@@ -1566,6 +1566,8 @@ function getFormData($form) {
     if (n["name"] === budgetRangePreference) {
       n["name"] = "budget";
 
+      console.log('BUDGETRANGEPREF');
+
       if (n["value"] === uptoOneM) {
         n.value = "Up to AED 1M";
       }
