@@ -1527,6 +1527,24 @@ function getFormData($form) {
         n["name"] = "jobSeeker";
     }
 
+    //What is your budget range?
+    if (n["name"] === budgetRangePreference) {
+      n["name"] = "budget";
+
+      if (n["value"] === uptoOneM) {
+        n.value = "Up to AED 1M";
+      }
+      if (n["value"] === oneMtoTwoM) {
+        n.value = "AED 1M to AED 2M";
+      }
+      if (n["value"] === twoMtoFiveM) {
+          n.value = "AED 2M to AED 5M";
+      }
+      if (n["value"] === fiveMPlus) {
+          n.value = "Above AED 5M";
+      }
+    }
+
 
     //What type of property are you interested in?
     if (n["name"] === propertyTypePreference) {
@@ -1561,24 +1579,6 @@ function getFormData($form) {
             n.value = "4";
         }
       }
-
-    //What is your budget range?
-    if (n["name"] === 'What is your budget range?') {
-      n["name"] = "budget";
-
-      if (n["value"] === uptoOneM) {
-        n.value = "Up to AED 1M";
-      }
-      if (n["value"] === oneMtoTwoM) {
-        n.value = "AED 1M to AED 2M";
-      }
-      if (n["value"] === twoMtoFiveM) {
-          n.value = "AED 2M to AED 5M";
-      }
-      if (n["value"] === fiveMPlus) {
-          n.value = "Above AED 5M";
-      }
-    }
 
 
     if (n["name"].startsWith(`dp_agreement::INSTAPAGE_BOX::`)) {
