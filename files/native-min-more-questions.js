@@ -1551,10 +1551,10 @@ function getFormData($form) {
         n["name"] = "Home_Type__c";
   
         if (n["value"] === villaHouse) {
-          n.value = "villa";
+          n.value = "Villa";
         }
         if (n["value"] === apartmentFlat) {
-          n.value = "apartment";
+          n.value = "Apartment";
         }
       }
 
