@@ -29,3 +29,5 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
 
     xhr.send(params);
 }
+
+obtainAccessToken(clientId, clientSecret, tokenEndpoint)
