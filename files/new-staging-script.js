@@ -1446,12 +1446,12 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         //Send to LQS 2
-        if (sendToLQS2 && formValid.isValid()) {
+        if (formValid.isValid()) {
             pushToNewLQS(data)
         }
 
         //Send to LQS 1
-        if (sendToLQS1 && formValid.isValid()) {
+        if (formValid.isValid()) {
           $.ajax({
             url: lqs1EndPoint,
             beforeSend: function (xhr) {
