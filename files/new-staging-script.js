@@ -1399,7 +1399,7 @@ window.addEventListener("DOMContentLoaded", function () {
           .getSelectedCountryData()
           .name.replace(/ *\([^)]*\) */g, "");
 
-        $("input[name='countryCode']").val(selectedData + ":" + code);
+        $("input[name='countryCode']").val(selectedData + ": " + code);
         $("input[name='country']").val(selectedData);
         $("input[name='ga_client_id']").val(getCookie("_ga"));
         $("input[name='fbid']").val(getFacebookCookie("_fbp"));
