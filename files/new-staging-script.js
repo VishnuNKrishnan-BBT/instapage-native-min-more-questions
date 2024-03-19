@@ -1290,14 +1290,28 @@ if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.len
   urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
 }
 
+// if (urlSplits.includes("gdn")) {
+//   defaultCampaignId = "a1207000000bnOn";
+// } else if (urlSplits.includes("emailer")) {
+//   defaultCampaignId = "a1207000000cX0R";
+// } else if (urlSplits.includes("social")) {
+//   defaultCampaignId = "a121n00000D9pUv";
+// } else if (urlSplits.includes("affilate")) {
+//   defaultCampaignId = "a1207000000d8a4";
+// } else {
+//   defaultCampaignId = "a121n00000Dwy45";
+// }
+
 if (urlSplits.includes("gdn")) {
   defaultCampaignId = "a1207000000bnOn";
-} else if (urlSplits.includes("emailer")) {
+} else if (urlSplits.includes("emailer-specific")) {
   defaultCampaignId = "a1207000000cX0R";
-} else if (urlSplits.includes("social")) {
+} else if (urlSplits.includes("social-specific")) {
   defaultCampaignId = "a121n00000D9pUv";
-} else if (urlSplits.includes("affilate")) {
+} else if (urlSplits.includes("affiliate-specific")) {
   defaultCampaignId = "a1207000000d8a4";
+} else if (urlSplits.includes("social-inf")) {
+  defaultCampaignId = "a121n00000D9pUv";
 } else {
   defaultCampaignId = "a121n00000Dwy45";
 }
