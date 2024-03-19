@@ -1283,12 +1283,15 @@ startTime = new Date().getTime();
 //let defaultCampaignIdData = document.querySelector("#defaultCampaignId"); 
 let defaultCampaignId;
   
-let urlSplits = window.location.href.split("/")
-if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
-  urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
-} else {
-  urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
-}
+// let urlSplits = window.location.href.split("/")
+
+// if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
+//   urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
+//   console.log("iffffffffffffffff", urlSplits)
+// } else {
+//   urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
+//   console.log("elseelseelseelse", urlSplits)
+// }
 
 // if (urlSplits.includes("gdn")) {
 //   defaultCampaignId = "a1207000000bnOn";
@@ -1301,6 +1304,26 @@ if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.len
 // } else {
 //   defaultCampaignId = "a121n00000Dwy45";
 // }
+
+const pageURL = window.location.href
+const hasUTMParams = pageURL.split('?')[1] !== undefined && pageURL.split('?')[1] !== null
+
+const addUTMParamsToSessionStorage = () => {
+    if(!hasUTMParams){
+        return
+    }
+
+    const UTMParamsString = pageURL.split('?')[1]
+    const UTMParamsArray = UTMParamsString.split('&')
+
+    if(UTMParamsArray.length == 0){
+        return
+    }
+
+    UTMParamsArray.map(obj => {
+        sessionStorage.setItem(obj.split('=')[0], obj.split('=')[1])
+    })
+}
 
 if (urlSplits.includes("gdn")) {
   defaultCampaignId = "a1207000000bnOn";
@@ -1770,4 +1793,6 @@ return $(this).val() ==titleVal;
 
 // ======== O N   I N I T ========
 obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
+
+addUTMParamsToSessionStorage()
 // ======== E N D   O F   O N   I N I T ========
