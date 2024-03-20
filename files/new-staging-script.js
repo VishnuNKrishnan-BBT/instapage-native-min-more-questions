@@ -1287,10 +1287,8 @@ let urlSplits = window.location.href.split("/")
 
 if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
   urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
-  console.log("iffffffffffffffff", urlSplits)
 } else {
   urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
-  console.log("elseelseelseelse", urlSplits)
 }
 
 // if (urlSplits.includes("gdn")) {
@@ -1315,29 +1313,55 @@ const addUTMParamsToSessionStorage = () => {
 
     const UTMParamsString = pageURL.split('?')[1]
     const UTMParamsArray = UTMParamsString.split('&')
-console.log("UTMParamsArray", UTMParamsArray)
+
     if(UTMParamsArray.length == 0){
         return
     }
 
     UTMParamsArray.map(obj => {
-        sessionStorage.setItem(obj.split('=')[0], obj.split('=')[1])
+      sessionStorage.setItem(obj.split('=')[0], obj.split('=')[1])
     })
 }
 
-if (urlSplits.includes("gdn")) {
-  defaultCampaignId = "a1207000000bnOn";
-} else if (urlSplits.includes("emailer-specific")) {
-  defaultCampaignId = "a1207000000cX0R";
-} else if (urlSplits.includes("social-specific")) {
-  defaultCampaignId = "a121n00000D9pUv";
-} else if (urlSplits.includes("affiliate-specific")) {
-  defaultCampaignId = "a1207000000d8a4";
-} else if (urlSplits.includes("social-inf")) {
-  defaultCampaignId = "a121n00000D9pUv";
-} else {
-  defaultCampaignId = "a121n00000Dwy45";
+const getDefaultCampaignIdAsPerUtmMedium = () => {
+
+  let campaign_id = sessionStorage.getItem('campaign_id')
+
+  if(campaign_id) {
+    return campaign_id
+  } else {
+    let utm_medium = sessionStorage.getItem('utm_medium')
+    if (utm_medium == "gdn") {
+      return "a1207000000bnOn";
+    } else if (utm_medium == "emailer-specific") {
+      return "a1207000000cX0R";
+    } else if (utm_medium == "social-specific") {
+      return "a121n00000D9pUv";
+    } else if (utm_medium == "affiliate-specific") {
+      return "a1207000000d8a4";
+    } else if (utm_medium == "social-inf") {
+      return "a121n00000D9pUv";
+    } else {
+      return "a121n00000Dwy45";
+    }
+  }
 }
+
+defaultCampaignId = getDefaultCampaignIdAsPerUtmMedium()
+
+// if (urlSplits.includes("gdn")) {
+//   defaultCampaignId = "a1207000000bnOn";
+// } else if (urlSplits.includes("emailer-specific")) {
+//   defaultCampaignId = "a1207000000cX0R";
+// } else if (urlSplits.includes("social-specific")) {
+//   defaultCampaignId = "a121n00000D9pUv";
+// } else if (urlSplits.includes("affiliate-specific")) {
+//   defaultCampaignId = "a1207000000d8a4";
+// } else if (urlSplits.includes("social-inf")) {
+//   defaultCampaignId = "a121n00000D9pUv";
+// } else {
+//   defaultCampaignId = "a121n00000Dwy45";
+// }
 
 window.addEventListener("DOMContentLoaded", function () {
   if (window.__featuresReady && window.__featuresReady.indexOf("Form") > -1) {
