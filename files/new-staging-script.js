@@ -1283,15 +1283,15 @@ startTime = new Date().getTime();
 //let defaultCampaignIdData = document.querySelector("#defaultCampaignId"); 
 let defaultCampaignId;
   
-// let urlSplits = window.location.href.split("/")
+let urlSplits = window.location.href.split("/")
 
-// if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
-//   urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
-//   console.log("iffffffffffffffff", urlSplits)
-// } else {
-//   urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
-//   console.log("elseelseelseelse", urlSplits)
-// }
+if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
+  urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
+  console.log("iffffffffffffffff", urlSplits)
+} else {
+  urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
+  console.log("elseelseelseelse", urlSplits)
+}
 
 // if (urlSplits.includes("gdn")) {
 //   defaultCampaignId = "a1207000000bnOn";
@@ -1315,7 +1315,7 @@ const addUTMParamsToSessionStorage = () => {
 
     const UTMParamsString = pageURL.split('?')[1]
     const UTMParamsArray = UTMParamsString.split('&')
-
+console.log("UTMParamsArray", UTMParamsArray)
     if(UTMParamsArray.length == 0){
         return
     }
