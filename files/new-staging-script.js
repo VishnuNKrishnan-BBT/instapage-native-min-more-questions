@@ -1287,8 +1287,10 @@ let urlSplits = window.location.href.split("/")
 
 if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
   urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
+  console.log("iffffffffff", urlSplits)
 } else {
   urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
+  console.log("elseeeeeeeeee", urlSplits)
 }
 
 // if (urlSplits.includes("gdn")) {
@@ -1302,7 +1304,7 @@ if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.len
 // } else {
 //   defaultCampaignId = "a121n00000Dwy45";
 // }
-
+console("urlSplitsurlSplitsurlSplitsurlSplits", urlSplits)
 if (urlSplits.includes("gdn")) {
   defaultCampaignId = "a1207000000bnOn";
 } else if (urlSplits.includes("emailer-specific")) {
