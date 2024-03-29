@@ -22,6 +22,43 @@ const lqs2leadEndpoint = "https://uat-mashery.damacgroup.com/v1/lqs/redis";
 // ======== E N D   O F   L Q S 2.0   C O N F I G ========
 
 
+// ======== BFF   C O N F I G ========
+const bffEmail = "user@example.com";
+const bffPassword = "string";
+
+// Function to retrieve the token from sessionStorage
+function getTokenFromLocalStorage() {
+  if (window !== undefined) {
+    const accessTokenForBff = sessionStorage.getItem('accessTokenForBff')
+    if(accessTokenForBff) {
+      return accessTokenForBff
+    } else {
+      bffLayerTokenAccess()
+    }
+  }
+  return;
+}
+function bffLayerTokenAccess() {
+  fetch('https://dummyjson.com/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      
+      username: 'kminchelle',
+      password: '0lelplR',
+    })
+  })
+  .then(res => res.json())
+  .then((res)=>{
+    console.log("res", res)
+    window.sessionStorage.setItem('accessTokenForBff', res?.token)
+  });
+}
+
+getTokenFromLocalStorage()
+// ======== BFF   C O N F I G ========
+
+
 
 // ======== L Q S 2.0   F U N C T I O N S ========
 //Obtain Mashery access token
