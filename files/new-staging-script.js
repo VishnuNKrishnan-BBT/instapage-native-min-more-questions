@@ -42,7 +42,7 @@ async function fetchPricingData(drupleId) {
   return getTokenFromLocalStorage().then(async (token) => {
     try {
       const response = await fetch(
-        `${bffBaseUrlStage}/instapage/get-pricing/${drupleId}?currency=PKR`,
+        `${bffBaseUrlStage}instapage/get-pricing/${drupleId}?currency=PKR`,
         {
           method: "GET",
           headers: {
