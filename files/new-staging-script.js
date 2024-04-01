@@ -35,7 +35,7 @@ async function bffLayerTokenAccess() {
   }
 }
 
-bffLayerTokenAccess();
+// bffLayerTokenAccess();
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
@@ -57,8 +57,21 @@ async function fetchPricingData(drupleId) {
     if(data?.message === 'success') {
       replaceTextInElements('{{CT_price}}*', data?.data?.prices?.AED?.min, document.body);
     }
+
+    if (response.status === 401 || (data?.message === 'Unauthorized: Invalid token')) {
+      await refreshTokenAndRetry(drupleId);
+    }
   } catch (error) {
     return console.error("Error fetching pricing data:", error);
+  }
+}
+
+async function refreshTokenAndRetry(drupleId) {
+  try {
+    await bffLayerTokenAccess(); // Refresh token
+    await fetchPricingData(drupleId); // Retry fetching pricing data
+  } catch (error) {
+    console.error("Error refreshing token and retrying:", error);
   }
 }
 

@@ -22,6 +22,67 @@ const lqs2leadEndpoint = "https://uat-mashery.damacgroup.com/v1/lqs/redis";
 // ======== E N D   O F   L Q S 2.0   C O N F I G ========
 
 
+// ======== BFF   C O N F I G ========
+const username = "DigitalIntegration";
+const bffEmail = "Digital.Integration@damacgroup.com";
+const bffPassword = "Clj~BEh![;)AL";
+const bffBaseUrlStage = 'https://stg-api.damacproperties.com/' 
+
+// Function to retrieve the token from sessionStorage
+function getTokenFromLocalStorage() {
+  if (window !== undefined) {
+    const accessTokenForBff = sessionStorage.getItem('accessTokenForBff')
+    if(accessTokenForBff) {
+      return accessTokenForBff
+    } else {
+      return bffLayerTokenAccess() // Return the promise
+    }
+  }
+  return;
+}
+
+async function bffLayerTokenAccess() {
+  return fetch(`${bffBaseUrlStage}/get-token`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: bffEmail,
+      password: bffPassword,
+    })
+  })
+  .then(res => res.json())
+  .then((res)=>{
+    console.log("res", res)
+    window.sessionStorage.setItem('accessTokenForBff', res?.token)
+    return res.token; // Return the token
+  });
+}
+
+// Function to fetch pricing data
+// function fetchPricingData(drupleId) {
+//   return getTokenFromLocalStorage().then(token => {
+//     return fetch(`${bffBaseUrlStage}/instapage/get-pricing/${drupleId}`, {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${token}`
+//       }
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//       console.log('Pricing Data:', data);
+//       // Handle pricing data here
+//     })
+//     .catch(error => console.error('Error fetching pricing data:', error));
+//   });
+// }
+
+// // Example usage:
+// const drupleId = 'your-id';
+// fetchPricingData(drupleId);
+// ======== BFF   C O N F I G ========
+
+
 
 // ======== L Q S 2.0   F U N C T I O N S ========
 //Obtain Mashery access token
@@ -1284,23 +1345,88 @@ startTime = new Date().getTime();
 let defaultCampaignId;
   
 let urlSplits = window.location.href.split("/")
+
 if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.length-1][0] == "?") {
   urlSplits = urlSplits[urlSplits.length-2].split("?")[0]
 } else {
   urlSplits = urlSplits[urlSplits.length-1].split("?")[0]
 }
 
+// if (urlSplits.includes("gdn")) {
+//   defaultCampaignId = "a1207000000bnOn";
+// } else if (urlSplits.includes("emailer")) {
+//   defaultCampaignId = "a1207000000cX0R";
+// } else if (urlSplits.includes("social")) {
+//   defaultCampaignId = "a121n00000D9pUv";
+// } else if (urlSplits.includes("affilate")) {
+//   defaultCampaignId = "a1207000000d8a4";
+// } else {
+//   defaultCampaignId = "a121n00000Dwy45";
+// }
+
 if (urlSplits.includes("gdn")) {
   defaultCampaignId = "a1207000000bnOn";
-} else if (urlSplits.includes("emailer")) {
+} else if (urlSplits.includes("emailer-specific")) {
   defaultCampaignId = "a1207000000cX0R";
-} else if (urlSplits.includes("social")) {
+} else if (urlSplits.includes("social-specific")) {
   defaultCampaignId = "a121n00000D9pUv";
-} else if (urlSplits.includes("affilate")) {
+} else if (urlSplits.includes("affiliate-specific")) {
   defaultCampaignId = "a1207000000d8a4";
+} else if (urlSplits.includes("social-inf")) {
+  defaultCampaignId = "a121n00000D9pUv";
 } else {
   defaultCampaignId = "a121n00000Dwy45";
 }
+
+
+
+// ======================================== LOGIC OF  ================================================
+// const pageURL = window.location.href
+// const hasUTMParams = pageURL.split('?')[1] !== undefined && pageURL.split('?')[1] !== null
+
+// const addUTMParamsToSessionStorage = () => {
+//     if(!hasUTMParams){
+//         return
+//     }
+
+//     const UTMParamsString = pageURL.split('?')[1]
+//     const UTMParamsArray = UTMParamsString.split('&')
+
+//     if(UTMParamsArray.length == 0){
+//         return
+//     }
+
+//     UTMParamsArray.map(obj => {
+//       sessionStorage.setItem(obj.split('=')[0], obj.split('=')[1])
+//     })
+// }
+
+// const getDefaultCampaignIdAsPerUtmMedium = () => {
+
+//   let campaign_id = sessionStorage.getItem('campaign_id')
+
+//   if(campaign_id) {
+//     return campaign_id
+//   } else {
+//     let utm_medium = sessionStorage.getItem('utm_medium')
+//     if (utm_medium == "gdn") {
+//       return "a1207000000bnOn";
+//     } else if (utm_medium == "emailer-specific") {
+//       return "a1207000000cX0R";
+//     } else if (utm_medium == "social-specific") {
+//       return "a121n00000D9pUv";
+//     } else if (utm_medium == "affiliate-specific") {
+//       return "a1207000000d8a4";
+//     } else if (utm_medium == "social-inf") {
+//       return "a121n00000D9pUv";
+//     } else {
+//       return "a121n00000Dwy45";
+//     }
+//   }
+// }
+
+// defaultCampaignId = getDefaultCampaignIdAsPerUtmMedium()
+// ======================================== END     O N   I N I T ================================================
 
 window.addEventListener("DOMContentLoaded", function () {
   if (window.__featuresReady && window.__featuresReady.indexOf("Form") > -1) {
@@ -1756,4 +1882,6 @@ return $(this).val() ==titleVal;
 
 // ======== O N   I N I T ========
 obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
+
+addUTMParamsToSessionStorage()
 // ======== E N D   O F   O N   I N I T ========
