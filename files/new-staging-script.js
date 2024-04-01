@@ -18,20 +18,18 @@ function getTokenFromLocalStorage() {
 }
 
 async function bffLayerTokenAccess() {
-  return fetch(`${bffBaseUrlStage}/get-token`, {
+  const res = await fetch(`${bffBaseUrlStage}/get-token`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email: bffEmail,
       password: bffPassword,
     })
-  })
-  .then(res => res.json())
-  .then((res)=>{
-    console.log("res", res)
-    window.sessionStorage.setItem('accessTokenForBff', res?.token)
-    return res.token; // Return the token
   });
+  const res_1 = await res.json();
+  console.log("res", res_1);
+  window.sessionStorage.setItem('accessTokenForBff', res_1?.token);
+  return res_1.token;
 }
 
 // Function to fetch pricing data
