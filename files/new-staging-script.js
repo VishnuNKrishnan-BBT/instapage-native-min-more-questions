@@ -28,8 +28,8 @@ async function bffLayerTokenAccess() {
     });
     const res_1 = await res.json();
     console.log("res", res_1);
-    window.sessionStorage.setItem("accessTokenForBff", res_1?.token);
-    return res_1.token;
+    window.sessionStorage.setItem("accessTokenForBff", res_1?.jwtToken);
+    return res_1.jwtToken;
   } catch (error) {
     return console.error("Error fetching pricing data:", error);
   }
