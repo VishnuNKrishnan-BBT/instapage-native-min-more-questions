@@ -39,24 +39,23 @@ bffLayerTokenAccess();
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
-  return getTokenFromLocalStorage().then(async (token) => {
-    try {
-      const response = await fetch(
-        `${bffBaseUrlStage}instapage/get-pricing/${drupleId}?currency=PKR`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      const data = await response.json();
-      console.log("Pricing Data:", data);
-    } catch (error) {
-      return console.error("Error fetching pricing data:", error);
-    }
-  });
+  try {
+    const token = await getTokenFromLocalStorage();
+    const response = await fetch(
+      `${bffBaseUrlStage}instapage/get-pricing/${drupleId}?currency=PKR`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await response.json();
+    console.log("Pricing Data:", data, token);
+  } catch (error) {
+    return console.error("Error fetching pricing data:", error);
+  }
 }
 
 // Example usage:
