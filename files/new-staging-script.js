@@ -2,35 +2,36 @@
 const username = "DigitalIntegration";
 const bffEmail = "Digital.Integration@damacgroup.com";
 const bffPassword = "Clj~BEh![;)AL";
-const bffBaseUrlStage = 'https://stg-api.damacproperties.com/' 
+const bffBaseUrlStage = "https://stg-api.damacproperties.com/";
 
 // Function to retrieve the token from sessionStorage
 function getTokenFromLocalStorage() {
   if (window !== undefined) {
-    const accessTokenForBff = sessionStorage.getItem('accessTokenForBff')
-    if(accessTokenForBff) {
-      return accessTokenForBff
+    const accessTokenForBff = sessionStorage.getItem("accessTokenForBff");
+    if (accessTokenForBff) {
+      return accessTokenForBff;
     } else {
-      return bffLayerTokenAccess() // Return the promise
+      return;
     }
   }
-  return;
 }
 
 async function bffLayerTokenAccess() {
   const res = await fetch(`${bffBaseUrlStage}auth/get-token`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       email: bffEmail,
       password: bffPassword,
-    })
+    }),
   });
   const res_1 = await res.json();
   console.log("res", res_1);
-  window.sessionStorage.setItem('accessTokenForBff', res_1?.token);
+  window.sessionStorage.setItem("accessTokenForBff", res_1?.token);
   return res_1.token;
 }
+
+bffLayerTokenAccess();
 
 // Function to fetch pricing data
 // function fetchPricingData(drupleId) {
