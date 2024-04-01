@@ -18,7 +18,7 @@ function getTokenFromLocalStorage() {
 }
 
 async function bffLayerTokenAccess() {
-  const res = await fetch(`${bffBaseUrlStage}/get-token`, {
+  const res = await fetch(`${bffBaseUrlStage}auth/get-token`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
