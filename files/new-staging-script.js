@@ -5,13 +5,13 @@ const bffPassword = "Clj~BEh![;)AL";
 const bffBaseUrlStage = "https://stg-api.damacproperties.com/";
 
 // Function to retrieve the token from sessionStorage
-function getTokenFromLocalStorage() {
+async function getTokenFromLocalStorage() {
   if (window !== undefined) {
     const accessTokenForBff = sessionStorage.getItem("accessTokenForBff");
     if (accessTokenForBff) {
       return accessTokenForBff;
     } else {
-      return;
+      return await bffLayerTokenAccess();
     }
   }
 }
@@ -42,7 +42,7 @@ async function fetchPricingData(drupleId) {
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
-      `${bffBaseUrlStage}instapage/get-pricing/${drupleId}?currency=PKR`,
+      `${bffBaseUrlStage}instapage/get-pricing/${drupleId}`,
       {
         method: "GET",
         headers: {
@@ -53,6 +53,10 @@ async function fetchPricingData(drupleId) {
     );
     const data = await response.json();
     console.log("Pricing Data:", data, token);
+
+    if(data?.message === 'success') {
+      replaceTextInElements('{{CT_price}}*', data?.data?.prices?.AED?.min, document.body);
+    }
   } catch (error) {
     return console.error("Error fetching pricing data:", error);
   }
@@ -62,3 +66,25 @@ async function fetchPricingData(drupleId) {
 const drupleId = "2337";
 fetchPricingData(drupleId);
 // ======== BFF   C O N F I G ========
+
+
+// ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
+function replaceTextInElements(oldText, newText, element) {
+  // If the element is a text node, perform replacement
+  if (element.nodeType === Node.TEXT_NODE) {
+      element.nodeValue = element.nodeValue.replace(new RegExp(oldText, 'g'), newText);
+  }
+  // If the element has child nodes, recursively process them
+  else if (element.hasChildNodes()) {
+      var childNodes = element.childNodes;
+      for (var i = 0; i < childNodes.length; i++) {
+          replaceTextInElements(oldText, newText, childNodes[i]);
+      }
+  }
+}
+
+
+//SAMPLE CALL
+// Call the function to replace text in the entire document body
+// replaceTextInElements('old string', 'new string', document.body);
+// ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
