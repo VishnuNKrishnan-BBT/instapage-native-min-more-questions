@@ -8,14 +8,20 @@ window.onload = function () {
   getQuerySlectorOfHiddenField();
   getTokenFromLocalStorage();
   bffLayerTokenAccess();
-  fetchPricingData();
   refreshTokenAndRetry();
   replaceTextInElements();
 };
 
 function getQuerySlectorOfHiddenField(fieldName) {
   let querySelector = document.querySelector(fieldName);
-  return querySelector?.value;
+  let defaultCurrency = querySelector?.value;
+
+  // Call fetchPricingData only when defaultCurrency is defined
+  if (defaultCurrency) {
+    fetchPricingData(defaultCurrency);
+  }
+
+  return defaultCurrency;
 }
 
 // Function to retrieve the token from sessionStorage
@@ -50,9 +56,7 @@ async function bffLayerTokenAccess() {
 }
 
 // Function to fetch pricing data
-async function fetchPricingData(drupleId) {
-  let defaultCurrency = getQuerySlectorOfHiddenField("#currency");
-
+async function fetchPricingData(defaultCurrency) {
   let currencyParameter =
     defaultCurrency && defaultCurrency !== "AED"
       ? `?currency=${defaultCurrency}`
@@ -92,7 +96,7 @@ async function fetchPricingData(drupleId) {
       response.status === 401 ||
       responseResult?.message === "Unauthorized: Invalid token"
     ) {
-      await refreshTokenAndRetry(() => fetchPricingData(drupleId));
+      await refreshTokenAndRetry(() => fetchPricingData(defaultCurrency));
     }
   } catch (error) {
     return console.error("Error fetching pricing data:", error);
@@ -110,7 +114,7 @@ async function refreshTokenAndRetry(callback) {
 
 let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
 const drupleId = "2337";
-fetchPricingData(dynamicProjectDrupleID || drupleId);
+//fetchPricingData(dynamicProjectDrupleID || drupleId);
 // ======== BFF   C O N F I G ========
 
 // ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
