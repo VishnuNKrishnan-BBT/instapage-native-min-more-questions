@@ -51,20 +51,20 @@ async function fetchPricingData(drupleId) {
         },
       }
     );
-    const data = await response.json();
-    console.log("Pricing Data:", data, token, response, data?.data?.prices?.AED?.min);
+    const responseResult = await response.json();
+    console.log("Pricing Data:", data, token, response, responseResult?.data?.data?.prices?.AED?.min);
 
-    if (data?.message === "success" || response?.status === 200) {
+    if (responseResult?.message === "success" || response?.status === 200) {
       replaceTextInElements(
         "{{CT_price}}*",
-        data?.data?.prices?.AED?.min,
+        responseResult?.data?.data?.prices?.AED?.min,
         document.body
       );
     }
 
     if (
       response.status === 401 ||
-      data?.message === "Unauthorized: Invalid token"
+      responseResult?.message === "Unauthorized: Invalid token"
     ) {
       await refreshTokenAndRetry(() => fetchPricingData(drupleId));
     }
