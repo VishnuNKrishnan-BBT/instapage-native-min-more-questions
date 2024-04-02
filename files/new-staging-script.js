@@ -1,5 +1,5 @@
 // ======== BFF   C O N F I G ========
-let defaultCurrency = document.querySelector("#currency");
+let defaultCurrency = document.querySelector("#currency").value;
 
 const username = "DigitalIntegration";
 const bffEmail = "Digital.Integration@damacgroup.com";
@@ -41,6 +41,7 @@ async function bffLayerTokenAccess() {
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
+  console.log("")
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
@@ -92,7 +93,7 @@ async function refreshTokenAndRetry(callback) {
   }
 }
 
-let dynamicProjectDrupleID = document.querySelector("#did_CT");
+let dynamicProjectDrupleID = document.querySelector("#did_CT").value;
 const drupleId = "2337";
 fetchPricingData(dynamicProjectDrupleID || drupleId);
 // ======== BFF   C O N F I G ========
