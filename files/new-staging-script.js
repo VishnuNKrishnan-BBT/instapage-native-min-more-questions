@@ -8,7 +8,6 @@ window.onload = function () {
   getQuerySlectorOfHiddenField();
   getTokenFromLocalStorage();
   bffLayerTokenAccess();
-  fetchPricingData();
   refreshTokenAndRetry();
   replaceTextInElements();
 };
@@ -51,51 +50,55 @@ async function bffLayerTokenAccess() {
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
-  let defaultCurrency = getQuerySlectorOfHiddenField("#currency");
+  if (drupleId !== undefined) { // Check if drupleId is defined
+    let defaultCurrency = getQuerySlectorOfHiddenField("#currency");
 
-  let currencyParameter =
-    defaultCurrency && defaultCurrency !== "AED"
-      ? `?currency=${defaultCurrency}`
-      : "";
+    let currencyParameter =
+      defaultCurrency && defaultCurrency !== "AED"
+        ? `?currency=${defaultCurrency}`
+        : "";
 
-  console.log("defaultCurrency", defaultCurrency);
-  try {
-    const token = await getTokenFromLocalStorage();
-    const response = await fetch(
-      `${bffBaseUrlStage}instapage/get-pricing/${drupleId}${currencyParameter}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    const responseResult = await response.json();
-    console.log(
-      "Pricing Data:",
-      responseResult,
-      token,
-      response,
-      responseResult?.data?.data?.prices?.AED?.min
-    );
-
-    if (responseResult?.message === "success" || response?.status === 200) {
-      replaceTextInElements(
-        "{{CT_price}}*",
-        responseResult?.data?.data?.prices?.AED?.min,
-        document.body
+    console.log("defaultCurrency", defaultCurrency);
+    try {
+      const token = await getTokenFromLocalStorage();
+      const response = await fetch(
+        `${bffBaseUrlStage}instapage/get-pricing/${drupleId}${currencyParameter}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
-    }
+      const responseResult = await response.json();
+      console.log(
+        "Pricing Data:",
+        responseResult,
+        token,
+        response,
+        responseResult?.data?.data?.prices?.AED?.min
+      );
 
-    if (
-      response.status === 401 ||
-      responseResult?.message === "Unauthorized: Invalid token"
-    ) {
-      await refreshTokenAndRetry(() => fetchPricingData(drupleId));
+      if (responseResult?.message === "success" || response?.status === 200) {
+        replaceTextInElements(
+          "{{CT_price}}*",
+          responseResult?.data?.data?.prices?.AED?.min,
+          document.body
+        );
+      }
+
+      if (
+        response.status === 401 ||
+        responseResult?.message === "Unauthorized: Invalid token"
+      ) {
+        await refreshTokenAndRetry(() => fetchPricingData(drupleId));
+      }
+    } catch (error) {
+      return console.error("Error fetching pricing data:", error);
     }
-  } catch (error) {
-    return console.error("Error fetching pricing data:", error);
+  } else {
+    console.error("drupleId is undefined, API call cannot be made.");
   }
 }
 
@@ -109,8 +112,8 @@ async function refreshTokenAndRetry(callback) {
 }
 
 let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
-const drupleId = "2337";
-fetchPricingData(dynamicProjectDrupleID || drupleId);
+const drupleId = dynamicProjectDrupleID || "2337";
+fetchPricingData(drupleId);
 // ======== BFF   C O N F I G ========
 
 // ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
