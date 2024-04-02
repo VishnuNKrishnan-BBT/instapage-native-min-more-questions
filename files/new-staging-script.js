@@ -1,4 +1,6 @@
 // ======== BFF   C O N F I G ========
+let defaultCurrency = document.querySelector("#currency");
+
 const username = "DigitalIntegration";
 const bffEmail = "Digital.Integration@damacgroup.com";
 const bffPassword = "Clj~BEh![;)AL";
@@ -39,10 +41,13 @@ async function bffLayerTokenAccess() {
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
+  defaultCurrency === "AED" ? "" : defaultCurrency;
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
-      `${bffBaseUrlStage}instapage/get-pricing/${drupleId}`,
+      `${bffBaseUrlStage}instapage/get-pricing/${drupleId}?${
+        defaultCurrency !== "AED" && `currency=${defaultCurrency}`
+      }`,
       {
         method: "GET",
         headers: {
@@ -52,7 +57,13 @@ async function fetchPricingData(drupleId) {
       }
     );
     const responseResult = await response.json();
-    console.log("Pricing Data:", responseResult, token, response, responseResult?.data?.data?.prices?.AED?.min);
+    console.log(
+      "Pricing Data:",
+      responseResult,
+      token,
+      response,
+      responseResult?.data?.data?.prices?.AED?.min
+    );
 
     if (responseResult?.message === "success" || response?.status === 200) {
       replaceTextInElements(
