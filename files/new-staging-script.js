@@ -52,13 +52,14 @@ async function bffLayerTokenAccess() {
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
   let defaultCurrency = getQuerySlectorOfHiddenField("#currency");
-
+  console.log("defaultCurrency", defaultCurrency);
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
       `${bffBaseUrlStage}instapage/get-pricing/${drupleId}${
-        defaultCurrency !== "AED" ||
-        (!defaultCurrency && `?currency=${defaultCurrency}`)
+        !defaultCurrency &&
+        defaultCurrency !== "AED" &&
+        `?currency=${defaultCurrency}`
       }`,
       {
         method: "GET",
