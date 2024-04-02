@@ -105,11 +105,19 @@ async function fetchPricingData(drupleId) {
 async function refreshTokenAndRetry(callback) {
   try {
     await bffLayerTokenAccess(); // Refresh token
-    await callback();
+    if (callback) {
+      await callback();
+    } else {
+      // If no callback is provided, retry the pricing data fetch directly
+      let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
+      const drupleId = dynamicProjectDrupleID || "2337";
+      await fetchPricingData(drupleId);
+    }
   } catch (error) {
     console.error("Error refreshing token and retrying:", error);
   }
 }
+
 
 let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
 const drupleId = dynamicProjectDrupleID || "2337";
