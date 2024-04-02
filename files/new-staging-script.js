@@ -54,7 +54,7 @@ async function fetchPricingData(drupleId) {
   let defaultCurrency = getQuerySlectorOfHiddenField("#currency");
 
   let currencyParameter =
-    !defaultCurrency && defaultCurrency !== "AED"
+    defaultCurrency && defaultCurrency !== "AED"
       ? `?currency=${defaultCurrency}`
       : "";
 
