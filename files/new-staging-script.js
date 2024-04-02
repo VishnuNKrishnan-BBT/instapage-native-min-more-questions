@@ -4,6 +4,11 @@ const bffEmail = "Digital.Integration@damacgroup.com";
 const bffPassword = "Clj~BEh![;)AL";
 const bffBaseUrlStage = "https://stg-api.damacproperties.com/";
 
+function getQuerySlectorOfHiddenField(fieldName) {
+  let querySelector = document.querySelector(fieldName);
+  return querySelector?.value;
+}
+
 // Function to retrieve the token from sessionStorage
 async function getTokenFromLocalStorage() {
   if (window !== undefined) {
@@ -39,12 +44,14 @@ async function bffLayerTokenAccess() {
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
-  let defaultCurrency = document.querySelector("#currency").value;
+  let defaultCurrency = getQuerySlectorOfHiddenField("#currency");
+
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
       `${bffBaseUrlStage}instapage/get-pricing/${drupleId}${
-        defaultCurrency !== "AED" || !defaultCurrency && `?currency=${defaultCurrency}`
+        defaultCurrency !== "AED" ||
+        (!defaultCurrency && `?currency=${defaultCurrency}`)
       }`,
       {
         method: "GET",
@@ -91,7 +98,7 @@ async function refreshTokenAndRetry(callback) {
   }
 }
 
-let dynamicProjectDrupleID = document.querySelector("#did_CT").value;
+let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
 const drupleId = "2337";
 fetchPricingData(dynamicProjectDrupleID || drupleId);
 // ======== BFF   C O N F I G ========
