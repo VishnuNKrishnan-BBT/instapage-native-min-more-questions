@@ -45,7 +45,7 @@ async function fetchPricingData(drupleId) {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
       `${bffBaseUrlStage}instapage/get-pricing/${drupleId}${
-        defaultCurrency !== "AED" && `?currency=${defaultCurrency}`
+        defaultCurrency !== "AED" || !defaultCurrency && `?currency=${defaultCurrency}`
       }`,
       {
         method: "GET",
