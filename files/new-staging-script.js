@@ -1,6 +1,4 @@
 // ======== BFF   C O N F I G ========
-let defaultCurrency = document.querySelector("#currency").value;
-
 const username = "DigitalIntegration";
 const bffEmail = "Digital.Integration@damacgroup.com";
 const bffPassword = "Clj~BEh![;)AL";
@@ -41,7 +39,7 @@ async function bffLayerTokenAccess() {
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
-  console.log("")
+  let defaultCurrency = document.querySelector("#currency").value;
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
