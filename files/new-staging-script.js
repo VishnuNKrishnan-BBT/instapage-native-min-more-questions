@@ -1819,14 +1819,6 @@ return $(this).val() ==titleVal;
 
 
 
-// ======== O N   I N I T ========
-obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
-
-addUTMParamsToSessionStorage()
-// ======== E N D   O F   O N   I N I T ========
-
-
-
 
 // ======== BFF   C O N F I G ========
 const username = "DigitalIntegration";
@@ -1976,3 +1968,13 @@ function replaceTextInElements(oldText, newText, element) {
 // Call the function to replace text in the entire document body
 // replaceTextInElements('old string', 'new string', document.body);
 // ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
+
+
+
+
+
+// ======== O N   I N I T ========
+obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
+
+addUTMParamsToSessionStorage()
+// ======== E N D   O F   O N   I N I T ========
