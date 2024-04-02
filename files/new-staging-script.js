@@ -57,7 +57,7 @@ async function fetchPricingData(drupleId) {
     const data = await response.json();
     console.log("Pricing Data:", data, token);
 
-    if(data?.message === 'success') {
+    if(data?.message === 'success' || data?.status === 'success') {
       replaceTextInElements('{{CT_price}}*', data?.data?.prices?.AED?.min, document.body);
     }
 
@@ -78,9 +78,10 @@ async function refreshTokenAndRetry(drupleId) {
   }
 }
 
-// Example usage:
+
+let dynamicProjectDrupleID = document.querySelector("#did_CT");
 const drupleId = "2337";
-fetchPricingData(drupleId);
+fetchPricingData(dynamicProjectDrupleID || drupleId);
 // ======== BFF   C O N F I G ========
 
 
