@@ -1,6 +1,3 @@
-
-
-
 // ======== BFF   C O N F I G ========
 const username = "DigitalIntegration";
 const bffEmail = "Digital.Integration@damacgroup.com";
@@ -57,49 +54,57 @@ async function fetchPricingData(drupleId) {
     const data = await response.json();
     console.log("Pricing Data:", data, token, response);
 
-    if(data?.message === 'success' || data?.status === '200') {
-      replaceTextInElements('{{CT_price}}*', data?.data?.prices?.AED?.min, document.body);
+    if (data?.message === "success" || response?.status === 200) {
+      replaceTextInElements(
+        "{{CT_price}}*",
+        data?.data?.prices?.AED?.min,
+        document.body
+      );
     }
 
-    if (response.status === 401 || (data?.message === 'Unauthorized: Invalid token')) {
-      await refreshTokenAndRetry(drupleId);
+    if (
+      response.status === 200 ||
+      response.status === 401 ||
+      data?.message === "Unauthorized: Invalid token"
+    ) {
+      await refreshTokenAndRetry(fetchPricingData(drupleId));
     }
   } catch (error) {
     return console.error("Error fetching pricing data:", error);
   }
 }
 
-async function refreshTokenAndRetry(drupleId) {
+async function refreshTokenAndRetry(callback) {
   try {
     await bffLayerTokenAccess(); // Refresh token
-    await fetchPricingData(drupleId); // Retry fetching pricing data
+    await callback();
   } catch (error) {
     console.error("Error refreshing token and retrying:", error);
   }
 }
-
 
 let dynamicProjectDrupleID = document.querySelector("#did_CT");
 const drupleId = "2337";
 fetchPricingData(dynamicProjectDrupleID || drupleId);
 // ======== BFF   C O N F I G ========
 
-
 // ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
 function replaceTextInElements(oldText, newText, element) {
   // If the element is a text node, perform replacement
   if (element.nodeType === Node.TEXT_NODE) {
-      element.nodeValue = element.nodeValue.replace(new RegExp(oldText, 'g'), newText);
+    element.nodeValue = element.nodeValue.replace(
+      new RegExp(oldText, "g"),
+      newText
+    );
   }
   // If the element has child nodes, recursively process them
   else if (element.hasChildNodes()) {
-      var childNodes = element.childNodes;
-      for (var i = 0; i < childNodes.length; i++) {
-          replaceTextInElements(oldText, newText, childNodes[i]);
-      }
+    var childNodes = element.childNodes;
+    for (var i = 0; i < childNodes.length; i++) {
+      replaceTextInElements(oldText, newText, childNodes[i]);
+    }
   }
 }
-
 
 //SAMPLE CALL
 // Call the function to replace text in the entire document body
