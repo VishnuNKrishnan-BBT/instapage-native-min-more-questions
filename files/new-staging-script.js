@@ -52,7 +52,7 @@ async function fetchPricingData(drupleId) {
       }
     );
     const data = await response.json();
-    console.log("Pricing Data:", data, token, response);
+    console.log("Pricing Data:", data, token, response, data?.data?.prices?.AED?.min);
 
     if (data?.message === "success" || response?.status === 200) {
       replaceTextInElements(
