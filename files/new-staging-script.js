@@ -30,7 +30,7 @@ async function bffLayerTokenAccess() {
       }),
     });
     const res_1 = await res.json();
-    console.log("res", res_1);
+    console.log("res", res_1, res);
     window.sessionStorage.setItem("accessTokenForBff", res_1?.data?.jwtToken);
     return res_1?.data?.jwtToken;
   } catch (error) {
@@ -55,9 +55,9 @@ async function fetchPricingData(drupleId) {
       }
     );
     const data = await response.json();
-    console.log("Pricing Data:", data, token);
+    console.log("Pricing Data:", data, token, response);
 
-    if(data?.message === 'success' || data?.status === 'success') {
+    if(data?.message === 'success' || data?.status === '200') {
       replaceTextInElements('{{CT_price}}*', data?.data?.prices?.AED?.min, document.body);
     }
 
