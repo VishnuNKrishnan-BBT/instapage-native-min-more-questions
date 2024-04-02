@@ -41,7 +41,6 @@ async function bffLayerTokenAccess() {
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
-  defaultCurrency === "AED" ? "" : defaultCurrency;
   try {
     const token = await getTokenFromLocalStorage();
     const response = await fetch(
