@@ -67,7 +67,7 @@ async function fetchPricingData(drupleId) {
       response.status === 401 ||
       data?.message === "Unauthorized: Invalid token"
     ) {
-      await refreshTokenAndRetry(fetchPricingData(drupleId));
+      await refreshTokenAndRetry(() => fetchPricingData(drupleId));
     }
   } catch (error) {
     return console.error("Error fetching pricing data:", error);
