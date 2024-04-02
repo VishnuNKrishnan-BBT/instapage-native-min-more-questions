@@ -4,6 +4,15 @@ const bffEmail = "Digital.Integration@damacgroup.com";
 const bffPassword = "Clj~BEh![;)AL";
 const bffBaseUrlStage = "https://stg-api.damacproperties.com/";
 
+window.onload = function () {
+  getQuerySlectorOfHiddenField();
+  getTokenFromLocalStorage();
+  bffLayerTokenAccess();
+  fetchPricingData();
+  refreshTokenAndRetry();
+  replaceTextInElements();
+};
+
 function getQuerySlectorOfHiddenField(fieldName) {
   let querySelector = document.querySelector(fieldName);
   return querySelector?.value;
@@ -39,8 +48,6 @@ async function bffLayerTokenAccess() {
     return console.error("Error fetching pricing data:", error);
   }
 }
-
-// bffLayerTokenAccess();
 
 // Function to fetch pricing data
 async function fetchPricingData(drupleId) {
