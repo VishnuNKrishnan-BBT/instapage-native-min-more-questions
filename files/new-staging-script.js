@@ -63,7 +63,6 @@ async function fetchPricingData(drupleId) {
     }
 
     if (
-      response.status === 200 ||
       response.status === 401 ||
       data?.message === "Unauthorized: Invalid token"
     ) {
