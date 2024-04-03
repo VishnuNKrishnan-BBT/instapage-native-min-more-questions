@@ -1932,7 +1932,7 @@ async function refreshTokenAndRetry(callback) {
     } else {
       // If no callback is provided, retry the pricing data fetch directly
       let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
-      const drupleId = dynamicProjectDrupleID ;
+      const drupleId = dynamicProjectDrupleID || "2337";
       await fetchPricingData(drupleId);
     }
   } catch (error) {
@@ -1942,7 +1942,7 @@ async function refreshTokenAndRetry(callback) {
 
 
 let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
-const drupleId = dynamicProjectDrupleID;
+const drupleId = dynamicProjectDrupleID || "2337";
 fetchPricingData(drupleId);
 // ======== BFF   C O N F I G ========
 
