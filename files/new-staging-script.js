@@ -1303,20 +1303,35 @@ if (urlSplits[urlSplits.length-1].trim().length == 0 ||  urlSplits[urlSplits.len
 //   defaultCampaignId = "a121n00000Dwy45";
 // }
 
-if (urlSplits.includes("gdn")) {
-  defaultCampaignId = "a1207000000bnOn";
-} else if (urlSplits.includes("emailer-specific")) {
-  defaultCampaignId = "a1207000000cX0R";
-} else if (urlSplits.includes("social-specific")) {
-  defaultCampaignId = "a121n00000D9pUv";
-} else if (urlSplits.includes("affiliate-specific")) {
-  defaultCampaignId = "a1207000000d8a4";
-} else if (urlSplits.includes("social-inf")) {
-  defaultCampaignId = "a121n00000D9pUv";
-} else {
-  defaultCampaignId = "a121n00000Dwy45";
-}
+// if (urlSplits.includes("gdn")) {
+//   defaultCampaignId = "a1207000000bnOn";
+// } else if (urlSplits.includes("emailer-specific")) {
+//   defaultCampaignId = "a1207000000cX0R";
+// } else if (urlSplits.includes("social-specific")) {
+//   defaultCampaignId = "a121n00000D9pUv";
+// } else if (urlSplits.includes("affiliate-specific")) {
+//   defaultCampaignId = "a1207000000d8a4";
+// } else if (urlSplits.includes("social-inf")) {
+//   defaultCampaignId = "a121n00000D9pUv";
+// } else {
+//   defaultCampaignId = "a121n00000Dwy45";
+// }
 
+
+//UPDATING CAMPAIGN IDS BASED ON TICKET 55929
+if (urlSplits.includes("gdn")) {
+  defaultCampaignId = "a12UC0000002vVF"; //a1207000000bnOn
+} else if (urlSplits.includes("emailer-specific")) {
+  defaultCampaignId = "a12UC0000002vTd"; //a1207000000cX0R
+} else if (urlSplits.includes("social-specific")) {
+  defaultCampaignId = "a12UC0000002vOn"; //a121n00000D9pUv
+} else if (urlSplits.includes("affiliate-specific")) {
+  defaultCampaignId = "a12UC0000002vQP"; //a1207000000d8a4
+} else if (urlSplits.includes("social-inf")) {
+  defaultCampaignId = "a12UC0000002vS1"; //a121n00000D9pUv
+} else {
+  defaultCampaignId = "a12UC0000002vWr"; //a121n00000Dwy45
+}
 
 
 // ======================================== LOGIC OF  ================================================
