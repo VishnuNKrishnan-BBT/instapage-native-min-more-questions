@@ -1,6 +1,6 @@
 // ======== M A N U A L   S W I T C H E S ========
 const sendToLQS1 = true
-const sendToLQS2 = true
+const sendToLQS2 = false
 // ======== E N D   O F   M A N U A L   S W I T C H E S ========
 
 
