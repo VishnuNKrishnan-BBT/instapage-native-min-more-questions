@@ -1877,7 +1877,7 @@ async function bffLayerTokenAccess() {
       }),
     });
     const res_1 = await res.json();
-    console.log("res", res_1, res);
+    
     window.sessionStorage.setItem("accessTokenForBff", res_1?.data?.jwtToken);
     return res_1?.data?.jwtToken;
   } catch (error) {
@@ -1958,7 +1958,9 @@ async function refreshTokenAndRetry(callback) {
 
 let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
 const drupleId = dynamicProjectDrupleID;
-fetchPricingData(drupleId);
+if(drupleId !== undefined) {
+  fetchPricingData(drupleId);
+}
 // ======== BFF   C O N F I G ========
 
 // ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
