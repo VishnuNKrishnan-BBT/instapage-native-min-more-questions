@@ -703,7 +703,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     preferredLanguageInput = "Preferred Language";
 
     whenDoYouWantToBuy= "When do you plan to buy ?"
-    
+
   } else if (websiteLanguage == "GK") {
     _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
     _Translate.set("Please Fix These Errors", "Î”Î¹Î¿ÏÎ¸ÏŽÏƒÏ„Îµ Î±Ï…Ï„Î¬ Ï„Î± ÏƒÏ†Î¬Î»Î¼Î±Ï„Î±");
@@ -2014,5 +2014,5 @@ function replaceTextInElements(oldText, newText, element) {
 // ======== O N   I N I T ========
 obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
 
-addUTMParamsToSessionStorage()
+// addUTMParamsToSessionStorage()
 // ======== E N D   O F   O N   I N I T ========
