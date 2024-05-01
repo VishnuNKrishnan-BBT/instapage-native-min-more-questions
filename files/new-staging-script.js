@@ -1504,6 +1504,7 @@ window.addEventListener("DOMContentLoaded", function () {
           $("input[name='campaignId']").val(defaultCampaignId);
         }
         var data = getFormData($(forms));
+        console.log("data 15077777", data)
         data.fullLandingPageUrl = location.toString();
         data.cookieEnabled = navigator.cookieEnabled;
         data.referrer = document.referrer;
