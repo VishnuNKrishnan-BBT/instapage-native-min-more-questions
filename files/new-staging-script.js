@@ -1459,7 +1459,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
     [].forEach.call(form, function (forms, index) {
       // //console.log(forms);
+      console.log("formValid 1462", forms)
       let formValid = instapageForm(forms);
+      console.log("formValid 1463", formValid)
       var handler = forms.onsubmit;
       forms.onsubmit = function (e) {
         e.preventDefault();
@@ -1527,6 +1529,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
+          console.log("data 1530", data)
             pushToNewLQS(data)
         }
 
