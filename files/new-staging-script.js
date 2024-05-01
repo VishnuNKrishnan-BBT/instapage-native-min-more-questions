@@ -142,6 +142,9 @@ let contacted;
 let sms;
 let whatsapp;
 let preferredLanguageInput
+
+let whenDoYouWantToBuy
+
 websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
@@ -209,6 +212,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "AR") {
     _Translate.set("Processing...", "Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¹Ù…Ù„...");
     _Translate.set(
@@ -282,6 +287,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "Ø±Ø³Ø§Ù„Ø© Ù†ØµÙŠÙ‘Ø©";
     whatsapp = "ØªØ·Ø¨ÙŠÙ‚ ÙˆØ§ØªØ³Ø§Ø¨";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "FR") {
     _Translate.set("Processing...", "En cours de traitement...");
     _Translate.set("Please Fix These Errors", "Veuillez corriger ces erreurs");
@@ -358,6 +366,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+    
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "SP") {
     _Translate.set("Processing...", "Procesando...");
     _Translate.set("Please Fix These Errors", "Solucione estos errores");
@@ -487,6 +498,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "CH") {
     _Translate.set("Processing...", "å¤„ç†ä¸­...");
     _Translate.set("Please Fix These Errors", "è¯·ä¿®å¤è¿™äº›é”™è¯¯");
@@ -619,6 +633,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "RU") {
     _Translate.set("Processing...", "Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ...");
     _Translate.set("Please Fix These Errors", "Ð˜ÑÐ¿Ñ€Ð°Ð²ÑŒÑ‚Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸");
@@ -684,6 +701,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+    
   } else if (websiteLanguage == "GK") {
     _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
     _Translate.set("Please Fix These Errors", "Î”Î¹Î¿ÏÎ¸ÏŽÏƒÏ„Îµ Î±Ï…Ï„Î¬ Ï„Î± ÏƒÏ†Î¬Î»Î¼Î±Ï„Î±");
