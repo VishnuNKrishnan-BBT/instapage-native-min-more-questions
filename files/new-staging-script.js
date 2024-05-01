@@ -1461,7 +1461,6 @@ window.addEventListener("DOMContentLoaded", function () {
       // //console.log(forms);
       console.log("formValid 1462", forms)
       let formValid = instapageForm(forms);
-      console.log("formValid 1463", formValid)
       var handler = forms.onsubmit;
       forms.onsubmit = function (e) {
         e.preventDefault();
@@ -1621,6 +1620,7 @@ function landingCMSThankYou(e, t, o, r, a, s, b) {
 function getFormData($form) {
   var unindexed_array = $form.serializeArray();
   var indexed_array = {};
+  console.log("unindexed_array", unindexed_array)
   $.map(unindexed_array, function (n, i) {
     if (n["name"] === firstNameInput) {
       n["name"] = "firstName";
