@@ -1691,8 +1691,8 @@ function getFormData($form) {
     //     n.value = "job seeker";
     //   }
     }
-    if (n["name"] === whenToBuy) {
-      n["name"] = "whenToBuy";
+    if (n["name"] === whenDoYouWantToBuy) {
+      n["name"] = "whenDoYouWantToBuy";
 
       if (n["value"] === daysThirty) {
         n.value = "Now";
@@ -1710,6 +1710,11 @@ function getFormData($form) {
         n.value = "Within 6 months";
       }
     }
+
+    if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
+      n["name"] = "newsAndOffers";
+    }
+
     if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
       n["name"] = "newsAndOffers";
     }
