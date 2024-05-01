@@ -435,6 +435,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "HE") {
     _Translate.set("Processing...", "×ž×¢×‘×“...");
     _Translate.set("Please Fix These Errors", "× × ×œ×ª×§×Ÿ ××ª ×”×©×’×™××•×ª ×”×‘××•×ª");
@@ -564,6 +567,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "IT") {
     _Translate.set("Processing...", "In elaborazione...");
     _Translate.set(
@@ -807,6 +813,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "NL") {
     _Translate.set("Processing...", "Verwerken...");
     _Translate.set("Please Fix These Errors", "Corrigeer deze fouten a.u.b.");
@@ -870,6 +879,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else if (websiteLanguage == "RO") {
     _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
 
@@ -938,6 +950,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
+
   } else {
     _Translate.set("Processing...", "Processing...");
     _Translate.set("Please Fix These Errors", "Please Fix These Errors");
@@ -1001,6 +1016,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?"
   }
 
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
