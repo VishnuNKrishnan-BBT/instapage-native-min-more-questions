@@ -1527,7 +1527,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
-          console.log("data", data)
             pushToNewLQS(data)
         }
 
