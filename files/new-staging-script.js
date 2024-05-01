@@ -1846,7 +1846,6 @@ window.onload = function () {
   getTokenFromLocalStorage();
   bffLayerTokenAccess();
   refreshTokenAndRetry();
-  replaceTextInElements();
 };
 
 function getQuerySlectorOfHiddenField(fieldName) {
@@ -1958,16 +1957,14 @@ async function refreshTokenAndRetry(callback) {
 
 let dynamicProjectDrupleID = getQuerySlectorOfHiddenField("#did_CT");
 const drupleId = dynamicProjectDrupleID;
-if(drupleId !== undefined) {
-  fetchPricingData(drupleId);
-}
+fetchPricingData(drupleId);
 // ======== BFF   C O N F I G ========
 
 // ======================== UPDATE PRICES AFTER TAKING FROM BFF ================================
 function replaceTextInElements(oldText, newText, element) {
   // If the element is a text node, perform replacement
-  if (element.nodeType === Node.TEXT_NODE) {
-    element.nodeValue = element.nodeValue.replace(
+  if (element?.nodeType === Node.TEXT_NODE) {
+    element.nodeValue = element?.nodeValue?.replace(
       new RegExp(oldText, "g"),
       newText
     );
