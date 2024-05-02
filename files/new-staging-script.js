@@ -1475,7 +1475,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
     [].forEach.call(form, function (forms, index) {
       // //console.log(forms);
-      console.log("formValid 1462", forms)
       let formValid = instapageForm(forms);
       var handler = forms.onsubmit;
       forms.onsubmit = function (e) {
