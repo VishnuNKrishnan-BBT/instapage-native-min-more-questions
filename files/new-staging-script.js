@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     mrInput = "Mr.";
     msInput = "Ms.";
     mrsInput = "Mrs.";
-    newsInput = "Iâ€™d like to hear about news and offers";
+    newsInput = "I’d like to hear about news and offers";
     privacyInput = "Iâ€™ve read and agreed to the Privacy Policy";
     phoneError = "Please enter a valid Phone number";
     emailError = "EnterÂ aÂ validÂ email";
@@ -1706,22 +1706,12 @@ function getFormData($form) {
       }
     }
 
-    if (n["name"] === newsAndOffers) {
+    if (n["name"].startsWith(`${newsAndOffers}::INSTAPAGE_BOX::`)) {
       n["name"] = "newsAndOffers";
     }
-    if (n["name"] === "newsAndOffers") {
-      n.value = "yes";
-    }
-
-    // if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
-    //   n["name"] = "newsAndOffers";
-    // }
 
     if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
       n["name"] = "acceptPrivacyPolicy";
-    }
-    if (n["name"] === "acceptPrivacyPolicy") {
-      n.value = "yes";
     }
 
     if (n["name"] === `${contacted}::INSTAPAGE_BOX::${sms}`) {
@@ -1799,8 +1789,22 @@ function getFormData($form) {
 
     indexed_array[n["name"]] = n["value"];
   });
-  ////console.log('indexed_array...', indexed_array);
-  return indexed_array;
+
+  /*
+    START => STRAT Logic for the Removing extra paoload with space
+    1- Created 1 array which with keys which i want to remove from the payload
+    2- Payload was in a object so, i remoed it from objects
+    3- Then filter object i am sending to the payload 
+  */
+  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy']
+
+  const filterWithoutSpace = Object.fromEntries(
+    Object.entries(indexed_array).filter(([key, value]) => !keysShouldBeRemovedWithSpace.includes(key))
+  );
+  /* START => STRAT Logic for the Removing extra paoload with space */
+  
+  return filterWithoutSpace;
+  // return indexed_array;
 }
 
 window.__custom_form_validations = [
