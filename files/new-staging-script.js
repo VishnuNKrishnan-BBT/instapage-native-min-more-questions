@@ -143,9 +143,6 @@ let sms;
 let whatsapp;
 let preferredLanguageInput
 
-let whenDoYouWantToBuy
-let areYouLookingTo
-
 websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
@@ -213,9 +210,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "AR") {
     _Translate.set("Processing...", "Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¹Ù…Ù„...");
@@ -290,9 +284,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "Ø±Ø³Ø§Ù„Ø© Ù†ØµÙŠÙ‘Ø©";
     whatsapp = "ØªØ·Ø¨ÙŠÙ‚ ÙˆØ§ØªØ³Ø§Ø¨";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "FR") {
     _Translate.set("Processing...", "En cours de traitement...");
@@ -370,9 +361,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-    
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "SP") {
     _Translate.set("Processing...", "Procesando...");
@@ -441,9 +429,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to"
-
   } else if (websiteLanguage == "HE") {
     _Translate.set("Processing...", "×ž×¢×‘×“...");
     _Translate.set("Please Fix These Errors", "× × ×œ×ª×§×Ÿ ××ª ×”×©×’×™××•×ª ×”×‘××•×ª");
@@ -507,9 +492,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to"
+    
 
   } else if (websiteLanguage == "CH") {
     _Translate.set("Processing...", "å¤„ç†ä¸­...");
@@ -574,9 +557,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "IT") {
     _Translate.set("Processing...", "In elaborazione...");
@@ -648,9 +628,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
-
   } else if (websiteLanguage == "RU") {
     _Translate.set("Processing...", "Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ...");
     _Translate.set("Please Fix These Errors", "Ð˜ÑÐ¿Ñ€Ð°Ð²ÑŒÑ‚Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸");
@@ -717,9 +694,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
-
   } else if (websiteLanguage == "GK") {
     _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
     _Translate.set("Please Fix These Errors", "Î”Î¹Î¿ÏÎ¸ÏŽÏƒÏ„Îµ Î±Ï…Ï„Î¬ Ï„Î± ÏƒÏ†Î¬Î»Î¼Î±Ï„Î±");
@@ -756,9 +730,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
 
   } else if (websiteLanguage == "GR") {
     _Translate.set("Processing...", "Verarbeitung lÃ¤uft...");
@@ -828,9 +799,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
-
   } else if (websiteLanguage == "NL") {
     _Translate.set("Processing...", "Verwerken...");
     _Translate.set("Please Fix These Errors", "Corrigeer deze fouten a.u.b.");
@@ -894,9 +862,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
 
   } else if (websiteLanguage == "RO") {
     _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
@@ -967,9 +932,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
-
   } else {
     _Translate.set("Processing...", "Processing...");
     _Translate.set("Please Fix These Errors", "Please Fix These Errors");
@@ -1033,9 +995,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-
-    whenDoYouWantToBuy= "When do you plan to buy ?";
-    areYouLookingTo= "Are you looking to";
   }
 
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
@@ -1581,6 +1540,8 @@ window.addEventListener("DOMContentLoaded", function () {
           data.lastName = newVal;
         }
 
+        data?.Lead_Gen_Identifier = "instapage"
+
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
             pushToNewLQS(data)
@@ -1741,13 +1702,6 @@ function getFormData($form) {
       if (n["value"] === withinSixMonths) {
         n.value = "Within 6 months";
       }
-    }
-
-    if (n["name"] === whenDoYouWantToBuy) {
-      n["name"] = "whenDoYouWantToBuy";
-    }
-    if (n["name"] === areYouLookingTo) {
-      n["name"] = "areYouLookingTo";
     }
 
     if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
