@@ -1706,9 +1706,13 @@ function getFormData($form) {
       }
     }
 
-    if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
-      n["name"] = "newsAndOffers";
+    if (n["name"] === newsAndOffers) {
+      n["name"] = "yes";
     }
+
+    // if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
+    //   n["name"] = "newsAndOffers";
+    // }
 
     if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
       n["name"] = "acceptPrivacyPolicy";
