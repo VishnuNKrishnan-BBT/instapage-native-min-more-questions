@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     emailError = "EnterÂ aÂ validÂ email";
     newsAndOffers = "News And Offers";
     acceptPrivacyPolicy = "Accept Privacy Policy";
-    lookingTo = "What are you looking to do today?";
+    lookingTo = "Are you looking to";
     invest = "Invest";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
@@ -961,7 +961,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     emailError = "EnterÂ aÂ validÂ email";
     newsAndOffers = "News And Offers";
     acceptPrivacyPolicy = "Accept Privacy Policy";
-    lookingTo = "What are you looking to do today?";
+    lookingTo = "Are you looking to";
     invest = "Invest in real estate";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
