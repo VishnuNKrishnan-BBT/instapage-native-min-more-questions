@@ -1707,7 +1707,11 @@ function getFormData($form) {
     }
 
     if (n["name"] === newsAndOffers) {
-      n["name"] = "yes";
+      n["name"] = "newsAndOffers";
+    }
+
+    if (n["name"] === newsAndOffers) {
+      n.value = "yes";
     }
 
     // if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
