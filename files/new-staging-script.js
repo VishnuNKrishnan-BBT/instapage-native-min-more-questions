@@ -144,6 +144,7 @@ let whatsapp;
 let preferredLanguageInput
 
 let whenDoYouWantToBuy
+let areYouLookingTo
 
 websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
@@ -212,7 +213,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "AR") {
     _Translate.set("Processing...", "Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¹Ù…Ù„...");
@@ -288,7 +291,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "ØªØ·Ø¨ÙŠÙ‚ ÙˆØ§ØªØ³Ø§Ø¨";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "FR") {
     _Translate.set("Processing...", "En cours de traitement...");
@@ -367,7 +371,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
     
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "SP") {
     _Translate.set("Processing...", "Procesando...");
@@ -436,7 +441,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "HE") {
     _Translate.set("Processing...", "×ž×¢×‘×“...");
@@ -502,7 +508,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "CH") {
     _Translate.set("Processing...", "å¤„ç†ä¸­...");
@@ -568,7 +575,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to"
 
   } else if (websiteLanguage == "IT") {
     _Translate.set("Processing...", "In elaborazione...");
@@ -640,7 +648,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
 
   } else if (websiteLanguage == "RU") {
     _Translate.set("Processing...", "Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ...");
@@ -708,7 +717,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
 
   } else if (websiteLanguage == "GK") {
     _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
@@ -746,6 +756,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
+
   } else if (websiteLanguage == "GR") {
     _Translate.set("Processing...", "Verarbeitung lÃ¤uft...");
     _Translate.set("Please Fix These Errors", "Bitte beheben Sie diese Fehler");
@@ -814,7 +828,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
 
   } else if (websiteLanguage == "NL") {
     _Translate.set("Processing...", "Verwerken...");
@@ -880,7 +895,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
 
   } else if (websiteLanguage == "RO") {
     _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
@@ -951,7 +967,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
 
   } else {
     _Translate.set("Processing...", "Processing...");
@@ -1017,7 +1034,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    whenDoYouWantToBuy= "When do you plan to buy ?"
+    whenDoYouWantToBuy= "When do you plan to buy ?";
+    areYouLookingTo= "Are you looking to";
   }
 
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
@@ -1540,7 +1558,6 @@ window.addEventListener("DOMContentLoaded", function () {
           $("input[name='campaignId']").val(defaultCampaignId);
         }
         var data = getFormData($(forms));
-        console.log("data 15077777", data)
         data.fullLandingPageUrl = location.toString();
         data.cookieEnabled = navigator.cookieEnabled;
         data.referrer = document.referrer;
@@ -1566,7 +1583,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
-          console.log("data 1530", data)
             pushToNewLQS(data)
         }
 
@@ -1657,7 +1673,6 @@ function landingCMSThankYou(e, t, o, r, a, s, b) {
 function getFormData($form) {
   var unindexed_array = $form.serializeArray();
   var indexed_array = {};
-  console.log("unindexed_array", unindexed_array)
   $.map(unindexed_array, function (n, i) {
     if (n["name"] === firstNameInput) {
       n["name"] = "firstName";
@@ -1730,6 +1745,9 @@ function getFormData($form) {
 
     if (n["name"] === whenDoYouWantToBuy) {
       n["name"] = "whenDoYouWantToBuy";
+    }
+    if (n["name"] === areYouLookingTo) {
+      n["name"] = "areYouLookingTo";
     }
 
     if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
