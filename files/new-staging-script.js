@@ -143,6 +143,8 @@ let sms;
 let whatsapp;
 let preferredLanguageInput
 
+
+
 websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
@@ -196,7 +198,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "AED 2M to AED 5M";
     fiveMPlus = "Above AED 5M";
 
-    whenToBuy = "When are you planning to make your purchase?";
+    whenToBuy = "When do you plan to buy ?";
     daysThirty = "Within 30 days";
     daysNinety = "Within 90 days";
     immediately = "Immediately";
@@ -981,7 +983,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "AED 2M to AED 5M";
     fiveMPlus = "Above AED 5M";
 
-    whenToBuy = "When are you planning to make your purchase?";
+    whenToBuy = "When do you plan to buy ?";
     daysThirty = "Within 30 days";
     daysNinety = "Within 90 days";
     immediately = "Immediately";
