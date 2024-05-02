@@ -1540,7 +1540,7 @@ window.addEventListener("DOMContentLoaded", function () {
           data.lastName = newVal;
         }
 
-        data?.Lead_Gen_Identifier = "instapage"
+        data.Lead_Gen_Identifier = "instapage"
 
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
