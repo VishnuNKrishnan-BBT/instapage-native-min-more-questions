@@ -143,6 +143,7 @@ let sms;
 let whatsapp;
 let preferredLanguageInput
 
+let findAJob
 
 
 websiteLanguage = $("input[name='websiteLanguage']").val();
@@ -212,6 +213,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
 
   } else if (websiteLanguage == "AR") {
     _Translate.set("Processing...", "Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¹Ù…Ù„...");
@@ -286,6 +289,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "Ø±Ø³Ø§Ù„Ø© Ù†ØµÙŠÙ‘Ø©";
     whatsapp = "ØªØ·Ø¨ÙŠÙ‚ ÙˆØ§ØªØ³Ø§Ø¨";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
 
   } else if (websiteLanguage == "FR") {
     _Translate.set("Processing...", "En cours de traitement...");
@@ -364,6 +369,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
+    findAJob="Find a Job"
+
   } else if (websiteLanguage == "SP") {
     _Translate.set("Processing...", "Procesando...");
     _Translate.set("Please Fix These Errors", "Solucione estos errores");
@@ -431,6 +438,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
+    findAJob="Find a Job"
+
   } else if (websiteLanguage == "HE") {
     _Translate.set("Processing...", "×ž×¢×‘×“...");
     _Translate.set("Please Fix These Errors", "× × ×œ×ª×§×Ÿ ××ª ×”×©×’×™××•×ª ×”×‘××•×ª");
@@ -494,6 +503,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
     
 
   } else if (websiteLanguage == "CH") {
@@ -559,6 +570,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
 
   } else if (websiteLanguage == "IT") {
     _Translate.set("Processing...", "In elaborazione...");
@@ -630,6 +643,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
+    findAJob="Find a Job"
+
   } else if (websiteLanguage == "RU") {
     _Translate.set("Processing...", "Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ...");
     _Translate.set("Please Fix These Errors", "Ð˜ÑÐ¿Ñ€Ð°Ð²ÑŒÑ‚Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸");
@@ -696,6 +711,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
+    findAJob="Find a Job"
+
   } else if (websiteLanguage == "GK") {
     _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
     _Translate.set("Please Fix These Errors", "Î”Î¹Î¿ÏÎ¸ÏŽÏƒÏ„Îµ Î±Ï…Ï„Î¬ Ï„Î± ÏƒÏ†Î¬Î»Î¼Î±Ï„Î±");
@@ -732,6 +749,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
 
   } else if (websiteLanguage == "GR") {
     _Translate.set("Processing...", "Verarbeitung lÃ¤uft...");
@@ -801,6 +820,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
+    findAJob="Find a Job"
+
   } else if (websiteLanguage == "NL") {
     _Translate.set("Processing...", "Verwerken...");
     _Translate.set("Please Fix These Errors", "Corrigeer deze fouten a.u.b.");
@@ -864,6 +885,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
 
   } else if (websiteLanguage == "RO") {
     _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
@@ -934,6 +957,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
+    findAJob="Find a Job"
+
   } else {
     _Translate.set("Processing...", "Processing...");
     _Translate.set("Please Fix These Errors", "Please Fix These Errors");
@@ -997,6 +1022,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a Job"
   }
 
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
@@ -1677,6 +1704,9 @@ function getFormData($form) {
       }
       if (n["value"] === exploringDamac) {
         n.value = "exploring";
+      }
+      if (n["value"] === findAJob) {
+        n.value = "Jobseeker";
       }
       // if (n["value"] === exploringDamac) {
       //   n.value = "job seeker";
