@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "AR") {
     _Translate.set("Processing...", "Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¹Ù…Ù„...");
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "ØªØ·Ø¨ÙŠÙ‚ ÙˆØ§ØªØ³Ø§Ø¨";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "FR") {
     _Translate.set("Processing...", "En cours de traitement...");
@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "SP") {
     _Translate.set("Processing...", "Procesando...");
@@ -438,7 +438,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "HE") {
     _Translate.set("Processing...", "×ž×¢×‘×“...");
@@ -504,7 +504,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
     
 
   } else if (websiteLanguage == "CH") {
@@ -571,7 +571,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "IT") {
     _Translate.set("Processing...", "In elaborazione...");
@@ -643,7 +643,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "RU") {
     _Translate.set("Processing...", "Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ...");
@@ -711,7 +711,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "GK") {
     _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
@@ -750,7 +750,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "GR") {
     _Translate.set("Processing...", "Verarbeitung lÃ¤uft...");
@@ -820,7 +820,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "NL") {
     _Translate.set("Processing...", "Verwerken...");
@@ -886,7 +886,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else if (websiteLanguage == "RO") {
     _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
@@ -957,7 +957,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
 
   } else {
     _Translate.set("Processing...", "Processing...");
@@ -1023,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
 
-    findAJob="Find a Job"
+    findAJob="Find a job"
   }
 
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
@@ -1705,7 +1705,7 @@ function getFormData($form) {
       if (n["value"] === exploringDamac) {
         n.value = "exploring";
       }
-      if (n["value"] === findAJob) {
+      if (n["value"].toLowerCase() === findAJob.toLowerCase()) {
         n.value = "Jobseeker";
       }
       // if (n["value"] === exploringDamac) {
@@ -1719,19 +1719,22 @@ function getFormData($form) {
       n["name"] = "whenToBuy";
 
       if (n["value"] === daysThirty) {
-        n.value = "Now";
+        n.value = "Within 30 days";
       }
       if (n["value"] === daysNinety) {
-        n.value = "after 60 days";
+        n.value = "Within 90 days";
       }
       if (n["value"] === immediately) {
-        n.value = "Immediately";
+        n.value = "Now";
       }
       if (n["value"] === withinThreeMonths) {
         n.value = "Within 3 months";
       }
       if (n["value"] === withinSixMonths) {
         n.value = "Within 6 months";
+      }
+      if (n["value"] === stillConsidering) {
+        n.value = "Still considering";
       }
     }
 
