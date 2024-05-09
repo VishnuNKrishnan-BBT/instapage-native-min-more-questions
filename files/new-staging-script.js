@@ -146,12 +146,12 @@ let preferredLanguageInput
 let findAJob
 
 websiteLanguage = $("input[name='websiteLanguage']").val();
-console.log("websiteLanguage", websiteLanguage)
 
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
+
   websiteLanguage = $("input[name='websiteLanguage']").val();
-  console.log("websiteLanguage", websiteLanguage)
+
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
@@ -238,13 +238,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     phoneInput = "هاتف";
     let data = $('input[name="' + phoneInput + '"]');
-    console.log("datadatadatadata", data)
     if (data.length > 0) {
       phoneInput = "هاتف";
     } else {
       phoneInput = "هاتف";
     }
-    console.log("datadatadatadata", phoneInput)
+    
     //console.log("data...", data);
     titleInput = "Ø§Ù„Ù„Ù‚Ø¨";
     firstNameInput = "Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„";
