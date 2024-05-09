@@ -145,11 +145,13 @@ let preferredLanguageInput
 
 let findAJob
 
-
 websiteLanguage = $("input[name='websiteLanguage']").val();
 console.log("websiteLanguage", websiteLanguage)
+
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
+  websiteLanguage = $("input[name='websiteLanguage']").val();
+  console.log("websiteLanguage", websiteLanguage)
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
