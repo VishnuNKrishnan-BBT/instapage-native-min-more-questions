@@ -1029,8 +1029,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     preferredLanguageInput = "Preferred Language";
 
     findAJob="Find a job"
-
     let data = $('input[name="' + phoneInput + '"]');
+    console.log("phoneInput phoneInput", data)
     if (data.length > 0) {
       phoneInput = "هاتف";
     } else {
