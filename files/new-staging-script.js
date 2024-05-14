@@ -220,21 +220,21 @@ document.addEventListener("DOMContentLoaded", async function () {
     findAJob="Find a job"
 
   } else if (websiteLanguage == "AR") {
-    _Translate.set("Processing...", "Ø¬Ø§Ø±ÙŠ Ø§Ù„Ø¹Ù…Ù„...");
+    _Translate.set("Processing...", "جاري العمل...");
     _Translate.set(
       "Please Fix These Errors",
       "Ø§Ù„Ø±Ø¬Ø§Ø¡ Ø§Ù„ØªØ£ÙƒØ¯ Ù…Ù† Ø§Ù„Ø£Ø®Ø·Ø§Ø¡ Ø§Ù„ØªØ§Ù„ÙŠØ© ",
     );
-    _Translate.set("is not valid", "ØºÙŠØ± ØµØ­ÙŠØ­");
-    _Translate.set("is required", "Ù…Ø·Ù„ÙˆØ¨");
-    _Translate.set("starts with @ sign", "ØªØ¨Ø¯Ø£ Ø¨Ø¹Ù„Ø§Ù…Ø© @");
-    _Translate.set("is missing @ sign", "Ø¹Ù„Ø§Ù…Ø© @ ØºÙŠØ± Ù…ÙˆØ¬ÙˆØ¯Ø©");
-    _Translate.set("contains repeated dots", "ÙŠØ­ØªÙˆÙŠ Ø¹Ù„Ù‰ Ù†Ù‚Ø§Ø· Ù…ÙƒØ±Ø±Ø©");
-    _Translate.set("starts with a dot", "ÙŠØ¨Ø¯Ø£ Ø¨Ù†Ù‚Ø·Ø©");
-    _Translate.set("domain is missing", "Ø§Ù„Ø®Ø§Ù†Ø© ÙØ§Ø±ØºØ©");
-    _Translate.set("domain starts with a dot", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØªØ¨Ø¯Ø£ Ø¨Ù†Ù‚Ø·Ø©");
-    _Translate.set("domain is not valid", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØºÙŠØ± ØµØ­ÙŠØ­Ø©");
-    _Translate.set("domain ends with a dot", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØªÙ†ØªÙ‡ÙŠ Ø¨Ù†Ù‚Ø·Ø©");
+    _Translate.set("is not valid", "غير صحيح­");
+    _Translate.set("is required", "مطلوب");
+    _Translate.set("starts with @ sign", "تبدأ بعلامة @");
+    _Translate.set("is missing @ sign", "علامة @ غير موجودة");
+    _Translate.set("contains repeated dots", "يحتوي على نقاط مكررة");
+    _Translate.set("starts with a dot", "يبدأ بنقطة");
+    _Translate.set("domain is missing", "الخانة فارغة");
+    _Translate.set("domain starts with a dot", "المعلومات بالخانة تبدأ بنقطة");
+    _Translate.set("domain is not valid", "المعلومات بالخانة غير صحيحة");
+    _Translate.set("domain ends with a dot", "المعلومات بالخانة تنتهي بنقطة");
 
     phoneInput = "هاتف";
     let data = $('input[name="' + phoneInput + '"]');
