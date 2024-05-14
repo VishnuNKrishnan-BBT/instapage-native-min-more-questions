@@ -1031,6 +1031,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     findAJob="Find a job"
   }
 
+  if (websiteLanguage == "EN" || websiteLanguage == "FR" || websiteLanguage == "SP" || websiteLanguage == "HE" || websiteLanguage == "CH" || websiteLanguage == "IT" || websiteLanguage == "RU" || websiteLanguage == "GK" || websiteLanguage == "GR" || websiteLanguage == "NL" || websiteLanguage == "RO") {
+    phoneInput = "Phone";
+    let data = $('input[name="' + phoneInput + '"]');
+    if (data.length > 0) {
+      phoneInput = "هاتف";
+    } else {
+      phoneInput = "هاتف";
+    }
+  }
+
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
   let fieldsNoNumbers = [firstNameInput, lastNameInput];
   var modstring = "";
