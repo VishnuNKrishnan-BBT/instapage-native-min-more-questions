@@ -1867,7 +1867,7 @@ function getFormData($form) {
     2- Payload was in a object so, i remoed it from objects
     3- Then filter object i am sending to the payload 
   */
-  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy', newsAndOffers]
+  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy', 'الأخبار والعروض', 'قبول سياسة الخصوصية']
 
   const filterWithoutSpace = Object.fromEntries(
     Object.entries(indexed_array).filter(([key, value]) => !keysShouldBeRemovedWithSpace.includes(key))
