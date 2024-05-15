@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneError = "أدخل رقم هاتف صحيح­";
     emailError = "أدخل بريد إلكتروني صحيح­";
     newsAndOffers = "الأخبار والعروض";
-    acceptPrivacyPolicy = "موافق على شروط الخصوصية";
+    acceptPrivacyPolicy = "قبول سياسة الخصوصية";
     lookingTo = "هل تبحث عن";
     invest = "الاستثمار";
     buyaHome = "شراء منزل";
@@ -1867,7 +1867,7 @@ function getFormData($form) {
     2- Payload was in a object so, i remoed it from objects
     3- Then filter object i am sending to the payload 
   */
-  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy', 'الأخبار والعروض', 'قبول سياسة الخصوصية']
+  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy', 'الأخبار والعروض']
 
   const filterWithoutSpace = Object.fromEntries(
     Object.entries(indexed_array).filter(([key, value]) => !keysShouldBeRemovedWithSpace.includes(key))
