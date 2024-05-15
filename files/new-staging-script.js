@@ -245,23 +245,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
     
     //console.log("data...", data);
-    titleInput = "Ø§Ù„Ù„Ù‚Ø¨";
+    titleInput = "اللقب";
     firstNameInput = "الاسم الأول";
     lastNameInput = "اسم العائلة";
-    emailInput = "Ø§Ù„Ø¨Ø±ÙŠØ¯ Ø§Ù„Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ";
-    mrInput = "Ø§Ù„Ø³ÙŠØ¯";
-    msInput = "Ø§Ù„Ø¢Ù†Ø³Ø©";
-    mrsInput = "Ø§Ù„Ø³ÙŠØ¯Ø©";
-    newsInput = "Ø£ÙˆØ¯Ù‘ Ø§Ù„Ø§Ø·Ù„Ø§Ø¹ Ø¹Ù„Ù‰ Ø§Ù„Ø£Ø®Ø¨Ø§Ø± ÙˆØ§Ù„Ø¹Ø±ÙˆØ¶";
-    privacyInput = "Ù„Ù‚Ø¯ Ù‚Ø±Ø£Øª ÙˆÙˆØ§ÙÙ‚Øª Ø¹Ù„Ù‰ Ø³ÙŠØ§Ø³Ø© Ø§Ù„Ø®ØµÙˆØµÙŠØ©";
-    phoneError = "Ø£Ø¯Ø®Ù„ Ø±Ù‚Ù… Ù‡Ø§ØªÙ ØµØ­ÙŠØ­";
-    emailError = "Ø£Ø¯Ø®Ù„ Ø¨Ø±ÙŠØ¯ Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ ØµØ­ÙŠØ­";
-    newsAndOffers = "Ø§Ù„Ø£Ø®Ø¨Ø§Ø± ÙˆØ§Ù„Ø¹Ø±ÙˆØ¶";
-    acceptPrivacyPolicy = "Ù…ÙˆØ§ÙÙ‚ Ø¹Ù„Ù‰ Ø´Ø±ÙˆØ· Ø§Ù„Ø®ØµÙˆØµÙŠØ©";
-    lookingTo = "Ù‡Ù„ ØªØ¨Ø­Ø« Ø¹Ù†";
-    invest = "Ø§Ù„Ø§Ø³ØªØ«Ù…Ø§Ø±";
-    buyaHome = "Ø´Ø±Ø§Ø¡ Ù…Ù†Ø²Ù„";
-    workAtDamac = "Ø§Ù„Ø¹Ù…Ù„ Ù„Ø¯Ù‰ Ø¯Ø§Ù…Ø§Ùƒ";
+    emailInput = "البريد الإلكتروني";
+    mrInput = "السيد";
+    msInput = "الآنسة";
+    mrsInput = "السيدة";
+    newsInput = "أودّ الاطلاع على الأخبار والعروض";
+    privacyInput = "لقد قرأت ووافقت على سياسة الخصوصية ";
+    phoneError = "أدخل رقم هاتف صحيح­";
+    emailError = "أدخل بريد إلكتروني صحيح­";
+    newsAndOffers = "الأخبار والعروض";
+    acceptPrivacyPolicy = "موافق على شروط الخصوصية";
+    lookingTo = "هل تبحث عن";
+    invest = "الاستثمار";
+    buyaHome = "شراء منزل";
+    workAtDamac = "العمل لدى داماك";
     iAmAJobSeeker = "I am a job seeker";
     exploringDamac = "I am just exploring";
     propertyTypePreference = "What kind of property interests you?";
@@ -280,19 +280,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "AED 2M to AED 5M";
     fiveMPlus = "Above AED 5M";
 
-    whenToBuy = "Ù…Ø§ Ù‡ÙŠ Ø§Ù„Ù…Ø¯Ø© Ø§Ù„ØªÙŠ Ø³ØªØ³ØªØºØ±Ù‚Ù‡Ø§ Ù„Ø´Ø±Ø§Ø¡ Ù…Ù†Ø²Ù„ØŸ";
-    daysThirty = "Ø®Ù„Ø§Ù„ 30 ÙŠÙˆÙ…";
-    daysNinety = "Ø®Ù„Ø§Ù„ 90 ÙŠÙˆÙ…";
+    whenToBuy = "ما هي المدة التي ستستغرقها لشراء منزل؟";
+    daysThirty = "خلال 30 يوم";
+    daysNinety = "خلال 90 يوم";
     immediately = "Immediately";
     withinThreeMonths = "Within 3 Months";
     withinSixMonths = "Within 6 Months";
     stillConsidering = "Still considering";
 
-    btntext = "Ø§Ø¶ØºØ· Ù‡Ù†Ø§";
-    labtext = "Ù„Ù…Ø¹Ø±ÙØ© Ø§Ù„Ù…Ø²ÙŠØ¯ Ø¹Ù† Ø¹Ù‚Ø§Ø±Ø§Øª Ø¯Ø§Ù…Ø§Ùƒ Ø§Ù„Ø£Ø®Ø±Ù‰";
-    contacted = "Ø£ÙÙˆØ§ÙÙ‚ Ø£Ù† ÙŠØªÙ…Ù‘ Ø§Ù„ØªÙˆØ§ØµÙ„ Ø¨";
-    sms = "Ø±Ø³Ø§Ù„Ø© Ù†ØµÙŠÙ‘Ø©";
-    whatsapp = "ØªØ·Ø¨ÙŠÙ‚ ÙˆØ§ØªØ³Ø§Ø¨";
+    btntext = "اضغط هنا";
+    labtext = "لمعرفة المزيد عن عقارات داماك الأخرى";
+    contacted = "أُوافق أن يتمّ التواصل ب";
+    sms = "رسالة نصيّة";
+    whatsapp = "تطبيق واتساب";
     preferredLanguageInput = "Preferred Language";
 
     findAJob="Find a job"
