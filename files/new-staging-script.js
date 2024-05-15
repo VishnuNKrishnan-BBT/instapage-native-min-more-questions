@@ -246,8 +246,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     
     //console.log("data...", data);
     titleInput = "Ø§Ù„Ù„Ù‚Ø¨";
-    firstNameInput = "Ø§Ù„Ø§Ø³Ù… Ø§Ù„Ø£ÙˆÙ„";
-    lastNameInput = "Ø§Ø³Ù… Ø§Ù„Ø¹Ø§Ø¦Ù„Ø©";
+    firstNameInput = "الاسم الأول";
+    lastNameInput = "اسم العائلة";
     emailInput = "Ø§Ù„Ø¨Ø±ÙŠØ¯ Ø§Ù„Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ";
     mrInput = "Ø§Ù„Ø³ÙŠØ¯";
     msInput = "Ø§Ù„Ø¢Ù†Ø³Ø©";
