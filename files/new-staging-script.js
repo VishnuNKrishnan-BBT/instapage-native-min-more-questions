@@ -1771,18 +1771,19 @@ function getFormData($form) {
       n["name"] = "newsAndOffers";
     }
 
-    if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::`) {
-      n["name"] = "newsAndOffers";
-    }
-
     if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
       n["name"] = "acceptPrivacyPolicy";
     }
 
-    // For AR
-    if (n["name"] === `${acceptPrivacyPolicy}::INSTAPAGE_BOX::`) {
+    // For AR Start
+    if (n["name"] === `${privacyInput}::INSTAPAGE_BOX::`) {
       n["name"] = "acceptPrivacyPolicy";
     }
+
+    if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
+      n["name"] = "newsAndOffers";
+    }
+    // For AR End
 
     if (n["name"] === `${contacted}::INSTAPAGE_BOX::${sms}`) {
       n["name"] = "SMSConsent";
