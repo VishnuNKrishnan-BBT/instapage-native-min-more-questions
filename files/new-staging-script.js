@@ -145,6 +145,8 @@ let preferredLanguageInput
 
 let findAJob
 
+let skipPrivacyPolicyValue
+
 websiteLanguage = $("input[name='websiteLanguage']").val();
 
 //console.log(websiteLanguage);
@@ -296,6 +298,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     preferredLanguageInput = "اللغة المفضلة";
 
     findAJob="Find a job"
+
+    skipPrivacyPolicyValue="قبول سياسة الخصوصية"
 
   } else if (websiteLanguage == "FR") {
     _Translate.set("Processing...", "En cours de traitement...");
@@ -1867,7 +1871,7 @@ function getFormData($form) {
     2- Payload was in a object so, i remoed it from objects
     3- Then filter object i am sending to the payload 
   */
-  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy', 'الأخبار والعروض', newsAndOffers]
+  const keysShouldBeRemovedWithSpace = ['News And Offers', 'Accept Privacy Policy', 'الأخبار والعروض', newsAndOffers, acceptPrivacyPolicy ]
 
   const filterWithoutSpace = Object.fromEntries(
     Object.entries(indexed_array).filter(([key, value]) => !keysShouldBeRemovedWithSpace.includes(key))
