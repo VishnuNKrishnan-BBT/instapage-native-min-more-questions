@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneError = "أدخل رقم هاتف صحيح­";
     emailError = "أدخل بريد إلكتروني صحيح­";
     newsAndOffers = "الأخبار والعروض";
-    acceptPrivacyPolicy = "موافق على شروط الخصوصية";
+    acceptPrivacyPolicy = "قبول سياسة الخصوصية";
     lookingTo = "هل تبحث عن";
     invest = "الاستثمار";
     buyaHome = "شراء منزل";
