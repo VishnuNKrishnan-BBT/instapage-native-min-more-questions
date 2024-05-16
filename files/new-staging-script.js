@@ -987,11 +987,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     phoneInput = "Phone";
     titleInput = "Ünvan";
-    firstNameInput = "First Name";
+    firstNameInput = "Ad";
     lastNameInput = "Soyad";
     emailInput = "E-posta";
-    mrInput = "Mr.";
-    msInput = "Ms.";
+    mrInput = "BAY";
+    msInput = "BAYAN";
     mrsInput = "Mrs.";
     newsInput = "I’d like to hear about news and offers";
     privacyInput = "Iâ€™ve read and agreed to the Privacy Policy";
