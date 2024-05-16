@@ -985,6 +985,59 @@ document.addEventListener("DOMContentLoaded", async function () {
     _Translate.set("domain is not valid", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØºÙŠØ± ØµØ­ÙŠØ­Ø©");
     _Translate.set("domain ends with a dot", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØªÙ†ØªÙ‡ÙŠ Ø¨Ù†Ù‚Ø·Ø©");
 
+    phoneInput = "Phone";
+    titleInput = "Title";
+    firstNameInput = "First Name";
+    lastNameInput = "Last Name";
+    emailInput = "Email";
+    mrInput = "Mr.";
+    msInput = "Ms.";
+    mrsInput = "Mrs.";
+    newsInput = "I’d like to hear about news and offers";
+    privacyInput = "Iâ€™ve read and agreed to the Privacy Policy";
+    phoneError = "Please enter a valid Phone number";
+    emailError = "EnterÂ aÂ validÂ email";
+    newsAndOffers = "News And Offers";
+    acceptPrivacyPolicy = "Accept Privacy Policy";
+    lookingTo = "Are you looking to";
+    invest = "Invest";
+    buyaHome = "Buy a home";
+    workAtDamac = "Work @ DAMAC";
+    iAmAJobSeeker = "I am a job seeker";
+    exploringDamac = "I am just exploring";
+    propertyTypePreference = "What kind of property interests you?";
+    villaHouse = "Villa/House";
+    apartmentFlat = "Apartment/Flat";
+
+    bedroomCountPreference = "How many bedrooms do you need?";
+    studio = "Studio";
+    oneBr = "1";
+    twoBr = "2";
+    threeBr = "3";
+    fourPlusBr = "4+";
+    budgetRangePreference = "What is your budget range?";
+    uptoOneM = "Up to AED 1M";
+    oneMtoTwoM = "AED 1M to AED 2M";
+    twoMtoFiveM = "AED 2M to AED 5M";
+    fiveMPlus = "Above AED 5M";
+
+    whenToBuy = "When do you plan to buy ?";
+    daysThirty = "Within 30 days";
+    daysNinety = "Within 90 days";
+    immediately = "Immediately";
+    withinThreeMonths = "Within 3 Months";
+    withinSixMonths = "Within 6 Months";
+    stillConsidering = "Still considering";
+
+    btntext = "CLICK HERE";
+    labtext = "For more on other DAMAC Properties";
+    contacted = "I can be contacted via";
+    sms = "SMS";
+    whatsapp = "WhatsApp";
+    preferredLanguageInput = "Preferred Language";
+
+    findAJob="Find a job"
+
     phoneInput = "Telefon";
     let data = $('input[name="' + phoneInput + '"]');
     if (data.length > 0) {
