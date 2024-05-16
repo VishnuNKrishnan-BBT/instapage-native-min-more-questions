@@ -1034,7 +1034,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     contacted = "I can be contacted via";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Tercih Edilen Dil";
 
     findAJob="Find a job"
 
