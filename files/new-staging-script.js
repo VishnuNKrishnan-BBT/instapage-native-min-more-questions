@@ -986,10 +986,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     _Translate.set("domain ends with a dot", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØªÙ†ØªÙ‡ÙŠ Ø¨Ù†Ù‚Ø·Ø©");
 
     phoneInput = "Phone";
-    titleInput = "Title";
+    titleInput = "Ünvan";
     firstNameInput = "First Name";
     lastNameInput = "Last Name";
-    emailInput = "Email";
+    emailInput = "E-posta";
     mrInput = "Mr.";
     msInput = "Ms.";
     mrsInput = "Mrs.";
@@ -1021,7 +1021,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "AED 2M to AED 5M";
     fiveMPlus = "Above AED 5M";
 
-    whenToBuy = "When do you plan to buy ?";
+    whenToBuy = "Ne zaman satın almayı planlıyorsunuz?";
     daysThirty = "Within 30 days";
     daysNinety = "Within 90 days";
     immediately = "Immediately";
