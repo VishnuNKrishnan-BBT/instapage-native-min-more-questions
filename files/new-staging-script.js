@@ -988,7 +988,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneInput = "Phone";
     titleInput = "Ünvan";
     firstNameInput = "First Name";
-    lastNameInput = "Last Name";
+    lastNameInput = "Soyad";
     emailInput = "E-posta";
     mrInput = "Mr.";
     msInput = "Ms.";
@@ -999,7 +999,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     emailError = "EnterÂ aÂ validÂ email";
     newsAndOffers = "Haberler ve fırsatlar";
     acceptPrivacyPolicy = "Gizlilik Politikasını Kabul Et";
-    lookingTo = "Are you looking to";
+    lookingTo = "Arıyor musunuz";
     invest = "Invest";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
