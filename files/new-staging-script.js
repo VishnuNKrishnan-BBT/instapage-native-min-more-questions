@@ -997,8 +997,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     privacyInput = "Iâ€™ve read and agreed to the Privacy Policy";
     phoneError = "Please enter a valid Phone number";
     emailError = "EnterÂ aÂ validÂ email";
-    newsAndOffers = "News And Offers";
-    acceptPrivacyPolicy = "Accept Privacy Policy";
+    newsAndOffers = "Haberler ve fırsatlar";
+    acceptPrivacyPolicy = "Gizlilik Politikasını Kabul Et";
     lookingTo = "Are you looking to";
     invest = "Invest";
     buyaHome = "Buy a home";
@@ -1831,16 +1831,6 @@ function getFormData($form) {
     if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
       n["name"] = "acceptPrivacyPolicy";
     }
-
-    // For AR Start
-    if (n["name"] === `${privacyInput}::INSTAPAGE_BOX::`) {
-      n["name"] = "acceptPrivacyPolicy";
-    }
-
-    if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
-      n["name"] = "newsAndOffers";
-    }
-    // For AR End
 
     if (n["name"] === `${contacted}::INSTAPAGE_BOX::${sms}`) {
       n["name"] = "SMSConsent";
