@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     _Translate.set("domain starts with a dot","域名以点开始");
     _Translate.set("domain is not valid","域名无效");
     _Translate.set("domain ends with a dot","域名以点结尾");
-    phoneInput = "电话";
+    phoneInput = "電話";
     titleInput = "称谓";
     firstNameInput = "名字";
     lastNameInput = "姓氏";
