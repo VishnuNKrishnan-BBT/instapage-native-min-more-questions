@@ -764,19 +764,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Bevorzugte Sprache";
   } else if (websiteLanguage == "NL") {
-    _Translate.set("Processing...", "Verwerken...");
-    _Translate.set("Please Fix These Errors", "Corrigeer deze fouten a.u.b.");
-    _Translate.set("is not valid", "is niet geldig");
-    _Translate.set("is required", "Is benodigd");
-    _Translate.set("starts with @ sign", "begint met @-teken");
-    _Translate.set("is missing @ sign", "ontbreekt @-teken");
-    _Translate.set("contains repeated dots", "bevat herhaalde punten");
-    _Translate.set("starts with a dot", "begint met een punt");
-    _Translate.set("domain is missing", "domein ontbreekt");
-    _Translate.set("domain starts with a dot", "domein begint met een punt");
-    _Translate.set("domain is not valid", "domein is niet geldig");
-    _Translate.set("domain ends with a dot", "domein eindigt op een punt");
-    phoneInput = "Telefoonnummer in";
+    _Translate.set("Processing...","Verwerken...");
+    _Translate.set("Please Fix These Errors","Corrigeer deze fouten a.u.b.");
+    _Translate.set("is not valid","is niet geldig");
+    _Translate.set("is required","Is benodigd");
+    _Translate.set("starts with @ sign","begint met @-teken");
+    _Translate.set("is missing @ sign","ontbreekt @-teken");
+    _Translate.set("contains repeated dots","bevat herhaalde punten");
+    _Translate.set("starts with a dot","begint met een punt");
+    _Translate.set("domain is missing","domein ontbreekt");
+    _Translate.set("domain starts with a dot","domein begint met een punt");
+    _Translate.set("domain is not valid","domein is niet geldig");
+    _Translate.set("domain ends with a dot","domein eindigt op een punt");
+    phoneInput = "Telefoonnummer";
     titleInput = "Aanhef";
     firstNameInput = "Voornaam";
     lastNameInput = "Achternaam";
@@ -794,38 +794,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     invest = "Investeren";
     buyaHome = "Een huis kopen";
     workAtDamac = "Werk @ DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    iAmAJobSeeker = "Ik zoek een baan";
+    exploringDamac = "Ik kijk alleen even rond";
+    propertyTypePreference = "Naar welk type woning ben je op zoek?";
+    villaHouse = "Villa/huis";
+    apartmentFlat = "Appartement/flat";
+    bedroomCountPreference = "Hoeveel slaapkamers moeten er zijn?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
+    budgetRangePreference = "Wat is je budget?";
+    uptoOneM = "Tot 1 miljoen AED";
+    oneMtoTwoM = "Tussen 1 en 2 miljoen AED";
+    twoMtoFiveM = "Tussen 2 en 5 miljoen AED";
+    fiveMPlus = "Meer dan 5 miljoen AED";
     whenToBuy = "Wanneer ben je van plan om te kopen?";
     daysThirty = "In 30 dagen";
     daysNinety = "Binnen 90 dagen";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
+    immediately = "Per direct";
+    withinThreeMonths = "Binnen 3 maanden";
+    withinSixMonths = "Binnen 6 maanden";
+    stillConsidering = "Weet het nog niet";
     btntext = "KLIK HIER";
-    labtext = "Voor meer informatie over andere DAMAC-eigenschappen:";
+    labtext = "Voor meer informatie over andere DAMAC-eigenschappen";
     contacted = "Ik ben bereikbaar via";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Voorkeurstaal";
   } else if (websiteLanguage == "RO") {
     _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
 
