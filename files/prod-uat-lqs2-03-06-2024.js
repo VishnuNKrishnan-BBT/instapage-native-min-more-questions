@@ -704,21 +704,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Προτιμώμενη γλώσσα";
   } else if (websiteLanguage == "GR") {
-    _Translate.set("Processing...", "Verarbeitung lÃ¤uft...");
-    _Translate.set("Please Fix These Errors", "Bitte beheben Sie diese Fehler");
-    _Translate.set("is not valid", "ist ungÃ¼ltig");
-    _Translate.set("is required", "ist erforderlich");
-    _Translate.set("starts with @ sign", "beginnt mit @-Zeichen");
-    _Translate.set("is missing @ sign", "@-Zeichen fehlt");
-    _Translate.set("contains repeated dots", "enthÃ¤lt wiederholte Punkte");
-    _Translate.set("starts with a dot", "beginnt mit einem Punkt");
-    _Translate.set("domain is missing", "Domain fehlt");
-    _Translate.set(
-      "domain starts with a dot",
-      "Domain beginnt mit einem Punkt",
-    );
-    _Translate.set("domain is not valid", "Domain ist ungÃ¼ltig");
-    _Translate.set("domain ends with a dot", "Domain endet mit einem Punkt");
+    _Translate.set("Processing...","Verarbeitung läuft...");
+    _Translate.set("Please Fix These Errors","Bitte beheben Sie diese Fehler");
+    _Translate.set("is not valid","ist ungültig");
+    _Translate.set("is required","ist erforderlich");
+    _Translate.set("starts with @ sign","beginnt mit @-Zeichen");
+    _Translate.set("is missing @ sign","@-Zeichen fehlt");
+    _Translate.set("contains repeated dots","enthält wiederholte Punkte");
+    _Translate.set("starts with a dot","beginnt mit einem Punkt");
+    _Translate.set("domain is missing","Domain fehlt");
+    _Translate.set("domain starts with a dot","Domain beginnt mit einem Punkt");
+    _Translate.set("domain is not valid","Domain ist ungültig");
+    _Translate.set("domain ends with a dot","Domain endet mit einem Punkt");
     phoneInput = "Telefonnummer";
     titleInput = "Anrede";
     firstNameInput = "Vorname";
@@ -726,50 +723,46 @@ document.addEventListener("DOMContentLoaded", async function () {
     emailInput = "E-Mail";
     mrInput = "Herr";
     msInput = "Frau";
-    mrsInput = "FrÃ¤ulein";
-    newsInput = "Ich mÃ¶chte Ã¼ber Neuigkeiten und Angebote informiert werden";
-    privacyInput =
-      "Ich habe die Datenschutzbestimmungen gelesen und stimme ihnen zu";
-    phoneError = "Bitte geben Sie eine gÃ¼ltige Telefonnummer ein";
-    emailError = "Bitte geben Sie eine gÃ¼ltige E-Mail-Adresse ein";
+    mrsInput = "Fräulein";
+    newsInput = "Ich möchte über Neuigkeiten und Angebote informiert werden";
+    privacyInput = "Ich habe die Datenschutzbestimmungen gelesen und stimme ihnen zu";
+    phoneError = "Bitte geben Sie eine gültige Telefonnummer ein";
+    emailError = "Bitte geben Sie eine gültige E-Mail-Adresse ein";
     newsAndOffers = "Neuigkeiten und Angebote";
     acceptPrivacyPolicy = "Akzeptieren Datenschutzbestimmungen";
     lookingTo = "Wollen Sie";
     invest = "investieren";
     buyaHome = "ein Zuhause kaufen";
     workAtDamac = "Bei @ DAMAC arbeiten";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    iAmAJobSeeker = "Ich bin auf Arbeitssuche";
+    exploringDamac = "Ich bin auf der Suche";
+    propertyTypePreference = "Für welche Art von Immobilie interessieren Sie sich?";
+    villaHouse = "Villa/Haus";
+    apartmentFlat = "Appartement/Wohnung";
+    bedroomCountPreference = "Wie viele Schlafzimmer benötigen Sie?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "Wann mÃ¶chten Sie kaufen?";
-    daysThirty = "Inerhalb kommenden 30 Tage";
-    daysNinety = "Inerhalb kommenden 90 Tage";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
+    budgetRangePreference = "Wie hoch ist Ihr Budget?";
+    uptoOneM = "Bis zu AED 1 Mio.";
+    oneMtoTwoM = "AED 1 Mio. - 2 Mio.";
+    twoMtoFiveM = "AED 2 Mio. - 5 Mio.";
+    fiveMPlus = "Mehr als AED 5 Mio.";
+    whenToBuy = "Wann möchten Sie kaufen?";
+    daysThirty = "Innerhalb kommenden 30 Tage";
+    daysNinety = "Innerhalb kommenden 90 Tage";
+    immediately = "Sofort";
+    withinThreeMonths = "Innerhalb von 3 Monaten";
+    withinSixMonths = "Innerhalb von 6 Monaten";
+    stillConsidering = "Bin noch am überlegen";
     btntext = "Hier klicken";
     labtext = "Hier finden Sie weitere Infos zu Immobilien von DAMAC";
-    contacted = "I can be contacted via";
+    contacted = "Man kann mich kontaktieren via";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Bevorzugte Sprache";
   } else if (websiteLanguage == "NL") {
     _Translate.set("Processing...", "Verwerken...");
     _Translate.set("Please Fix These Errors", "Corrigeer deze fouten a.u.b.");
