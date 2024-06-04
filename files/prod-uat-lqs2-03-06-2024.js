@@ -824,73 +824,66 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Voorkeurstaal";
   } else if (websiteLanguage == "RO") {
-    _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
-
-    _Translate.set(
-      "Please Fix These Errors",
-      "VÄƒ rugÄƒm sÄƒ remediaÈ›i aceste erori",
-    );
-
-    _Translate.set("is not valid", "nu este valid");
-    _Translate.set("is required", "este obligatoriu");
-    _Translate.set("starts with @ sign", "Ã®ncepe cu semnul @");
-    _Translate.set("is missing @ sign", "semnul @ lipseÈ™te");
-    _Translate.set("contains repeated dots", "conÈ›ine puncte repetate");
-    _Translate.set("starts with a dot", "Ã®ncepe cu un punct");
-    _Translate.set("domain is missing", "lipseÈ™te 'domeniul");
-    _Translate.set("domain starts with a dot", "domeniul Ã®ncepe cu un punct");
-    _Translate.set("domain is not valid", "domeniul nu este valid");
-    _Translate.set("domain ends with a dot", "domeniul se Ã®ncheie cu un punct");
+    _Translate.set("Processing...","Se procesează…...");
+    _Translate.set("Please Fix These Errors","Vă rugăm să remediați aceste erori");
+    _Translate.set("is not valid","nu este valid");
+    _Translate.set("is required","este obligatoriu");
+    _Translate.set("starts with @ sign","începe cu semnul @");
+    _Translate.set("is missing @ sign","semnul @ lipsește");
+    _Translate.set("contains repeated dots","conține puncte repetate");
+    _Translate.set("starts with a dot","începe cu un punct");
+    _Translate.set("domain is missing","lipsește domeniul");
+    _Translate.set("domain starts with a dot","domeniul începe cu un punct");
+    _Translate.set("domain is not valid","domeniul nu este valid");
+    _Translate.set("domain ends with a dot","domeniul se încheie cu un punct");
     phoneInput = "De telefon";
-    titleInput = "SelectaÈ›i o titulaturÄƒ";
-    firstNameInput = "IntroduceÈ›i un prenume valid";
-    lastNameInput = "IntroduceÈ›i un nume de familie valid";
-    emailInput = "IntroduceÈ›i o adresÄƒ de e-mail validÄƒ";
+    phoneInput = "De telefon";
+    titleInput = "Selectați o titulatură";
+    firstNameInput = "Introduceți un prenume valid";
+    lastNameInput = "Introduceți un nume de familie valid";
+    emailInput = "Introduceți o adresă de e-mail validă";
     mrInput = "Dl";
     msInput = "Dna";
     mrsInput = "Dra";
-    newsInput = "Doresc sÄƒ primesc noutÄƒÈ›i È™i oferte";
-    privacyInput = "Am citit È™i sunt de acord cu Politica de confidenÈ›ialitate";
-    phoneError = "IntroduceÈ›i un numÄƒr de telefon valid";
-    emailError = "IntroduceÈ›i o adresÄƒ de e-mail validÄƒ";
-    newsAndOffers = "NoutÄƒÈ›i È™i oferte";
-    acceptPrivacyPolicy = "Accept Politica de confidenÈ›ialitate";
-    lookingTo = "VÄƒ intereseazÄƒ";
-    invest = "SÄƒ investiÈ›i";
-    buyaHome = "SÄƒ cumpÄƒraÈ›i o casÄƒ";
-    workAtDamac = "SÄƒ lucraÈ›i la DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    newsInput = "Doresc să primesc noutăți și oferte";
+    privacyInput = "Am citit și sunt de acord cu Politica de confidențialitate";
+    phoneError = "Introduceți un număr de telefon valid";
+    emailError = "Introduceți o adresă de e-mail validă";
+    newsAndOffers = "Noutăți și oferte";
+    acceptPrivacyPolicy = "Accept Politica de confidențialitate";
+    lookingTo = "Vă interesează";
+    invest = "Să investiți";
+    buyaHome = "Să cumpărați o casă";
+    workAtDamac = "Să lucrați la DAMAC";
+    iAmAJobSeeker = "Caut un loc de muncă";
+    exploringDamac = "Doar explorez";
+    propertyTypePreference = "Ce tip de proprietate vă interesează?";
+    villaHouse = "Vilă/Casă";
+    apartmentFlat = "Apartament";
+    bedroomCountPreference = "De câte dormitoare aveți nevoie?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "CÃ¢nd intenÈ›ionaÈ›i sÄƒ cumpÄƒraÈ›i ?";
-    daysThirty = "ÃŽn urmÄƒtoarele 30 de zile";
-    daysNinety = "ÃŽn urmÄƒtoarele 90 de zile";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
-    btntext = "APÄ‚SAÈšI AICI";
-    labtext = "Pentru mai multe informaÈ›ii despre DAMAC Properties";
-    contacted = "MÄƒ puteÈ›i contactata prin";
+    budgetRangePreference = "Care este intervalul în care se încadrează bugetul dvs.?";
+    uptoOneM = "Până la 1 milion AED";
+    oneMtoTwoM = "Între 1 milion AED și 2 milioane AED";
+    twoMtoFiveM = "Între 2 milioane AED și 5 milioane AED";
+    fiveMPlus = "Peste 5 milioane AED";
+    whenToBuy = "Când intenționați să cumpărați?";
+    daysThirty = "În următoarele 30 de zile";
+    daysNinety = "În următoarele 90 de zile";
+    immediately = "Imediat";
+    withinThreeMonths = "În 3 luni";
+    withinSixMonths = "În 6 luni";
+    stillConsidering = "Încă mă gândesc";
+    btntext = "APĂSAȚI AICI";
+    labtext = "Pentru mai multe informații despre DAMAC Properties";
+    contacted = "Mă puteți contactata prin";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Limbă preferată";
   }else if (websiteLanguage == "TR") { //TURKISH
     _Translate.set("Processing...","İşleniyor...");
     _Translate.set("Please Fix These Errors","Lütfen Bu Hataları Düzeltin");
@@ -904,7 +897,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     _Translate.set("domain starts with a dot","etki alanı bir nokta ile başlıyor");
     _Translate.set("domain is not valid","etki alanı geçerli değil");
     _Translate.set("domain ends with a dot","etki alanı bir nokta ile bitiyor");
-
     phoneInput = "Telefon";
     titleInput = "Ünvan";
     firstNameInput = "Ad";
