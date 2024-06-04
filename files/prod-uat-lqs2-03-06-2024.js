@@ -480,7 +480,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     titleInput = "称谓";
     firstNameInput = "名字";
     lastNameInput = "姓氏";
-    emailInput = "电邮";
+    emailInput = "电子邮箱";
     mrInput = "先生";
     msInput = "小姐";
     mrsInput = "女士";
