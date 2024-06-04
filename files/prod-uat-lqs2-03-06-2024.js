@@ -225,12 +225,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     _Translate.set("domain starts with a dot", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØªØ¨Ø¯Ø£ Ø¨Ù†Ù‚Ø·Ø©");
     _Translate.set("domain is not valid", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØºÙŠØ± ØµØ­ÙŠØ­Ø©");
     _Translate.set("domain ends with a dot", "Ø§Ù„Ù…Ø¹Ù„ÙˆÙ…Ø§Øª Ø¨Ø§Ù„Ø®Ø§Ù†Ø© ØªÙ†ØªÙ‡ÙŠ Ø¨Ù†Ù‚Ø·Ø©");
-    phoneInput = "Ã™â€¡Ã˜Â§Ã˜ÂªÃ™Â";
+    phoneInput = "رقم الهاتف";
     let data = $('input[name="' + phoneInput + '"]');
     if (data.length > 0) {
-      phoneInput = "Ã™â€¡Ã˜Â§Ã˜ÂªÃ™Â";
+        phoneInput = "رقم الهاتف";
     } else {
-      phoneInput = "Ã˜Â§Ã™â€žÃ™â€¡Ã˜Â§Ã˜ÂªÃ™Â";
+        phoneInput = "رقم الهاتف";
     }
     //console.log("data...", data);
     titleInput = "Ø§Ù„Ù„Ù‚Ø¨";
