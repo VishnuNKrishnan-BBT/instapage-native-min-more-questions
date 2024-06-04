@@ -228,9 +228,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneInput = "Ù‡Ø§ØªÙ";
     let data = $('input[name="' + phoneInput + '"]');
     if (data.length > 0) {
-      phoneInput = "Ù‡Ø§ØªÙ";
+      phoneInput = "Ù‡Ø§ØªÙ";
     } else {
-      phoneInput = "Ø§Ù„Ù‡Ø§ØªÙ";
+      phoneInput = "Ø§Ù„Ù‡Ø§ØªÙ";
     }
     //console.log("data...", data);
     titleInput = "Ø§Ù„Ù„Ù‚Ø¨";
