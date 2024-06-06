@@ -837,11 +837,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     _Translate.set("domain is not valid","domeniul nu este valid");
     _Translate.set("domain ends with a dot","domeniul se încheie cu un punct");
     phoneInput = "De telefon";
-    phoneInput = "De telefon";
     titleInput = "Selectați o titulatură";
-    firstNameInput = "Introduceți un prenume valid";
-    lastNameInput = "Introduceți un nume de familie valid";
-    emailInput = "Introduceți o adresă de e-mail validă";
+    firstNameInput = "Prenume";
+    lastNameInput = "Nume de familie";
+    emailInput = "Adresă de e-mail";
     mrInput = "Dl";
     msInput = "Dna";
     mrsInput = "Dra";
