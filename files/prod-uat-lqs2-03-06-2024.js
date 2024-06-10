@@ -1404,10 +1404,10 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  var code //Country Code selected in iti
   function alterFormHandler() {
     //phone field name
     // var field = "Phone";
-    var code
     var field = phoneInput;
     var telInput = document.querySelectorAll(`form input[name='${field}']`);
 
