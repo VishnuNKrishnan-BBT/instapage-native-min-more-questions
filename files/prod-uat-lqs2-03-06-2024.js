@@ -883,7 +883,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     sms = "SMS";
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Limbă preferată";
-  }else if (websiteLanguage == "TR") { //TURKISH
+  } else if (websiteLanguage == "TR") { //TURKISH
     _Translate.set("Processing...","İşleniyor...");
     _Translate.set("Please Fix These Errors","Lütfen Bu Hataları Düzeltin");
     _Translate.set("is not valid","geçerli değil");
@@ -1534,6 +1534,9 @@ window.addEventListener("DOMContentLoaded", function () {
           var newVal = elements.length > 0 ? x : "noLastName";
           data.lastName = newVal;
         }
+
+        //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
+        data.Lead_Gen_Identifier = 'instapage'
 
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
