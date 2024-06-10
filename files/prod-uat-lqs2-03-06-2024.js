@@ -1486,7 +1486,9 @@ window.addEventListener("DOMContentLoaded", function () {
           .find(".iti__selected-dial-code")
           .text()
           .replace("+", "00");
+
           console.log('CODE: ' + code);
+
         var selectedData = iti[index]
           .getSelectedCountryData()
           .name.replace(/ *\([^)]*\) */g, "");
@@ -1642,8 +1644,21 @@ function getFormData($form) {
     if (n["name"] === emailInput) {
       n["name"] = "email";
     }
+
+    //New function to tackle scenario where user manually types the country code along with the phone number.
+    function stripPrefix(prefix, str) {
+      let selectedCode = prefix.replace(/\+/g, '00') //Replace any '+' with '00'
+      let givenPhone = str.replace(/\+/g, '00') //Replace any '+' with '00'
+      if (givenPhone.startsWith(selectedCode)) {
+          return givenPhone.slice(selectedCode.length);
+      } else {
+          return str;
+      }
+    }
+
     if (n["name"] === phoneInput) {
       n["name"] = "phoneNumber";
+      n.value = stripPrefix(code, n.value)
     }
     if (n["name"] === titleInput) {
       n["name"] = "title";
