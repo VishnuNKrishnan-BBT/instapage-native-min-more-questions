@@ -143,6 +143,9 @@ let sms;
 let whatsapp;
 let preferredLanguageInput
 websiteLanguage = $("input[name='websiteLanguage']").val();
+
+let code //Country Code selected in iti
+
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
   // _Translate.set( original in English, translated );
@@ -1404,7 +1407,6 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  var code //Country Code selected in iti
   function alterFormHandler() {
     //phone field name
     // var field = "Phone";
