@@ -1407,6 +1407,7 @@ window.addEventListener("DOMContentLoaded", function () {
   function alterFormHandler() {
     //phone field name
     // var field = "Phone";
+    var code
     var field = phoneInput;
     var telInput = document.querySelectorAll(`form input[name='${field}']`);
 
@@ -1481,10 +1482,11 @@ window.addEventListener("DOMContentLoaded", function () {
         // //console.log(getFormData($('form')));
 
         $("input[name='timeSpentbeforeFormSubmit']").val(completeTime);
-        var code = $(this)
+        code = $(this)
           .find(".iti__selected-dial-code")
           .text()
           .replace("+", "00");
+          console.log('CODE: ' + code);
         var selectedData = iti[index]
           .getSelectedCountryData()
           .name.replace(/ *\([^)]*\) */g, "");
