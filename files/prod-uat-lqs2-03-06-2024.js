@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     oneMtoTwoM = "Entre 1 y 2 millones de AED";
     twoMtoFiveM = "Entre 2 y 5 millones de AED";
     fiveMPlus = "Más de 5 millones de AED";
-    whenToBuy = "¿Cuándo piensa comprarlo?";
+    whenToBuy = "¿Cuándo piensa hacer la compra?";
     daysThirty = "En 30 días";
     daysNinety = "En 90 días";
     immediately = "Inmediatamente";
