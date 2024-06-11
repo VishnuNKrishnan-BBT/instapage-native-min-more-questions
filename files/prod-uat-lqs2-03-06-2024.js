@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneError = "Escriba un número de teléfono válido";
     emailError = "Escriba un correo electrónico válido";
     newsAndOffers = "Noticias y ofertas";
-    acceptPrivacyPolicy = "Aceptar la política de privacidad";
+    acceptPrivacyPolicy = "Aceptar Política de Privacidad";
     lookingTo = "Está pensando en?";
     areYouLookingTo = "Está pensando en?"; //add to other languages as well if needed
     findAJob = "Trabajar en DAMAC"; //add to other languages as well
