@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     invest = "Invest";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
-    findAJob = "Jobseeker"; //add to other languages as well
+    findAJob = "Find a job"; //add to other languages as well
     iAmAJobSeeker = "I am a job seeker";
     exploringDamac = "I am just exploring";
     propertyTypePreference = "What kind of property interests you?";
