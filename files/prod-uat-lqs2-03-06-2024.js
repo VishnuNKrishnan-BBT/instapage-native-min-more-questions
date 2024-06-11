@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     mrInput = "Mr.";
     msInput = "Ms.";
     mrsInput = "Mrs.";
-    newsInput = "Iâ€™d like to hear about news and offers";
+    newsInput = "I’d like to hear about news and offers";
     privacyInput = "Iâ€™ve read and agreed to the Privacy Policy";
     phoneError = "Please enter a valid Phone number";
     emailError = "EnterÂ aÂ validÂ email";
