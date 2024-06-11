@@ -379,8 +379,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     emailError = "Escriba un correo electrónico válido";
     newsAndOffers = "Noticias y ofertas";
     acceptPrivacyPolicy = "Aceptar Política de Privacidad";
-    lookingTo = "Está pensando en?";
-    areYouLookingTo = "Está pensando en?"; //add to other languages as well if needed
+    lookingTo = "Desea";
+    areYouLookingTo = "Desea"; //add to other languages as well if needed
     findAJob = "Trabajar en DAMAC"; //add to other languages as well
     invest = "Invertir";
     buyaHome = "Comprar un inmueble";
