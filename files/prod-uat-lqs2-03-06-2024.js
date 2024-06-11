@@ -1747,7 +1747,7 @@ function getFormData($form) {
       }
     }
     if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
-      n["name"] = "newsAndOffers";
+      n["name"] = "AcceptNews_And_Offers__c";
     }
 
     if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
