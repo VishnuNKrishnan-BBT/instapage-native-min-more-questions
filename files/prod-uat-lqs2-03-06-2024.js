@@ -811,10 +811,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     privacyInput = "Ik heb het privacybeleid gelezen en ga ermee akkoord";
     phoneError = "Voer alstublieft een geldig telefoonnummer in";
     emailError = "Voer een geldig e-mailadres in";
-    newsAndOffers = "Nieuws en aanbiedingen";
+    newsAndOffers = "News And Offers";
     acceptPrivacyPolicy = "Accepteer privacybeleid";
-    lookingTo = "Ben je op zoek naar";
-    areYouLookingTo = "Ben je op zoek naar"; //add to other languages as well if needed
+    lookingTo = "Wilt u graag";
+    areYouLookingTo = "Wilt u graag"; //add to other languages as well if needed
     findAJob = "Werk @ DAMAC"; //add to other languages as well
     invest = "Investeren";
     buyaHome = "Een huis kopen";
@@ -835,7 +835,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     oneMtoTwoM = "Tussen 1 en 2 miljoen AED";
     twoMtoFiveM = "Tussen 2 en 5 miljoen AED";
     fiveMPlus = "Meer dan 5 miljoen AED";
-    whenToBuy = "Wanneer ben je van plan om te kopen?";
+    whenToBuy = "Wanneer bent u van plan te kopen?";
     daysThirty = "In 30 dagen";
     daysNinety = "Binnen 90 dagen";
     immediately = "Per direct";
