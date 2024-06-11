@@ -1746,7 +1746,11 @@ function getFormData($form) {
         n.value = "Within 6 months";
       }
     }
-    if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
+    // if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
+    //   n["name"] = "AcceptNews_And_Offers__c";
+    // }
+
+    if (n["name"].startsWith(`${newsAndOffers}::INSTAPAGE_BOX::`)) {
       n["name"] = "AcceptNews_And_Offers__c";
     }
 
