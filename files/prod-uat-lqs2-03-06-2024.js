@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "News And Offers";
     acceptPrivacyPolicy = "Accept Privacy Policy";
     lookingTo = "What are you looking to do today?";
-    areYouLookingTo = "Are you looking to";
+    areYouLookingTo = "Are you looking to"; //add to other languages as well if needed
     invest = "Invest";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
