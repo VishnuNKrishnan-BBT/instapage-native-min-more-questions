@@ -1752,6 +1752,12 @@ function getFormData($form) {
 
     if (n["name"].startsWith(`${newsAndOffers}::INSTAPAGE_BOX::`)) {
       n["name"] = "AcceptNews_And_Offers__c";
+      
+      if(n.value === "yes"){
+        n.value = "Yes"
+      }else{
+        n.value = "No"
+      }
     }
 
     if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
