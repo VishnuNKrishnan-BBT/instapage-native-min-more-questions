@@ -1703,10 +1703,10 @@ function getFormData($form) {
       n["name"] = "whenToBuy";
 
       if (n["value"] === daysThirty) {
-        n.value = "Now";
+        n.value = "Within 30 days";
       }
       if (n["value"] === daysNinety) {
-        n.value = "after 60 days";
+        n.value = "Within 90 days";
       }
       if (n["value"] === immediately) {
         n.value = "Immediately";
