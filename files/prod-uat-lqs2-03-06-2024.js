@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     privacyInput = "He leído y acepto la Política de privacidad";
     phoneError = "Escriba un número de teléfono válido";
     emailError = "Escriba un correo electrónico válido";
-    newsAndOffers = "Noticias y ofertas";
+    newsAndOffers = "Noticias y Ofertas";
     acceptPrivacyPolicy = "Aceptar Política de Privacidad";
     lookingTo = "Desea";
     areYouLookingTo = "Desea"; //add to other languages as well if needed
