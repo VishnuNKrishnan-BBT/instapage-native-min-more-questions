@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "News And Offers";
     acceptPrivacyPolicy = "Accept Privacy Policy";
     lookingTo = "What are you looking to do today?";
+    areYouLookingTo = "Are you looking to";
     invest = "Invest";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
@@ -1681,7 +1682,7 @@ function getFormData($form) {
         n["name"] = "preferredLanguage"
     }
 
-    if (n["name"] === lookingTo) {
+    if (n["name"] === lookingTo || n["name"] === areYouLookingTo) {
       n["name"] = "BuyerType";
 
       if (n["value"] === invest) {
