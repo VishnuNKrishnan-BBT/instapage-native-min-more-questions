@@ -252,6 +252,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     invest = "الاستثمار";
     buyaHome = "شراء منزل";
     workAtDamac = "العمل لدى داماك";
+    areYouLookingTo = "هل تبحث عن"; //add to other languages as well if needed
+    findAJob = "أبحث عن عمل"; //add to other languages as well
     iAmAJobSeeker = "أبحث عن عمل";
     exploringDamac = "أستعرض الخيارات المتاحة";
     propertyTypePreference = "ما نوع العقار الذي تبحث عنه؟";
@@ -316,6 +318,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Actualités et offres";
     acceptPrivacyPolicy = "Accepter la politique de confidentialité";
     lookingTo = "Souhaitez-vous";
+    areYouLookingTo = "Souhaitez-vous"; //add to other languages as well if needed
+    findAJob = "Travailler @ DAMAC"; //add to other languages as well
     invest = "Investir";
     buyaHome = "Acheter une maison";
     workAtDamac = "Travailler @ DAMAC";
@@ -376,6 +380,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Noticias y ofertas";
     acceptPrivacyPolicy = "Aceptar la política de privacidad";
     lookingTo = "Está pensando en?";
+    areYouLookingTo = "Está pensando en?"; //add to other languages as well if needed
+    findAJob = "Trabajar en DAMAC"; //add to other languages as well
     invest = "Invertir";
     buyaHome = "Comprar un inmueble";
     workAtDamac = "Trabajar en DAMAC";
@@ -436,6 +442,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "חדשות ומבצעים";
     acceptPrivacyPolicy = "קבלת מדיניות הפרטיות";
     lookingTo = "האם אתם מעוניינים";
+    areYouLookingTo = "האם אתם מעוניינים"; //add to other languages as well if needed
+    findAJob = "לעבוד @ DAMAC"; //add to other languages as well
     invest = "להשקיע";
     buyaHome = "לרכוש בית";
     workAtDamac = "לעבוד @ DAMAC";
@@ -496,6 +504,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "最新消息和优惠";
     acceptPrivacyPolicy = "接受隐私政策";
     lookingTo = "你可希望";
+    areYouLookingTo = "你可希望"; //add to other languages as well if needed
+    findAJob = "加入@达马克工作"; //add to other languages as well
     invest = "投资";
     buyaHome = "置业";
     workAtDamac = "加入@达马克工作";
@@ -556,6 +566,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Aggiornamenti e offerte";
     acceptPrivacyPolicy = "Accettare l'Informativa sulla Privacy";
     lookingTo = "Vorresti";
+    areYouLookingTo = "Vorresti"; //add to other languages as well if needed
+    findAJob = "Lavorare a @ DAMAC"; //add to other languages as well
     invest = "Investire";
     buyaHome = "Acquistare una casa";
     workAtDamac = "Lavorare a @ DAMAC";
@@ -616,6 +628,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Новости и предложения";
     acceptPrivacyPolicy = "Примите условия Политики конфиденциальности";
     lookingTo = "Что вас интересует";
+    areYouLookingTo = "Что вас интересует"; //add to other languages as well if needed
+    findAJob = "Работа в DAMAC"; //add to other languages as well
     invest = "Инвестиции";
     buyaHome = "Покупка недвижимости";
     workAtDamac = "Работа в DAMAC";
@@ -676,6 +690,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Νέα και προσφορές";
     acceptPrivacyPolicy = "Αποδοχή Πολιτικής απορρήτου";
     lookingTo = "Τι θα θέλατε να κάνετε σήμερα;";
+    areYouLookingTo = "Τι θα θέλατε να κάνετε σήμερα;"; //add to other languages as well if needed
+    findAJob = "Εργασία @ DAMAC"; //add to other languages as well
     invest = "Επένδυση";
     buyaHome = "Αγορά σπιτιού";
     workAtDamac = "Εργασία @ DAMAC";
@@ -736,6 +752,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Neuigkeiten und Angebote";
     acceptPrivacyPolicy = "Akzeptieren Datenschutzbestimmungen";
     lookingTo = "Wollen Sie";
+    areYouLookingTo = "Wollen Sie"; //add to other languages as well if needed
+    findAJob = "Bei @ DAMAC arbeiten"; //add to other languages as well
     invest = "investieren";
     buyaHome = "ein Zuhause kaufen";
     workAtDamac = "Bei @ DAMAC arbeiten";
@@ -796,6 +814,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Nieuws en aanbiedingen";
     acceptPrivacyPolicy = "Accepteer privacybeleid";
     lookingTo = "Ben je op zoek naar";
+    areYouLookingTo = "Ben je op zoek naar"; //add to other languages as well if needed
+    findAJob = "Werk @ DAMAC"; //add to other languages as well
     invest = "Investeren";
     buyaHome = "Een huis kopen";
     workAtDamac = "Werk @ DAMAC";
@@ -856,6 +876,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Noutăți și oferte";
     acceptPrivacyPolicy = "Accept Politica de confidențialitate";
     lookingTo = "Vă interesează";
+    areYouLookingTo = "Vă interesează"; //add to other languages as well if needed
+    findAJob = "Să lucrați la DAMAC"; //add to other languages as well
     invest = "Să investiți";
     buyaHome = "Să cumpărați o casă";
     workAtDamac = "Să lucrați la DAMAC";
@@ -916,6 +938,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "Haberler ve Teklifler";
     acceptPrivacyPolicy = "Gizlilik Politikasını Kabul Et";
     lookingTo = "Bugün ne yapmak istiyorsunuz?";
+    areYouLookingTo = "Bugün ne yapmak istiyorsunuz?"; //add to other languages as well if needed
+    findAJob = "DAMAC ile çalışmak"; //add to other languages as well
     invest = "Yatırım yapmak";
     buyaHome = "Ev satın almak";
     workAtDamac = "DAMAC ile çalışmak";
@@ -976,6 +1000,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     newsAndOffers = "News And Offers";
     acceptPrivacyPolicy = "Accept Privacy Policy";
     lookingTo = "What are you looking to do today?";
+    areYouLookingTo = "What are you looking to do today?"; //add to other languages as well if needed
+    findAJob = "Work @ DAMAC"; //add to other languages as well
     invest = "Invest in real estate";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
