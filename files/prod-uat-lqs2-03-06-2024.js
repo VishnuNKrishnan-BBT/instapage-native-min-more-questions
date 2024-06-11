@@ -812,7 +812,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneError = "Voer alstublieft een geldig telefoonnummer in";
     emailError = "Voer een geldig e-mailadres in";
     newsAndOffers = "News And Offers";
-    acceptPrivacyPolicy = "Accepteer privacybeleid";
+    acceptPrivacyPolicy = "Accept Privacy Policy";
     lookingTo = "Wilt u graag";
     areYouLookingTo = "Wilt u graag"; //add to other languages as well if needed
     findAJob = "Werk @ DAMAC"; //add to other languages as well
