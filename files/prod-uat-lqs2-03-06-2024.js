@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     oneMtoTwoM = "100万迪拉姆至200万迪拉姆";
     twoMtoFiveM = "200万迪拉姆至500万迪拉姆";
     fiveMPlus = "500万迪拉姆以上";
-    whenToBuy = "你打算何时购买？";
+    whenToBuy = "你打算何時購買？";
     daysThirty = "30天内";
     daysNinety = "90天内";
     immediately = "立即";
