@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     invest = "Invest";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
+    findAJob = "Jobseeker"; //add to other languages as well
     iAmAJobSeeker = "I am a job seeker";
     exploringDamac = "I am just exploring";
     propertyTypePreference = "What kind of property interests you?";
@@ -1695,9 +1696,9 @@ function getFormData($form) {
       // if (n["value"] === exploringDamac) {
       //   n.value = "job seeker";
       // }
-    //   if (n["value"] === workAtDamac) {
-    //     n.value = "job seeker";
-    //   }
+      if (n["value"] === workAtDamac || n["value"] === findAJob) {
+        n.value = "Jobseeker";
+      }
     }
     if (n["name"] === whenToBuy) {
       n["name"] = "whenToBuy";
