@@ -1524,7 +1524,11 @@ window.addEventListener("DOMContentLoaded", function () {
           .name.replace(/ *\([^)]*\) */g, "");
 
         $("input[name='countryCode']").val(selectedData + ": " + code);
-        $("input[name='country']").val(selectedData);
+        if(selectedData === 'United States'){ //New if block based on new finding. Apparently SF accepts 'United States of America' for country and 'United States: 001' fro countryCode. Not consistent.
+          $("input[name='country']").val('United States of America');
+        }else{
+          $("input[name='country']").val(selectedData);
+        }
         $("input[name='ga_client_id']").val(getCookie("_ga"));
         $("input[name='fbid']").val(getFacebookCookie("_fbp"));
         $("input[name='fbclid']").val(getFbc());
