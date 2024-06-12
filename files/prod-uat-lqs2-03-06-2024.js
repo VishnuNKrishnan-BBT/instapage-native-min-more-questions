@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     phoneError = "أدخل رقم هاتف صالح";
     emailError = "أدخل عنوان بريد إلكتروني صالح";
     newsAndOffers = "الأخبار والعروض";
-    acceptPrivacyPolicy = "أوافق على شروط الخصوصية";
+    acceptPrivacyPolicy = "موافق على شروط الخصوصية";
     lookingTo = "هل تبحث عن";
     invest = "الاستثمار";
     buyaHome = "شراء منزل";
@@ -1760,7 +1760,7 @@ function getFormData($form) {
       }
     }
 
-    if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`)) {
+    if (n["name"].startsWith(`${acceptPrivacyPolicy}::INSTAPAGE_BOX::`) || n["name"] === "موافق على شروط الخصوصية::INSTAPAGE_BOX::لقد قرأت ووافقت على  <u><a href=&quot;https://www.damacproperties.com/ar/privacy-policy&quot; target=&quot;_blank&quot;> سياسة الخصوصية</a></u>") {
       n["name"] = "acceptPrivacyPolicy";
     }
     if (n["name"] === `${contacted}::INSTAPAGE_BOX::${sms}`) {
