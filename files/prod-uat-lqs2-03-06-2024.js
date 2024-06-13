@@ -1878,7 +1878,7 @@ const itiSFCountryAdaptor = [
       name: "United States",
       diallingCode: "+1",
       sendAs: {
-          country: "United States",
+          country: "United States of America",
           countryCode: "United States: 001"
       }
   },
