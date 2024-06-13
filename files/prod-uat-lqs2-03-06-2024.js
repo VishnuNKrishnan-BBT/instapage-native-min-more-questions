@@ -3483,13 +3483,15 @@ window.addEventListener("DOMContentLoaded", function () {
           .text()
           .replace("+", "00");
 
+        var selectedCountryName = iti[index].getSelectedCountryData().name
+        
         var selectedData = iti[index]
           .getSelectedCountryData()
           .name.replace(/ *\([^)]*\) */g, "");
 
         $("input[name='countryCode']").val(selectedData + ": " + code);
         
-        $("input[name='country']").val(retrieveCountry(selectedData).sendAs.country);
+        $("input[name='country']").val(retrieveCountry(selectedCountryName).sendAs.country);
         
         $("input[name='ga_client_id']").val(getCookie("_ga"));
         $("input[name='fbid']").val(getFacebookCookie("_fbp"));
