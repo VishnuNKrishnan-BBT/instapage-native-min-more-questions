@@ -3489,7 +3489,7 @@ window.addEventListener("DOMContentLoaded", function () {
           .getSelectedCountryData()
           .name.replace(/ *\([^)]*\) */g, "");
 
-        $("input[name='countryCode']").val(selectedData + ": " + code);
+        $("input[name='countryCode']").val(retrieveCountry(selectedCountryName).sendAs.countryCode);
         
         $("input[name='country']").val(retrieveCountry(selectedCountryName).sendAs.country);
         
