@@ -118,8 +118,8 @@ const itiSFCountryAdaptor = [
       name: "Ascension Island",
       diallingCode: "+247",
       sendAs: {
-          country: "Ascension Island",
-          countryCode: "Ascension Island: 00247"
+          country: "Saint Helena%2C Ascension and Tristan da Cunha",  //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Saint Helena: 00290"                          //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -270,8 +270,8 @@ const itiSFCountryAdaptor = [
       name: "British Virgin Islands",
       diallingCode: "+1",
       sendAs: {
-          country: "British Virgin Islands",
-          countryCode: "British Virgin Islands: 001"
+          country: "Virgin Islands%2C British",           //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "British Virgin Islands: 001284"   //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -342,8 +342,8 @@ const itiSFCountryAdaptor = [
       name: "Caribbean Netherlands",
       diallingCode: "+599",
       sendAs: {
-          country: "Caribbean Netherlands",
-          countryCode: "Caribbean Netherlands: 00599"
+          country: "Bonaire%2C Sint Eustatius and Saba",  //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Netherlands Antilles: 00599"      //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -398,8 +398,8 @@ const itiSFCountryAdaptor = [
       name: "Cocos (Keeling) Islands",
       diallingCode: "+61",
       sendAs: {
-          country: "Cocos",
-          countryCode: "Cocos: 0061"
+          country: "Cocos %28Keeling%29 Islands", //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Cocos Islands: 0061"      //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -422,16 +422,16 @@ const itiSFCountryAdaptor = [
       name: "Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)",
       diallingCode: "+243",
       sendAs: {
-          country: "Congo",
-          countryCode: "Congo: 00243"
+          country: "Republic of the Congo",                   //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Democratic Republic of Congo: 00243"  //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
       name: "Congo (Republic) (Congo-Brazzaville)",
       diallingCode: "+242",
       sendAs: {
-          country: "Congo",
-          countryCode: "Congo: 00242"
+          country: "Republic of the Congo",           //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Republic of the Congo: 00242" //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -454,8 +454,8 @@ const itiSFCountryAdaptor = [
       name: "Côte d’Ivoire",
       diallingCode: "+225",
       sendAs: {
-          country: "Côte d’Ivoire",
-          countryCode: "Côte d’Ivoire: 00225"
+          country: "Cote dIvoire",              //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Cote d Ivoire: 002250"  //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -478,8 +478,8 @@ const itiSFCountryAdaptor = [
       name: "Curaçao",
       diallingCode: "+599",
       sendAs: {
-          country: "Curaçao",
-          countryCode: "Curaçao: 00599"
+          country: "Curacao",
+          countryCode: "Curacao: 00599"
       }
   },
   {
@@ -582,8 +582,8 @@ const itiSFCountryAdaptor = [
       name: "Eswatini",
       diallingCode: "+268",
       sendAs: {
-          country: "Eswatini",
-          countryCode: "Eswatini: 00268"
+          country: "Swaziland",           //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Swaziland: 00268" //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -598,7 +598,7 @@ const itiSFCountryAdaptor = [
       name: "Falkland Islands (Islas Malvinas)",
       diallingCode: "+500",
       sendAs: {
-          country: "Falkland Islands",
+          country: "Falkland Islands %28Malvinas%29", //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Falkland Islands: 00500"
       }
   },
@@ -966,7 +966,7 @@ const itiSFCountryAdaptor = [
       name: "Laos (ລາວ)",
       diallingCode: "+856",
       sendAs: {
-          country: "Laos",
+          country: "Lao People%27s Democratic Republic",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Laos: 00856"
       }
   },
@@ -1006,7 +1006,7 @@ const itiSFCountryAdaptor = [
       name: "Libya (‫ليبيا‬‎)",
       diallingCode: "+218",
       sendAs: {
-          country: "Libya",
+          country: "State of Libya",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Libya: 00218"
       }
   },
@@ -1038,15 +1038,15 @@ const itiSFCountryAdaptor = [
       name: "Macau (澳門)",
       diallingCode: "+853",
       sendAs: {
-          country: "Macau",
-          countryCode: "Macau: 00853"
+          country: "Macao",           //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Macao: 00853" //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
       name: "Macedonia (FYROM) (Македонија)",
       diallingCode: "+389",
       sendAs: {
-          country: "Macedonia",
+          country: "Macedonia%2C The Former Yugoslav Republic of",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Macedonia: 00389"
       }
   },
@@ -1150,7 +1150,7 @@ const itiSFCountryAdaptor = [
       name: "Micronesia",
       diallingCode: "+691",
       sendAs: {
-          country: "Micronesia",
+          country: "Micronesia%2C Federated States of", //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Micronesia: 00691"
       }
   },
@@ -1303,14 +1303,14 @@ const itiSFCountryAdaptor = [
       diallingCode: "+672",
       sendAs: {
           country: "Norfolk Island",
-          countryCode: "Norfolk Island: 00672"
+          countryCode: "Antarctica: 00672"  //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
       name: "North Korea (조선 민주주의 인민 공화국)",
       diallingCode: "+850",
       sendAs: {
-          country: "North Korea",
+          country: "Korea%2C Democratic People%27s Republic of",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "North Korea: 00850"
       }
   },
@@ -1358,7 +1358,7 @@ const itiSFCountryAdaptor = [
       name: "Palestine (‫فلسطين‬‎)",
       diallingCode: "+970",
       sendAs: {
-          country: "Palestine",
+          country: "Palestinian Territory%2C Occupied", //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Palestine: 00970"
       }
   },
@@ -1438,8 +1438,8 @@ const itiSFCountryAdaptor = [
       name: "Réunion (La Réunion)",
       diallingCode: "+262",
       sendAs: {
-          country: "Réunion",
-          countryCode: "Réunion: 00262"
+          country: "Reunion",             //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Reunion: 00262"   //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -1470,15 +1470,15 @@ const itiSFCountryAdaptor = [
       name: "Saint Barthélemy",
       diallingCode: "+590",
       sendAs: {
-          country: "Saint Barthélemy",
-          countryCode: "Saint Barthélemy: 00590"
+          country: "Saint Barthelemy",            //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Saint Barthelemy: 00590"  //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
       name: "Saint Helena",
       diallingCode: "+290",
       sendAs: {
-          country: "Saint Helena",
+          country: "Saint Helena%2C Ascension and Tristan da Cunha",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Saint Helena: 00290"
       }
   },
@@ -1502,7 +1502,7 @@ const itiSFCountryAdaptor = [
       name: "Saint Martin (Saint-Martin (partie française))",
       diallingCode: "+590",
       sendAs: {
-          country: "Saint Martin",
+          country: "Saint Martin %28French part%29",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Saint Martin: 00590"
       }
   },
@@ -1542,8 +1542,8 @@ const itiSFCountryAdaptor = [
       name: "São Tomé and Príncipe (São Tomé e Príncipe)",
       diallingCode: "+239",
       sendAs: {
-          country: "São Tomé and Príncipe",
-          countryCode: "São Tomé and Príncipe: 00239"
+          country: "Sao Tome and Principe",
+          countryCode: "Sao Tome and Principe: 00239"
       }
   },
   {
@@ -1598,7 +1598,7 @@ const itiSFCountryAdaptor = [
       name: "Sint Maarten",
       diallingCode: "+1",
       sendAs: {
-          country: "Sint Maarten",
+          country: "Sint Maarten %28Dutch part%29", //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Sint Maarten: 001"
       }
   },
@@ -1646,7 +1646,7 @@ const itiSFCountryAdaptor = [
       name: "South Korea (대한민국)",
       diallingCode: "+82",
       sendAs: {
-          country: "South Korea",
+          country: "South Korean",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "South Korea: 0082"
       }
   },
@@ -1718,7 +1718,7 @@ const itiSFCountryAdaptor = [
       name: "Syria (‫سوريا‬‎)",
       diallingCode: "+963",
       sendAs: {
-          country: "Syria",
+          country: "Syrian Arab Republic",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Syria: 00963"
       }
   },
@@ -1759,7 +1759,7 @@ const itiSFCountryAdaptor = [
       diallingCode: "+670",
       sendAs: {
           country: "Timor-Leste",
-          countryCode: "Timor-Leste: 00670"
+          countryCode: "East Timor: 00670"  //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -1838,8 +1838,8 @@ const itiSFCountryAdaptor = [
       name: "U.S. Virgin Islands",
       diallingCode: "+1",
       sendAs: {
-          country: "U.S. Virgin Islands",
-          countryCode: "U.S. Virgin Islands: 001"
+          country: "Virgin Islands%2C U%2ES%2E",
+          countryCode: "U.S. Virgin Islands: 001340"  //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
@@ -1878,7 +1878,7 @@ const itiSFCountryAdaptor = [
       name: "United States",
       diallingCode: "+1",
       sendAs: {
-          country: "United States of America",
+          country: "United States of America",  //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "United States: 001"
       }
   },
@@ -1910,15 +1910,15 @@ const itiSFCountryAdaptor = [
       name: "Vatican City (Città del Vaticano)",
       diallingCode: "+39",
       sendAs: {
-          country: "Vatican City",
-          countryCode: "Vatican City: 0039"
+          country: "Holy See %28Vatican City State%29", //MANUALLY UPDATED TO MATCH SF MAPPING
+          countryCode: "Italy: 0039"                    //MANUALLY UPDATED TO MATCH SF MAPPING
       }
   },
   {
       name: "Venezuela",
       diallingCode: "+58",
       sendAs: {
-          country: "Venezuela",
+          country: "Venezuela%2C Bolivarian Republic of", //MANUALLY UPDATED TO MATCH SF MAPPING
           countryCode: "Venezuela: 0058"
       }
   },
@@ -1974,8 +1974,8 @@ const itiSFCountryAdaptor = [
       name: "Åland Islands",
       diallingCode: "+358",
       sendAs: {
-          country: "Åland Islands",
-          countryCode: "Åland Islands: 00358"
+          country: "Finland",
+          countryCode: "Finland: 00358"
       }
   }
 ]
