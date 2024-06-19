@@ -317,7 +317,7 @@ const pushToNewLQS = data => {
       'Authorization': `Bearer ${sessionStorage.getItem('lqsat')}`
     }
   
-    console.log(data)
+    // console.log(data)
   
     const requestBody = JSON.stringify(data)
   
@@ -1946,7 +1946,7 @@ function getFormData($form) {
 
     if (n["name"] === phoneInput) {
       n["name"] = "phoneNumber";
-      n.value = stripPrefix(code, n.value)
+      n.value = stripPrefix(code, n.value?.replaceAll(' ', ''))
     }
     if (n["name"] === titleInput) {
       n["name"] = "title";
