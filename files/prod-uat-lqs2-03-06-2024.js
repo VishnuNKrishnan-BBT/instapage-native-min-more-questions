@@ -3490,9 +3490,7 @@ window.addEventListener("DOMContentLoaded", function () {
           .name.replace(/ *\([^)]*\) */g, "");
 
         $("input[name='countryCode']").val(retrieveCountry(selectedCountryName).sendAs.countryCode);
-        
-        $("input[name='country']").val(retrieveCountry(selectedCountryName).sendAs.country);
-        
+        $("input[name='country']").val(decodeURIComponent(retrieveCountry(selectedCountryName).sendAs.country));
         $("input[name='ga_client_id']").val(getCookie("_ga"));
         $("input[name='fbid']").val(getFacebookCookie("_fbp"));
         $("input[name='fbclid']").val(getFbc());
