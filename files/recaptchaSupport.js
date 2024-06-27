@@ -1083,14 +1083,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
             const captchaInterval = setInterval(() => {
-                if(recaptchaToken !== ''){
-                    clearInterval(captchaInterval)
-                }
+                if(recaptchaToken === ''){
+                    // clearInterval(captchaInterval)
+                    recaptchaToken = grecaptcha.getResponse()
+                    console.log('recaptchaToken: ', recaptchaToken);
 
-                recaptchaToken = grecaptcha.getResponse()
-                console.log('recaptchaToken: ', recaptchaToken);
-
-                if(recaptchaToken !== ''){
                     $.ajax({
                         url: "https://lqsapp.damacgroup.com/api/importedleads",
                         beforeSend: function (xhr) {
@@ -1123,6 +1120,8 @@ window.addEventListener("DOMContentLoaded", function () {
                           //console.log("Request failed, error= " + err);
                         },
                       });
+
+                      clearInterval(captchaInterval)
                 }
             }, 500)
         } else {
