@@ -1082,48 +1082,39 @@ window.addEventListener("DOMContentLoaded", function () {
         if (formValid.isValid()) {
 
 
-            const captchaInterval = setInterval(() => {
-                if(recaptchaToken === ''){
-                    // clearInterval(captchaInterval)
-                    recaptchaToken = grecaptcha.getResponse()
-                    console.log('recaptchaToken: ', recaptchaToken);
-
-                    $.ajax({
-                        url: "https://lqsapp.damacgroup.com/api/importedleads",
-                        beforeSend: function (xhr) {
-                          xhr.setRequestHeader(
-                            "Authorization",
-                            "newiuw3ujdjudqoeneoie1E@R#",
-                          );
-                        },
-                        type: "POST",
-                        data: data,
-            
-                        success: function (json) {
-                          var gender = data.title == "MR." ? "male" : "female";
-                          const hashedEmail = "NA";
-                          const hashedPhone = "NA";
-                          landingCMSThankYou(
-                            gender,
-                            hashedEmail,
-                            hashedPhone,
-                            null,
-                            null,
-                            data.page_variant,
-                            data.email,
-                          );
-                          submitUrl();
-                          // //console.log(json);
-                          handler(e);
-                        },
-                        error: function (err) {
-                          //console.log("Request failed, error= " + err);
-                        },
-                      });
-
-                      clearInterval(captchaInterval)
-                }
-            }, 500)
+            $.ajax({
+                url: "https://lqsapp.damacgroup.com/api/importedleads",
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader(
+                    "Authorization",
+                    "newiuw3ujdjudqoeneoie1E@R#",
+                  );
+                },
+                type: "POST",
+                data: data,
+    
+                success: function (json) {
+                  var gender = data.title == "MR." ? "male" : "female";
+                  const hashedEmail = "NA";
+                  const hashedPhone = "NA";
+                  landingCMSThankYou(
+                    gender,
+                    hashedEmail,
+                    hashedPhone,
+                    null,
+                    null,
+                    data.page_variant,
+                    data.email,
+                  );
+                  submitUrl();
+                  // //console.log(json);
+                  handler(e);
+                },
+                error: function (err) {
+                  //console.log("Request failed, error= " + err);
+                },
+              });
+              
         } else {
           handler(e);
         }
