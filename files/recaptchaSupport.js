@@ -1100,38 +1100,42 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (formValid.isValid()) {
 
-            $.ajax({
-                url: "https://lqsapp.damacgroup.com/api/importedleads",
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader(
-                    "Authorization",
-                    "newiuw3ujdjudqoeneoie1E@R#",
-                  );
-                },
-                type: "POST",
-                data: data,
-    
-                success: function (json) {
-                  var gender = data.title == "MR." ? "male" : "female";
-                  const hashedEmail = "NA";
-                  const hashedPhone = "NA";
-                  landingCMSThankYou(
-                    gender,
-                    hashedEmail,
-                    hashedPhone,
-                    null,
-                    null,
-                    data.page_variant,
-                    data.email,
-                  );
-                  submitUrl();
-                  // //console.log(json);
-                  handler(e);
-                },
-                error: function (err) {
-                  //console.log("Request failed, error= " + err);
-                },
-              });
+            if((data["userType"] === "" || data["userType"] === undefined  || data["userType"]) === null){
+                $.ajax({
+                    url: "https://lqsapp.damacgroup.com/api/importedleads",
+                    beforeSend: function (xhr) {
+                      xhr.setRequestHeader(
+                        "Authorization",
+                        "newiuw3ujdjudqoeneoie1E@R#",
+                      );
+                    },
+                    type: "POST",
+                    data: data,
+        
+                    success: function (json) {
+                      var gender = data.title == "MR." ? "male" : "female";
+                      const hashedEmail = "NA";
+                      const hashedPhone = "NA";
+                      landingCMSThankYou(
+                        gender,
+                        hashedEmail,
+                        hashedPhone,
+                        null,
+                        null,
+                        data.page_variant,
+                        data.email,
+                      );
+                      submitUrl();
+                      // //console.log(json);
+                      handler(e);
+                    },
+                    error: function (err) {
+                      //console.log("Request failed, error= " + err);
+                    },
+                  });
+            }else{
+                console.log("Bot identified");
+            }
 
         } else {
           handler(e);
