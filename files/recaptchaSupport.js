@@ -1,6 +1,3 @@
-let recaptchaToken
-let recaptchaSuccess = false
-
 jQuery = $;
 let phoneInput;
 let titleInput;
@@ -1081,40 +1078,53 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (formValid.isValid()) {
 
+            let recaptchaToken = ''
+            let recaptchaSuccess = false
 
-            $.ajax({
-                url: "https://lqsapp.damacgroup.com/api/importedleads",
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader(
-                    "Authorization",
-                    "newiuw3ujdjudqoeneoie1E@R#",
-                  );
-                },
-                type: "POST",
-                data: data,
-    
-                success: function (json) {
-                  var gender = data.title == "MR." ? "male" : "female";
-                  const hashedEmail = "NA";
-                  const hashedPhone = "NA";
-                  landingCMSThankYou(
-                    gender,
-                    hashedEmail,
-                    hashedPhone,
-                    null,
-                    null,
-                    data.page_variant,
-                    data.email,
-                  );
-                  submitUrl();
-                  // //console.log(json);
-                  handler(e);
-                },
-                error: function (err) {
-                  //console.log("Request failed, error= " + err);
-                },
-              });
-              
+            const captchaInterval = setInterval(() => {
+                if(recaptchaToken == ''){
+                    const newToken = grecaptcha.getResponse()
+                    if(newToken !== ''){
+                        recaptchaToken = newToken
+
+                        $.ajax({
+                            url: "https://lqsapp.damacgroup.com/api/importedleads",
+                            beforeSend: function (xhr) {
+                              xhr.setRequestHeader(
+                                "Authorization",
+                                "newiuw3ujdjudqoeneoie1E@R#",
+                              );
+                            },
+                            type: "POST",
+                            data: data,
+                
+                            success: function (json) {
+                              var gender = data.title == "MR." ? "male" : "female";
+                              const hashedEmail = "NA";
+                              const hashedPhone = "NA";
+                              landingCMSThankYou(
+                                gender,
+                                hashedEmail,
+                                hashedPhone,
+                                null,
+                                null,
+                                data.page_variant,
+                                data.email,
+                              );
+                              submitUrl();
+                              // //console.log(json);
+                              handler(e);
+                            },
+                            error: function (err) {
+                              //console.log("Request failed, error= " + err);
+                            },
+                          });
+
+                          clearInterval(captchaInterval)
+                    }
+                }
+            }, 500)
+
         } else {
           handler(e);
         }
