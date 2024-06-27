@@ -30,13 +30,6 @@ websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
 
-    // Add the token to a hidden input field in the form
-    var recaptchaInput = document.createElement('input');
-    recaptchaInput.setAttribute('type', 'hidden');
-    recaptchaInput.setAttribute('name', 'recaptcha-token');
-    recaptchaInput.setAttribute('value', token);
-    form.appendChild(recaptchaInput);
-
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
@@ -1085,45 +1078,38 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (formValid.isValid()) {
 
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LdjTDInAAAAAFLI9H-ECHPxhW6WeYLAdh8WyOi8', {action: 'submit'}).then(function(token) {
-        
-                    // Now submit the form
-                    // form.submit();
-                    $.ajax({
-                        url: "https://lqsapp.damacgroup.com/api/importedleads",
-                        beforeSend: function (xhr) {
-                          xhr.setRequestHeader(
-                            "Authorization",
-                            "newiuw3ujdjudqoeneoie1E@R#",
-                          );
-                        },
-                        type: "POST",
-                        data: data,
-            
-                        success: function (json) {
-                          var gender = data.title == "MR." ? "male" : "female";
-                          const hashedEmail = "NA";
-                          const hashedPhone = "NA";
-                          landingCMSThankYou(
-                            gender,
-                            hashedEmail,
-                            hashedPhone,
-                            null,
-                            null,
-                            data.page_variant,
-                            data.email,
-                          );
-                          submitUrl();
-                          // //console.log(json);
-                          handler(e);
-                        },
-                        error: function (err) {
-                          //console.log("Request failed, error= " + err);
-                        },
-                      });
-                })
-            })
+            $.ajax({
+                url: "https://lqsapp.damacgroup.com/api/importedleads",
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader(
+                    "Authorization",
+                    "newiuw3ujdjudqoeneoie1E@R#",
+                  );
+                },
+                type: "POST",
+                data: data,
+    
+                success: function (json) {
+                  var gender = data.title == "MR." ? "male" : "female";
+                  const hashedEmail = "NA";
+                  const hashedPhone = "NA";
+                  landingCMSThankYou(
+                    gender,
+                    hashedEmail,
+                    hashedPhone,
+                    null,
+                    null,
+                    data.page_variant,
+                    data.email,
+                  );
+                  submitUrl();
+                  // //console.log(json);
+                  handler(e);
+                },
+                error: function (err) {
+                  //console.log("Request failed, error= " + err);
+                },
+              });
 
         } else {
           handler(e);
