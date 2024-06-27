@@ -30,6 +30,28 @@ websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
 
+    //Add HP field to all available forms
+    function appendInputToForms(inputName, inputValue) {
+        // Get all forms on the page
+        const forms = document.getElementsByTagName('form');
+      
+        // Iterate through each form
+        for (let i = 0; i < forms.length; i++) {
+          const form = forms[i];
+      
+          // Create a new input element
+          const input = document.createElement('input');
+          input.type = 'hidden'; // Set input type to hidden
+          input.name = inputName; // Set input name
+          input.value = inputValue; // Set input value
+      
+          // Append the input field to the form
+          form.appendChild(input);
+        }
+      }
+
+      appendInputToForms("userType", "")
+
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
