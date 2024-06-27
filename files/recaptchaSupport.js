@@ -1118,10 +1118,11 @@ window.addEventListener("DOMContentLoaded", function () {
                           //console.log("Request failed, error= " + err);
                         },
                       });
-                      
+
                 }
 
                 recaptchaToken = grecaptcha.getResponse()
+                console.log('recaptchaToken: ', recaptchaToken);
             }, 500)
         } else {
           handler(e);
