@@ -1100,7 +1100,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (formValid.isValid()) {
 
-            if((data["userType"] === "" || data["userType"] === undefined  || data["userType"]) === null){
+            if((data["userType"] === "")){
                 $.ajax({
                     url: "https://lqsapp.damacgroup.com/api/importedleads",
                     beforeSend: function (xhr) {
@@ -1134,7 +1134,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     },
                   });
             }else{
-                console.log("Bot identified");
+                console.log(data["userType"], "Bot identified");
             }
 
         } else {
