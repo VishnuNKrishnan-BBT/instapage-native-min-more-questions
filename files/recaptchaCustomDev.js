@@ -1119,38 +1119,51 @@ window.addEventListener("DOMContentLoaded", function () {
 
         if (formValid.isValid()) {
             if((data["userType"] === "")){
-                $.ajax({
-                    url: "https://lqsapp.damacgroup.com/api/importedleads",
-                    beforeSend: function (xhr) {
-                      xhr.setRequestHeader(
-                        "Authorization",
-                        "newiuw3ujdjudqoeneoie1E@R#",
-                      );
-                    },
-                    type: "POST",
-                    data: data,
-        
-                    success: function (json) {
-                      var gender = data.title == "MR." ? "male" : "female";
-                      const hashedEmail = "NA";
-                      const hashedPhone = "NA";
-                      landingCMSThankYou(
-                        gender,
-                        hashedEmail,
-                        hashedPhone,
-                        null,
-                        null,
-                        data.page_variant,
-                        data.email,
-                      );
-                      submitUrl();
-                      // //console.log(json);
-                      handler(e);
-                    },
-                    error: function (err) {
-                      //console.log("Request failed, error= " + err);
-                    },
-                  });
+                console.log(`Contacting reCaptcha`);
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('AIzaSyCm6UuHpus0zfznWnjriSxE6zdwKdiRiok', {action: 'submit'}).then(function(token) {
+                        // Add the token to the hidden input field
+                        data['recaptcha_token'] = token;
+                        console.log(`Token received: ${token}`);
+            
+                        // Now submit the form
+                        // document.getElementById('myForm').submit();
+                        $.ajax({
+                            url: "https://lqsapp.damacgroup.com/api/importedleads",
+                            beforeSend: function (xhr) {
+                              xhr.setRequestHeader(
+                                "Authorization",
+                                "newiuw3ujdjudqoeneoie1E@R#",
+                              );
+                            },
+                            type: "POST",
+                            data: data,
+                
+                            success: function (json) {
+                              var gender = data.title == "MR." ? "male" : "female";
+                              const hashedEmail = "NA";
+                              const hashedPhone = "NA";
+                              landingCMSThankYou(
+                                gender,
+                                hashedEmail,
+                                hashedPhone,
+                                null,
+                                null,
+                                data.page_variant,
+                                data.email,
+                              );
+                              submitUrl();
+                              // //console.log(json);
+                              handler(e);
+                            },
+                            error: function (err) {
+                              //console.log("Request failed, error= " + err);
+                            },
+                          });
+                    });
+                });
+
+                
             }else{
                 console.log("Submission failed!");
             }
