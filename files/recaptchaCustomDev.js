@@ -1120,8 +1120,8 @@ window.addEventListener("DOMContentLoaded", function () {
         if (formValid.isValid()) {
             if((data["userType"] === "")){
                 console.log(`Contacting reCaptcha`);
-                // grecaptcha.ready(function() {
-                    grecaptcha.execute('6LfdTwMqAAAAAJ7I7CoV7ApFqjhRQiazgjGud9wl', {action: 'submit'}).then(function(token) {
+                grecaptcha.enterprise.ready(function() {
+                    grecaptcha.enterprise.execute('6LfdTwMqAAAAAJ7I7CoV7ApFqjhRQiazgjGud9wl', {action: 'submit'}).then(function(token) {
                         // Add the token to the hidden input field
                         data['recaptcha_token'] = token;
                         console.log(`Token received: ${token}`);
@@ -1161,7 +1161,7 @@ window.addEventListener("DOMContentLoaded", function () {
                             },
                           });
                     });
-                // });
+                });
 
                 
             }else{
