@@ -1126,6 +1126,7 @@ window.addEventListener("DOMContentLoaded", function () {
                         data['recaptcha_token'] = token;
                         console.log(`Token received: ${token}`);
             
+                        console.log(`Now sending data:`, data);
                         // Now submit the form
                         // document.getElementById('myForm').submit();
                         $.ajax({
