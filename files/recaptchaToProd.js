@@ -53,6 +53,48 @@ let preferredLanguageInput
 websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
+
+    //Add HP field to all available forms
+    function appendInputToForms(inputName, inputValue) {
+        // Get all forms on the page
+        const forms = document.getElementsByTagName('form');
+      
+        // Iterate through each form
+        for (let i = 0; i < forms.length; i++) {
+          const form = forms[i];
+      
+          // Create a new input element
+          const input = document.createElement('input');
+          input.type = 'hidden'; // Set input type to hidden
+          input.name = inputName; // Set input name
+          input.value = inputValue; // Set input value
+      
+          // Append the input field to the form
+          form.appendChild(input);
+        }
+      }
+
+    function appendRecaptchaTokenHolderToForms() {
+        // Get all forms on the page
+        const forms = document.getElementsByTagName('form');
+      
+        // Iterate through each form
+        for (let i = 0; i < forms.length; i++) {
+            const form = forms[i];
+
+            //  Create new hidden input for recaptcha token
+            const captchaTokenField = document.createElement('input');
+            captchaTokenField.type = 'hidden';
+            captchaTokenField.id = 'recaptchaToken';
+            captchaTokenField.name = 'recaptcha_token'
+
+            form.appendChild(captchaTokenField);
+        }
+      }
+
+      appendInputToForms("userType", "")
+      appendRecaptchaTokenHolderToForms()
+
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
@@ -1354,38 +1396,56 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         if (formValid.isValid()) {
-          $.ajax({
-            url: "https://lqsapp.damacgroup.com/api/importedleads",
-            beforeSend: function (xhr) {
-              xhr.setRequestHeader(
-                "Authorization",
-                "newiuw3ujdjudqoeneoie1E@R#",
-              );
-            },
-            type: "POST",
-            data: data,
+            if((data["userType"] === "")){
+                console.log(`Contacting reCaptcha`);
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb', {action: 'submit'}).then(function(token) {
+                        // Add the token to the hidden input field
+                        data['recaptcha_token'] = token;
+                        console.log(`Token received: ${token}`);
+            
+                        console.log(`Now sending data:`, data);
+                        // Now submit the form
+                        // document.getElementById('myForm').submit();
+                        $.ajax({
+                            url: "https://lqsapp.damacgroup.com/api/importedleads",
+                            beforeSend: function (xhr) {
+                              xhr.setRequestHeader(
+                                "Authorization",
+                                "newiuw3ujdjudqoeneoie1E@R#",
+                              );
+                            },
+                            type: "POST",
+                            data: data,
+                
+                            success: function (json) {
+                              var gender = data.title == "MR." ? "male" : "female";
+                              const hashedEmail = "NA";
+                              const hashedPhone = "NA";
+                              landingCMSThankYou(
+                                gender,
+                                hashedEmail,
+                                hashedPhone,
+                                null,
+                                null,
+                                data.page_variant,
+                                data.email,
+                              );
+                              submitUrl();
+                              // //console.log(json);
+                              handler(e);
+                            },
+                            error: function (err) {
+                              //console.log("Request failed, error= " + err);
+                            },
+                          });
+                    });
+                });
 
-            success: function (json) {
-              var gender = data.title == "MR." ? "male" : "female";
-              const hashedEmail = "NA";
-              const hashedPhone = "NA";
-              landingCMSThankYou(
-                gender,
-                hashedEmail,
-                hashedPhone,
-                null,
-                null,
-                data.page_variant,
-                data.email,
-              );
-              submitUrl();
-              // //console.log(json);
-              handler(e);
-            },
-            error: function (err) {
-              //console.log("Request failed, error= " + err);
-            },
-          });
+                
+            }else{
+                console.log("Submission failed!");
+            }
         } else {
           handler(e);
         }
