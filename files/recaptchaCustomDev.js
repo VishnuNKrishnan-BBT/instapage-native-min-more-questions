@@ -1121,7 +1121,7 @@ window.addEventListener("DOMContentLoaded", function () {
             if((data["userType"] === "")){
                 console.log(`Contacting reCaptcha`);
                 grecaptcha.ready(function() {
-                    grecaptcha.execute('AIzaSyCm6UuHpus0zfznWnjriSxE6zdwKdiRiok', {action: 'submit'}).then(function(token) {
+                    grecaptcha.execute('6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb', {action: 'submit'}).then(function(token) {
                         // Add the token to the hidden input field
                         data['recaptcha_token'] = token;
                         console.log(`Token received: ${token}`);
