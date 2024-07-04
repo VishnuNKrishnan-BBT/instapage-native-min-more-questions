@@ -1123,7 +1123,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 grecaptcha.ready(function() {
                     grecaptcha.execute('6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb', {action: 'submit'}).then(function(token) {
                         // Add the token to the hidden input field
-                        data['recaptcha_token'] = token;
+                        data['validationToken'] = token;
                         console.log(`Token received: ${token}`);
             
                         console.log(`Now sending data:`, data);
