@@ -54,25 +54,25 @@ websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
 
-      function appendRecaptchaTokenHolderToForms() {
-        // Get all forms on the page
-        const forms = document.getElementsByTagName('form');
+    //   function appendRecaptchaTokenHolderToForms() {
+    //     // Get all forms on the page
+    //     const forms = document.getElementsByTagName('form');
       
-        // Iterate through each form
-        for (let i = 0; i < forms.length; i++) {
-            const form = forms[i];
+    //     // Iterate through each form
+    //     for (let i = 0; i < forms.length; i++) {
+    //         const form = forms[i];
 
-            //  Create new hidden input for recaptcha token
-            const captchaTokenField = document.createElement('input');
-            captchaTokenField.type = 'hidden';
-            captchaTokenField.id = 'recaptchaToken';
-            captchaTokenField.name = 'recaptcha_token'
+    //         //  Create new hidden input for recaptcha token
+    //         const captchaTokenField = document.createElement('input');
+    //         captchaTokenField.type = 'hidden';
+    //         captchaTokenField.id = 'recaptchaToken';
+    //         captchaTokenField.name = 'recaptcha_token'
 
-            form.appendChild(captchaTokenField);
-        }
-      }
+    //         form.appendChild(captchaTokenField);
+    //     }
+    //   }
 
-      appendRecaptchaTokenHolderToForms()
+    //   appendRecaptchaTokenHolderToForms()
 
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
@@ -208,292 +208,273 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "تطبيق واتساب";
     preferredLanguageInput = "اللغة المفضلة";
   } else if (websiteLanguage == "FR") {
-    _Translate.set("Processing...", "En cours de traitement...");
-    _Translate.set("Please Fix These Errors", "Veuillez corriger ces erreurs");
-    _Translate.set("is not valid", "nâ€™est pas valide");
-    _Translate.set("is required", "est un Ã©lÃ©ment requis");
-    _Translate.set("starts with @ sign", "commence par une @");
-    _Translate.set("is missing @ sign", "Le signe @ est manquant");
-    _Translate.set(
-      "contains repeated dots",
-      "contient plusieurs points consÃ©cutifs",
-    );
-    _Translate.set("starts with a dot", "commence par un point");
-    _Translate.set("domain is missing", "Le domaine est manquant");
-    _Translate.set(
-      "domain starts with a dot",
-      "Le domaine commence par un point",
-    );
-    _Translate.set("domain is not valid", "Le domaine nâ€™est pas valide");
-    _Translate.set("domain ends with a dot", "Le domaine finit par un point");
-    phoneInput = "tÃ©lÃ©phoner";
+    _Translate.set("Processing...","En cours de traitement...");
+    _Translate.set("Please Fix These Errors","Veuillez corriger ces erreurs");
+    _Translate.set("is not valid","n’est pas valide");
+    _Translate.set("is required","n'est un élément requis");
+    _Translate.set("starts with @ sign","commence par une @");
+    _Translate.set("is missing @ sign","Le signe @ est manquant");
+    _Translate.set("contains repeated dots","contient plusieurs points consécutifs");
+    _Translate.set("starts with a dot","commence par un point");
+    _Translate.set("domain is missing","Le domaine est manquant");
+    _Translate.set("domain starts with a dot","Le domaine commence par un point");
+    _Translate.set("domain is not valid","Le domaine n’est pas valide");
+    _Translate.set("domain ends with a dot","Le domaine finit par un point");
+    phoneInput = "Téléphone";
     let data = $('input[name="' + phoneInput + '"]');
     //console.log("data...", data);
     if (data.length > 0) {
-      phoneInput = "tÃ©lÃ©phoner";
+      phoneInput = "Téléphone";
     } else {
-      phoneInput = "TÃ©lÃ©phone";
+      phoneInput = "Téléphone";
     }
     titleInput = "Titre";
-    firstNameInput = "PrÃ©nom";
+    firstNameInput = "Prénom";
     lastNameInput = "Nom";
     emailInput = "Adresse e-mail";
     mrInput = "M";
     msInput = "Melle";
     mrsInput = "Mme";
     newsInput = "Je souhaite recevoir les informations et les offres";
-    privacyInput = "Jâ€™ai lu et jâ€™accepte la politique de confidentialitÃ©";
-    phoneError = "Veuillez saisir un numÃ©ro de tÃ©lÃ©phone valide";
+    privacyInput = "J'ai lu et j'accepte la politique de confidentialité";
+    phoneError = "Veuillez saisir un numéro de téléphone valide";
     emailError = "Saisir une adresse e-mail valide";
-    newsAndOffers = "ActualitÃ©s et offres";
-    acceptPrivacyPolicy = "Accepter la politique de confidentialitÃ©";
+    newsAndOffers = "Actualités et offres";
+    acceptPrivacyPolicy = "Accepter la politique de confidentialité";
     lookingTo = "Souhaitez-vous";
+    areYouLookingTo = "Souhaitez-vous"; //add to other languages as well if needed
+    findAJob = "Travailler @ DAMAC"; //add to other languages as well
     invest = "Investir";
     buyaHome = "Acheter une maison";
     workAtDamac = "Travailler @ DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    iAmAJobSeeker = "Je cherche un emploi (or) je suis a la recherche d'un emploi";
+    exploringDamac = " Juste j'explore";
+    propertyTypePreference = "Quel type de propriété vous intvresse?";
+    villaHouse = "Villa/  maison";
+    apartmentFlat = "appartement/";
+    bedroomCountPreference = "De combien de chambres avez-vous besoin?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "Quand envisagez-vous dâ€™acheter ?";
+    budgetRangePreference = "Quel est votre budget";
+    uptoOneM = "Jusqu'a 1 million d'AED";
+    oneMtoTwoM = "1 million d'AED a 2 millions d'AED";
+    twoMtoFiveM = "2 millions d'AED a 5 millions d'AED";
+    fiveMPlus = "Au-dessus de 5 millions d'AED";
+    whenToBuy = "Quand envisagez-vous d’acheter ?";
     daysThirty = "Dans 30 jours";
     daysNinety = "Dans 90 jours";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
+    immediately = "immediatement";
+    withinThreeMonths = "Dans 3 mois";
+    withinSixMonths = "Dans 6 mois";
+    stillConsidering = "(Je réfléchis toujours)";
     btntext = "Cliquer ici";
-    labtext = "Pour en savoir plus sur les autres propriÃ©tÃ©s DAMAC";
-    contacted = "I can be contacted via";
+    labtext = "Pour en savoir plus sur les autres propriétés DAMAC";
+    contacted = "Je peux etre contacté par";
     sms = "SMS";
-    whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    whatsapp = "Whatsapp";
+    preferredLanguageInput = "langue préferée";
   } else if (websiteLanguage == "SP") {
-    _Translate.set("Processing...", "Procesando...");
-    _Translate.set("Please Fix These Errors", "Solucione estos errores");
-    _Translate.set("is not valid", "no es vÃ¡lido");
-    _Translate.set("is required", "se requiere");
-    _Translate.set("starts with @ sign", "empieza con un signo @");
-    _Translate.set("is missing @ sign", "falta el signo @");
-    _Translate.set("contains repeated dots", "contiene puntos repetidos");
-    _Translate.set("starts with a dot", "empieza con un punto");
-    _Translate.set("domain is missing", "falta el dominio");
-    _Translate.set(
-      "domain starts with a dot",
-      "el dominio empieza con un punto",
-    );
-    _Translate.set("domain is not valid", "el domino no es vÃ¡lido");
-    _Translate.set("domain ends with a dot", "el dominio termina con un punto");
-    phoneInput = "TelÃ©fono";
+    _Translate.set("Processing...","Procesando...");
+    _Translate.set("Please Fix These Errors","Solucione estos errores");
+    _Translate.set("is not valid","no es válido");
+    _Translate.set("is required","se requiere");
+    _Translate.set("starts with @ sign","empieza con un signo @");
+    _Translate.set("is missing @ sign","falta el signo @");
+    _Translate.set("contains repeated dots","contiene puntos repetidos");
+    _Translate.set("starts with a dot","empieza con un punto");
+    _Translate.set("domain is missing","falta el dominio");
+    _Translate.set("domain starts with a dot","el dominio empieza con un punto");
+    _Translate.set("domain is not valid","el domino no es válido");
+    _Translate.set("domain ends with a dot","el dominio termina con un punto");
+    phoneInput = "Teléfono";
     titleInput = "Tratamiento";
     firstNameInput = "Nombre";
     lastNameInput = "Apellido";
-    emailInput = "Correo electrÃ³nico";
+    emailInput = "Correo electrónico";
     mrInput = "Sr.";
     msInput = "Srta.";
     mrsInput = "Sra.";
-    newsInput = "Me gustarÃ­a recibir noticias y ofertas";
-    privacyInput = "He leÃ­do y acepto la PolÃ­tica de privacidad";
-    phoneError = "Escriba un nÃºmero de telÃ©fono vÃ¡lido";
-    emailError = "Escriba un correo electrÃ³nico vÃ¡lido";
-    newsAndOffers = "Noticias y ofertas";
-    acceptPrivacyPolicy = "Aceptar la polÃ­tica de privacidad";
-    lookingTo = "EstÃ¡ pensando en?";
+    newsInput = "Me gustaría recibir noticias y ofertas";
+    privacyInput = "He leído y acepto la Política de privacidad";
+    phoneError = "Escriba un número de teléfono válido";
+    emailError = "Escriba un correo electrónico válido";
+    newsAndOffers = "Noticias y Ofertas";
+    acceptPrivacyPolicy = "Aceptar Política de Privacidad";
+    lookingTo = "Desea";
+    areYouLookingTo = "Desea"; //add to other languages as well if needed
+    findAJob = "Trabajar en DAMAC"; //add to other languages as well
     invest = "Invertir";
     buyaHome = "Comprar un inmueble";
     workAtDamac = "Trabajar en DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
-    studio = "Studio";
+    iAmAJobSeeker = "Busco un empleo";
+    exploringDamac = "Solo estoy explorando";
+    propertyTypePreference = "¿Qué tipo de inmueble le interesa?";
+    villaHouse = "Villa/chalet";
+    apartmentFlat = "Piso/apartamento";
+    bedroomCountPreference = "¿Cuántas habitaciones necesita?";
+    studio = "Estudio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "Â¿CuÃ¡ndo piensa comprarlo?";
-    daysThirty = "En 30Â dÃ­as";
-    daysNinety = "En 90Â dÃ­as";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
-    btntext = "HAGA CLIC AQUÃ";
-    labtext = "Para obtener mÃ¡s informaciÃ³n sobre otras propiedades DAMAC";
-    contacted = "I can be contacted via";
+    budgetRangePreference = "¿Cuál es su presupuesto?";
+    uptoOneM = "Hasta 1 millón de AED";
+    oneMtoTwoM = "Entre 1 y 2 millones de AED";
+    twoMtoFiveM = "Entre 2 y 5 millones de AED";
+    fiveMPlus = "Más de 5 millones de AED";
+    whenToBuy = "¿Cuándo piensa hacer la compra?";
+    daysThirty = "En 30 días";
+    daysNinety = "En 90 días";
+    immediately = "Inmediatamente";
+    withinThreeMonths = "En 3 meses";
+    withinSixMonths = "En 6 meses";
+    stillConsidering = "Todavía estoy pensándomelo";
+    btntext = "HAGA CLIC AQUÍ";
+    labtext = "Para obtener más información sobre otras propiedades DAMAC";
+    contacted = "Pueden contactar conmigo por";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Idioma preferido";
   } else if (websiteLanguage == "HE") {
-    _Translate.set("Processing...", "×ž×¢×‘×“...");
-    _Translate.set("Please Fix These Errors", "× × ×œ×ª×§×Ÿ ××ª ×”×©×’×™××•×ª ×”×‘××•×ª");
-    _Translate.set("is not valid", "×œ× ×ª×§×™×Ÿ");
-    _Translate.set("is required", "×—×•×‘×”");
-    _Translate.set("starts with @ sign", "×ž×ª×—×™×œ ×‘×¡×™×ž×Ÿ @");
-    _Translate.set("is missing @ sign", "×—×¡×¨ ×¡×™×ž×Ÿ @");
-    _Translate.set("contains repeated dots", "×ž×›×™×œ ×ž×¡×¤×¨ × ×§×•×“×•×ª ×‘×¨×¦×£");
-    _Translate.set("starts with a dot", "×ž×ª×—×™×œ ×‘× ×§×•×“×”");
-    _Translate.set("domain is missing", "×—×¡×¨ ×©× ×“×•×ž×™×™×Ÿ");
-    _Translate.set("domain starts with a dot", "×©× ×”×“×•×ž×™×™×Ÿ ×ž×ª×—×™×œ ×‘× ×§×•×“×”");
-    _Translate.set("domain is not valid", "×©× ×”×“×•×ž×™×™×Ÿ ××™× ×• ×ª×§×™×Ÿ");
-    _Translate.set("domain ends with a dot", "×©× ×”×“×•×ž×™×™×Ÿ ×ž×¡×ª×™×™× ×‘× ×§×•×“×”");
-    phoneInput = "×ž×›×©×™×¨ ×˜×œ×¤×•×Ÿ";
-    titleInput = "×ª×•××¨";
-    firstNameInput = "×©× ×¤×¨×˜×™ ×ª×§× ×™";
-    lastNameInput = "×©× ×ž×©×¤×—×” ×ª×§× ×™";
-    emailInput = "×›×ª×•×‘×ª ××™×ž×™×™×œ";
+    _Translate.set("Processing...","מעבד...");
+    _Translate.set("Please Fix These Errors","נא לתקן את השגיאות הבאות");
+    _Translate.set("is not valid","לא תקין");
+    _Translate.set("is required","חובה");
+    _Translate.set("starts with @ sign","מתחיל בסימן @");
+    _Translate.set("is missing @ sign","חסר סימן @");
+    _Translate.set("contains repeated dots","מכיל מספר נקודות ברצף");
+    _Translate.set("starts with a dot","מתחיל בנקודה");
+    _Translate.set("domain is missing","חסר שם דומיין");
+    _Translate.set("domain starts with a dot","שם הדומיין מתחיל בנקודה");
+    _Translate.set("domain is not valid","שם הדומיין אינו תקין");
+    _Translate.set("domain ends with a dot","שם הדומיין מסתיים בנקודה");
+    phoneInput = "מכשיר טלפון";
+    titleInput = "תואר";
+    firstNameInput = "שם פרטי תקני";
+    lastNameInput = "שם משפחה תקני";
+    emailInput = "כתובת אימייל";
     mrInput = ".MR";
     msInput = ".MS";
     mrsInput = ".MRS";
-    newsInput = "×‘×¨×¦×•× ×™ ×œ×©×ž×•×¢ ×¢×œ ×—×“×©×•×ª ×•×ž×‘×¦×¢×™×";
-    privacyInput = "×§×¨××ª×™ ×•×”×¡×›×ž×ª×™ ×œ×ž×“×™× ×™×•×ª ×”×¤×¨×˜×™×•×ª";
-    phoneError = "× × ×œ×”×–×™×Ÿ ×ž×¡×¤×¨ ×˜×œ×¤×•×Ÿ ×ª×§× ×™";
-    emailError = "× × ×œ×”×–×™×Ÿ ×›×ª×•×‘×ª ××™×ž×™×™×œ ×ª×§× ×™×ª";
-    newsAndOffers = "×—×“×©×•×ª ×•×ž×‘×¦×¢×™×";
-    acceptPrivacyPolicy = "×§×‘×œ×ª ×ž×“×™× ×™×•×ª ×”×¤×¨×˜×™×•×ª";
-    lookingTo = "×”×× ××ª× ×ž×¢×•× ×™×™× ×™×";
-    invest = "×œ×”×©×§×™×¢";
-    buyaHome = "×œ×¨×›×•×© ×‘×™×ª";
-    workAtDamac = "×œ×¢×‘×•×“ @ DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
-    studio = "Studio";
+    newsInput = "ברצוני לשמוע על חדשות ומבצעים";
+    privacyInput = "קראתי והסכמתי למדיניות הפרטיות";
+    phoneError = "נא להזין מספר טלפון תקני";
+    emailError = "נא להזין כתובת אימייל תקנית";
+    newsAndOffers = "חדשות ומבצעים";
+    acceptPrivacyPolicy = "קבלת מדיניות הפרטיות";
+    lookingTo = "האם אתם מעוניינים";
+    areYouLookingTo = "האם אתם מעוניינים"; //add to other languages as well if needed
+    findAJob = "לעבוד @ DAMAC"; //add to other languages as well
+    invest = "להשקיע";
+    buyaHome = "לרכוש בית";
+    workAtDamac = "לעבוד @ DAMAC";
+    iAmAJobSeeker = "אני מחפש עבודה";
+    exploringDamac = "אני רק מתעניין";
+    propertyTypePreference = "מה סוג הנכס שאתה מחפש?";
+    villaHouse = "וילה/בית";
+    apartmentFlat = "דירה";
+    bedroomCountPreference = "לכמה חדרי שינה אתה זקוק?";
+    studio = "דירת סטודיו";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "×ž×ª×™ ××ª× ×ž×ª×›× × ×™× ×œ×¨×›×•×©?";
-    daysThirty = "×ª×•×š 30 ×™×•×";
-    daysNinety = "×ª×•×š 90 ×™×•×";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
-    btntext = "×œ×—×¦×• ×›××Ÿ";
-    labtext = "×œ×¢×•×“ ×¤×¨×˜×™× ×¢×œ × ×›×¡×™× ××—×¨×™× ×©×œ ×—×‘×¨×ª DAMAC";
-    contacted = "I can be contacted via";
-    sms = "SMS";
+    budgetRangePreference = "מה טווח התקציב?";
+    uptoOneM = "עד מיליון דירהם";
+    oneMtoTwoM = "מיליון דירהם עד 2 מיליון דירהם";
+    twoMtoFiveM = "2 מיליון דירהם עד 5 מיליון דירהם";
+    fiveMPlus = "יותר מ-5 מיליון דירהם";
+    whenToBuy = "מתי אתם מתכננים לרכוש?";
+    daysThirty = "תוך 30 יום";
+    daysNinety = "תוך 90 יום";
+    immediately = "באופן מיידי";
+    withinThreeMonths = "תוך 3 חודשים";
+    withinSixMonths = "תוך 6 חודשים";
+    stillConsidering = "עדיין חושב על זה";
+    btntext = "לחץ כאן";
+    labtext = "למידע נוסף בנושא נכסי DAMAC";
+    contacted = "ניתן ליצור איתי קשר באמצעות";
+    sms = "הודעת SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "שפה מועדפת";
   } else if (websiteLanguage == "CH") {
-    _Translate.set("Processing...", "å¤„ç†ä¸­...");
-    _Translate.set("Please Fix These Errors", "è¯·ä¿®å¤è¿™äº›é”™è¯¯");
-    _Translate.set("is not valid", "æ— æ•ˆä¿¡æ¯");
-    _Translate.set("is required", "å¿…å¡«ä¿¡æ¯");
-    _Translate.set("starts with @ sign", "ä»¥@ç¬¦å·å¼€å¤´");
-    _Translate.set("is missing @ sign", "ç¼ºå°‘@ç¬¦å·");
-    _Translate.set("contains repeated dots", "åŒ…å«é‡å¤çš„ç‚¹");
-    _Translate.set("starts with a dot", "ä»¥ç‚¹å¼€å¤´");
-    _Translate.set("domain is missing", "åŸŸåä¸¢å¤±");
-    _Translate.set("domain starts with a dot", "åŸŸåä»¥ç‚¹å¼€å¤´");
-    _Translate.set("domain is not valid", "åŸŸåæ— æ•ˆ");
-    _Translate.set("domain ends with a dot", "åŸŸåä»¥ç‚¹ç»“å°¾");
-    phoneInput = "é›»è©±";
-    titleInput = "ç¨±è¬‚";
-    firstNameInput = "åå­—";
-    lastNameInput = "å§“æ°";
-    emailInput = "é›»éƒµ";
-    mrInput = "å…ˆç”Ÿ";
-    msInput = "å°å§";
-    mrsInput = "å¥³å£«";
-    newsInput = "æˆ‘æ¨‚æ„æŽ¥æ”¶æ–°èžå’Œå„ªæƒ è³‡è¨Š";
-    privacyInput = "æˆ‘å·²é–±è®€ä¸¦åŒæ„ã€Šç§éš±æ”¿ç­–ã€‹";
-    phoneError = "è¯·è¾“å…¥ä¸€ä¸ªæœ‰æ•ˆçš„ç”µè¯å·ç ";
-    emailError = "è¾“å…¥æœ‰æ•ˆçš„ç”µå­é‚®ä»¶";
-    newsAndOffers = "æœ€æ–°æ¶ˆæ¯å’Œä¼˜æƒ ";
-    acceptPrivacyPolicy = "æŽ¥å—éšç§æ”¿ç­–";
-    lookingTo = "ä½ å¯å¸Œæœ›";
-    invest = "æŠ•è³‡";
-    buyaHome = "ç½®æ¥­";
-    workAtDamac = "åŠ å…¥@é”é¦¬å…‹å·¥ä½œ";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
-    studio = "Studio";
+    _Translate.set("Processing...","处理中...");
+    _Translate.set("Please Fix These Errors","请修复这些错误");
+    _Translate.set("is not valid","无效信息");
+    _Translate.set("is required","必填信息");
+    _Translate.set("starts with @ sign","以@符号开始");
+    _Translate.set("is missing @ sign","缺少@符号");
+    _Translate.set("contains repeated dots","包含重复的点");
+    _Translate.set("starts with a dot","以点开始");
+    _Translate.set("domain is missing","域名丢失");
+    _Translate.set("domain starts with a dot","域名以点开始");
+    _Translate.set("domain is not valid","域名无效");
+    _Translate.set("domain ends with a dot","域名以点结尾");
+    phoneInput = "電話";
+    titleInput = "称谓";
+    firstNameInput = "名字";
+    lastNameInput = "姓氏";
+    emailInput = "电子邮箱";
+    mrInput = "先生";
+    msInput = "小姐";
+    mrsInput = "女士";
+    newsInput = "我乐意接收新闻和优惠资讯";
+    privacyInput = "我已阅读并同意《隐私政策》";
+    phoneError = "请输入一个有效的电话号码";
+    emailError = "输入有效的电子邮件";
+    newsAndOffers = "最新消息和优惠";
+    acceptPrivacyPolicy = "接受隐私政策";
+    lookingTo = "你可希望";
+    areYouLookingTo = "你可希望"; //add to other languages as well if needed
+    findAJob = "加入@达马克工作"; //add to other languages as well
+    invest = "投资";
+    buyaHome = "置业";
+    workAtDamac = "加入@达马克工作";
+    iAmAJobSeeker = "我正在找工作";
+    exploringDamac = "我想了解一下基本情况";
+    propertyTypePreference = "您对哪种房产感兴趣？";
+    villaHouse = "别墅/房子";
+    apartmentFlat = "公寓";
+    bedroomCountPreference = "您需要几间卧室？";
+    studio = "单身公寓";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "ä½ æ‰“ç®—ä½•æ™‚è³¼è²·ï¼Ÿ";
-    daysThirty = "30å¤©å…§";
-    daysNinety = "90å¤©å…§";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
-    btntext = "å•å‡»æ­¤å¤„";
-    labtext = "æœ‰å…³å…¶ä»– DAMAC å±žæ€§çš„è¯¦ç»†ä¿¡æ¯";
-    contacted = "I can be contacted via";
-    sms = "SMS";
+    budgetRangePreference = "您的预算范围是多少？";
+    uptoOneM = "100万迪拉姆以内";
+    oneMtoTwoM = "100万迪拉姆至200万迪拉姆";
+    twoMtoFiveM = "200万迪拉姆至500万迪拉姆";
+    fiveMPlus = "500万迪拉姆以上";
+    whenToBuy = "你打算何時購買？";
+    daysThirty = "30天内";
+    daysNinety = "90天内";
+    immediately = "立即";
+    withinThreeMonths = "3个月内";
+    withinSixMonths = "6个月内";
+    stillConsidering = "仍在考虑中";
+    btntext = "单击此处";
+    labtext = "有关其他 DAMAC 属性的详细信息";
+    contacted = "可以通过以下方式联系我";
+    sms = "手机短信";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "首选语言";
   } else if (websiteLanguage == "IT") {
-    _Translate.set("Processing...", "In elaborazione...");
-    _Translate.set(
-      "Please Fix These Errors",
-      "Si prega di correggere gli errori",
-    );
-    _Translate.set("is not valid", "non Ã¨ un elemento valido");
-    _Translate.set("is required", "Ã¨ un elemento richiesto");
-    _Translate.set("starts with @ sign", "inizia con il simbolo @");
-    _Translate.set("is missing @ sign", "non contiene il simbolo @");
-    _Translate.set("contains repeated dots", "contiene piÃ¹ punti consecutivi");
-    _Translate.set("starts with a dot", "inizia con un punto");
-    _Translate.set("domain is missing", "non contiene il dominio");
-    _Translate.set(
-      "domain starts with a dot",
-      "il dominio inizia con un punto",
-    );
-    _Translate.set("domain is not valid", "il dominio non Ã¨ valido");
-    _Translate.set("domain ends with a dot", "il dominio termina con un punto");
+    _Translate.set("Processing...","In elaborazione...");
+    _Translate.set("Please Fix These Errors","Si prega di correggere gli errori");
+    _Translate.set("is not valid","non è un elemento valido");
+    _Translate.set("is required","è un elemento richiesto");
+    _Translate.set("starts with @ sign","inizia con il simbolo @");
+    _Translate.set("is missing @ sign","non contiene il simbolo @");
+    _Translate.set("contains repeated dots","contiene più punti consecutivi");
+    _Translate.set("starts with a dot","inizia con un punto");
+    _Translate.set("domain is missing","non contiene il dominio");
+    _Translate.set("domain starts with a dot","il dominio inizia con un punto");
+    _Translate.set("domain is not valid","il dominio non è valido");
+    _Translate.set("domain ends with a dot","il dominio termina con un punto");
     phoneInput = "Telefono";
     titleInput = "Titolo";
     firstNameInput = "Nome";
@@ -503,164 +484,183 @@ document.addEventListener("DOMContentLoaded", async function () {
     msInput = "Sig.ra";
     mrsInput = "Sig.na";
     newsInput = "Vorrei ricevere aggiornamenti e offerte";
-    privacyInput = "Ho letto e accetto lâ€™Informativa sulla Privacy";
+    privacyInput = "Ho letto e accetto l'Informativa sulla Privacy";
     phoneError = "Si prega di inserire un numero di telefono valido";
     emailError = "Inserire un indirizzo email valido";
     newsAndOffers = "Aggiornamenti e offerte";
-    acceptPrivacyPolicy = "Accettare lâ€™Informativa sulla Privacy";
+    acceptPrivacyPolicy = "Accettare l'Informativa sulla Privacy";
     lookingTo = "Vorresti";
+    areYouLookingTo = "Vorresti"; //add to other languages as well if needed
+    findAJob = "Lavorare a @ DAMAC"; //add to other languages as well
     invest = "Investire";
     buyaHome = "Acquistare una casa";
     workAtDamac = "Lavorare a @ DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    iAmAJobSeeker = "Cerco lavoro";
+    exploringDamac = "Mi sto solo informando";
+    propertyTypePreference = "Che genere di proprietà ti interessa?";
+    villaHouse = "Villa/Casa";
+    apartmentFlat = "Appartamento";
+    bedroomCountPreference = "Quante camere da letto ti servono?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "Quando vorresti effettuare lâ€™acquisto?";
+    budgetRangePreference = "Qual è il tuo budget?";
+    uptoOneM = "Fino a 1 milione di AED";
+    oneMtoTwoM = "Da 1 a 2 milioni di AED";
+    twoMtoFiveM = "Da 2 a 5 milioni di AED";
+    fiveMPlus = "Oltre 5 milioni di AED";
+    whenToBuy = "Quando vorresti effettuare l'acquisto?";
     daysThirty = "Entro 30 giorni";
     daysNinety = "Entro 90 giorni";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
+    immediately = "Subito";
+    withinThreeMonths = "Fra 3 mesi";
+    withinSixMonths = "Fra 6 mesi";
+    stillConsidering = "Ci sto ancora pensando";
     btntext = "Clicca qui";
-    labtext = "Per saperne di piÃ¹ sugli altri immobili DAMAC";
-    contacted = "I can be contacted via";
+    labtext = "Per saperne di più sugli altri immobili DAMAC";
+    contacted = "Contattatemi via";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Lingua di preferenza";
   } else if (websiteLanguage == "RU") {
-    _Translate.set("Processing...", "Ð’ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚ÐºÐµ...");
-    _Translate.set("Please Fix These Errors", "Ð˜ÑÐ¿Ñ€Ð°Ð²ÑŒÑ‚Ðµ Ð¾ÑˆÐ¸Ð±ÐºÐ¸");
-    _Translate.set("is not valid", "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð½ÐµÐ´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹");
-    _Translate.set("is required", "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ ÑƒÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ");
-    _Translate.set("starts with @ sign", "Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ÑÑ ÑÐ¾ Ð·Ð½Ð°ÐºÐ° @");
-    _Translate.set("is missing @ sign", "Ð½Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ð·Ð½Ð°ÐºÐ° @");
-    _Translate.set("contains repeated dots", "ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ð»Ð¸ÑˆÐ½Ð¸Ðµ Ñ‚Ð¾Ñ‡ÐºÐ¸");
-    _Translate.set("starts with a dot", "Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ÑÑ Ñ Ñ‚Ð¾Ñ‡ÐºÐ¸");
-    _Translate.set("domain is missing", "Ð´Ð¾Ð¼ÐµÐ½ Ð½Ðµ ÑƒÐºÐ°Ð·Ð°Ð½");
-    _Translate.set(
-      "domain starts with a dot",
-      "Ñ‚Ð¾Ñ‡ÐºÐ° Ð² Ð½Ð°Ñ‡Ð°Ð»Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ Ð´Ð¾Ð¼ÐµÐ½Ð°",
-    );
-    _Translate.set("domain is not valid", "Ð´Ð¾Ð¼ÐµÐ½ Ð½ÐµÐ´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÐµÐ½");
-    _Translate.set("domain ends with a dot", "Ñ‚Ð¾Ñ‡ÐºÐ° Ð² ÐºÐ¾Ð½Ñ†Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ Ð´Ð¾Ð¼ÐµÐ½Ð°");
-    phoneInput = "Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°";
-    titleInput = "Ð¤Ð¾Ñ€Ð¼Ð° Ð¾Ð±Ñ€Ð°Ñ‰ÐµÐ½Ð¸Ñ";
-    firstNameInput = "Ð˜Ð¼Ñ";
-    lastNameInput = "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ";
-    emailInput = "ÐÐ´Ñ€ÐµÑ ÑÐ»ÐµÐºÑ‚Ñ€Ð¾Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ñ‡Ñ‚Ñ‹";
-    mrInput = "Ð“-Ð½";
-    msInput = "Ð“-Ð¶Ð°";
-    newsInput = "Ð¯ Ñ…Ð¾Ñ‡Ñƒ Ð¿Ð¾Ð»ÑƒÑ‡Ð°Ñ‚ÑŒ Ð½Ð¾Ð²Ð¾ÑÑ‚Ð¸ Ð¸ Ð¿Ñ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ";
-    privacyInput = "Ð¯ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÑŽ ÑƒÑÐ»Ð¾Ð²Ð¸Ñ Ð¿Ð¾Ð»Ð¸Ñ‚Ð¸ÐºÐ¸ ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸";
-    phoneError = "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°";
-    emailError = "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹ Ð°Ð´Ñ€ÐµÑ ÑÐ». Ð¿Ð¾Ñ‡Ñ‚Ñ‹";
-    newsAndOffers = "ÐÐ¾Ð²Ð¾ÑÑ‚Ð¸ Ð¸ Ð¿Ñ€ÐµÐ´Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ";
-    acceptPrivacyPolicy = "ÐŸÑ€Ð¸Ð¼Ð¸Ñ‚Ðµ ÑƒÑÐ»Ð¾Ð²Ð¸Ñ ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ¸ ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸";
-    lookingTo = "Ð§Ñ‚Ð¾ Ð²Ð°Ñ Ð¸Ð½Ñ‚ÐµÑ€ÐµÑÑƒÐµÑ‚";
-    invest = "Ð˜Ð½Ð²ÐµÑÑ‚Ð¸Ñ†Ð¸Ð¸";
-    buyaHome = "ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð½ÐµÐ´Ð²Ð¸Ð¶Ð¸Ð¼Ð¾ÑÑ‚Ð¸";
-    workAtDamac = "Ð Ð°Ð±Ð¾Ñ‚Ð° Ð² DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
-    studio = "Studio";
+    _Translate.set("Processing...","В обработке...");
+    _Translate.set("Please Fix These Errors","Исправьте эти ошибки");
+    _Translate.set("is not valid","Данные недействительны");
+    _Translate.set("is required","Необходимо указать данные");
+    _Translate.set("starts with @ sign","начинается со знака @");
+    _Translate.set("is missing @ sign","не содержит знака @");
+    _Translate.set("contains repeated dots","содержит лишние точки");
+    _Translate.set("starts with a dot","начинается с точки");
+    _Translate.set("domain is missing","домен не указан");
+    _Translate.set("domain starts with a dot","точка в начале названия домена");
+    _Translate.set("domain is not valid","домен недействителен");
+    _Translate.set("domain ends with a dot","точка в конце названия домена");
+    phoneInput = "номер телефона";
+    titleInput = "Форма обращения";
+    firstNameInput = "Имя";
+    lastNameInput = "Фамилия";
+    emailInput = "Адрес электронной почты";
+    mrInput = "Г-н";
+    msInput = "Г-жа";
+    mrsInput = "Г-жа";
+    newsInput = "Я хочу получать новости и предложения";
+    privacyInput = "Я принимаю условия политики конфиденциальности";
+    phoneError = "Введите действительный номер телефона";
+    emailError = "Введите действительный адрес эл. почты";
+    newsAndOffers = "Новости и предложения";
+    acceptPrivacyPolicy = "Примите условия Политики конфиденциальности";
+    lookingTo = "Что вас интересует";
+    areYouLookingTo = "Что вас интересует"; //add to other languages as well if needed
+    findAJob = "Работа в DAMAC"; //add to other languages as well
+    invest = "Инвестиции";
+    buyaHome = "Покупка недвижимости";
+    workAtDamac = "Работа в DAMAC";
+    iAmAJobSeeker = "Я ищу работу";
+    exploringDamac = "Я просто изучаю";
+    propertyTypePreference = "Какой тип недвижимости вас интересует?";
+    villaHouse = "Вилла/дом";
+    apartmentFlat = "Квартира/апартаменты";
+    bedroomCountPreference = "Сколько спален вам нужно?";
+    studio = "Студия";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "ÐšÐ¾Ð³Ð´Ð° Ð²Ñ‹ Ð¿Ð»Ð°Ð½Ð¸Ñ€ÑƒÐµÑ‚Ðµ ÑÐ´ÐµÐ»Ð°Ñ‚ÑŒ Ð¿Ð¾ÐºÑƒÐ¿ÐºÑƒ?";
-    daysThirty = "Ð’ Ñ‚ÐµÑ‡ÐµÐ½Ð¸Ðµ 30 Ð´Ð½ÐµÐ¹";
-    daysNinety = "Ð’ Ñ‚ÐµÑ‡ÐµÐ½Ð¸Ðµ 90 Ð´Ð½ÐµÐ¹";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
-    btntext = "ÐÐ°Ð¶Ð¼Ð¸Ñ‚Ðµ Ð·Ð´ÐµÑÑŒ";
-    labtext = "ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½ÐµÐµ Ð¾ Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð¾Ð±ÑŠÐµÐºÑ‚Ð°Ñ… DAMAC Properties";
-    contacted = "I can be contacted via";
+    budgetRangePreference = "Каков ваш бюджет?";
+    uptoOneM = "До 1 млн дирхамов";
+    oneMtoTwoM = "От 1 до 2 млн дирхамов";
+    twoMtoFiveM = "От 2 до 5 млн дирхамов";
+    fiveMPlus = "Свыше 5 млн дирхамов";
+    whenToBuy = "Когда вы планируете сделать покупку?";
+    daysThirty = "В течение 30 дней";
+    daysNinety = "В течение 90 дней";
+    immediately = "Немедленно";
+    withinThreeMonths = "В течение 3 месяцев";
+    withinSixMonths = "В течение 6 месяцев";
+    stillConsidering = "Пока рассматриваю";
+    btntext = "Нажмите здесь";
+    labtext = "Подробнее о других объектах DAMAC Properties";
+    contacted = "Как со мной связаться:";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Предпочитаемый язык";
   } else if (websiteLanguage == "GK") {
-    _Translate.set("Processing...", "Î“Î¯Î½ÎµÏ„Î±Î¹ ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÎ¯Î±...");
-    _Translate.set("Please Fix These Errors", "Î”Î¹Î¿ÏÎ¸ÏŽÏƒÏ„Îµ Î±Ï…Ï„Î¬ Ï„Î± ÏƒÏ†Î¬Î»Î¼Î±Ï„Î±");
-    _Translate.set("is not valid", "Î´ÎµÎ½ ÎµÎ¯Î½Î±Î¹ Î­Î³ÎºÏ…ÏÎ¿");
-    _Translate.set("is required", "ÎµÎ¯Î½Î±Î¹ Ï…Ï€Î¿Ï‡ÏÎµÏ‰Ï„Î¹ÎºÏŒ");
-    _Translate.set("starts with @ sign", "Î¾ÎµÎºÎ¹Î½Î¬ Î¼Îµ Ï„Î¿ ÏƒÏÎ¼Î²Î¿Î»Î¿ @");
-    _Translate.set("is missing @ sign", "Î»ÎµÎ¯Ï€ÎµÎ¹ Ï„Î¿ ÏƒÏÎ¼Î²Î¿Î»Î¿ @");
-    _Translate.set(
-      "contains repeated dots",
-      "Ï€ÎµÏÎ¹Î­Ï‡ÎµÎ¹ ÎµÏ€Î±Î½Î±Î»Î±Î¼Î²Î±Î½ÏŒÎ¼ÎµÎ½ÎµÏ‚ Ï„ÎµÎ»ÎµÎ¯ÎµÏ‚",
-    );
-    _Translate.set("starts with a dot", "Î¾ÎµÎºÎ¹Î½Î¬ Î¼Îµ Î¼Î¹Î± Ï„ÎµÎ»ÎµÎ¯Î±");
-    _Translate.set("domain is missing", "Î»ÎµÎ¯Ï€ÎµÎ¹ Ï„Î¿ domain");
-    _Translate.set("domain starts with a dot", "Ï„Î¿ domain Î¾ÎµÎºÎ¹Î½Î¬ Î¼Îµ Ï„ÎµÎ»ÎµÎ¯Î±");
-    _Translate.set("domain is not valid", "Ï„Î¿ domain Î´ÎµÎ½ ÎµÎ¯Î½Î±Î¹ Î­Î³ÎºÏ…ÏÎ¿");
-    _Translate.set("domain ends with a dot", "Ï„Î¿ domain Î»Î®Î³ÎµÎ¹ ÏƒÎµ Ï„ÎµÎ»ÎµÎ¯Î±");
-    phoneInput = "Î¤Î·Î»Î­Ï†Ï‰Î½Î¿";
-    titleInput = "Î¤Î¯Ï„Î»Î¿Ï‚";
-    firstNameInput = "ÎŒÎ½Î¿Î¼Î±";
-    lastNameInput = "Î•Ï€ÏŽÎ½Ï…Î¼Î¿";
+    _Translate.set("Processing...","Γίνεται επεξεργασία...");
+    _Translate.set("Please Fix These Errors","Διορθώστε αυτά τα σφάλματα");
+    _Translate.set("is not valid","δεν είναι έγκυρο");
+    _Translate.set("is required","είναι υποχρεωτικό");
+    _Translate.set("starts with @ sign","ξεκινά με το σύμβολο @");
+    _Translate.set("is missing @ sign","λείπει το σύμβολο @");
+    _Translate.set("contains repeated dots","περιέχει επαναλαμβανόμενες τελείες");
+    _Translate.set("starts with a dot","ξεκινά με μια τελεία");
+    _Translate.set("domain is missing","λείπει το domain");
+    _Translate.set("domain starts with a dot","το domain ξεκινά με τελεία");
+    _Translate.set("domain is not valid","το domain δεν είναι έγκυρο");
+    _Translate.set("domain ends with a dot","το domain τελειώνει με τελεία");
+    phoneInput = "Τηλέφωνο";
+    titleInput = "Τίτλος";
+    firstNameInput = "Όνομα";
+    lastNameInput = "Επώνυμο";
     emailInput = "Email";
-    mrInput = "ÎšÎ¿Ï‚.";
-    msInput = "Î”Î¹Ï‚.";
-    mrsInput = "ÎšÎ±.";
-    newsInput = "Î˜Î­Î»Ï‰ Î½Î± Î¼Î±Î¸Î±Î¯Î½Ï‰ Î³Î¹Î± Ï„Î± Î½Î­Î± ÎºÎ±Î¹ Ï„Î¹Ï‚ Ï€ÏÎ¿ÏƒÏ†Î¿ÏÎ­Ï‚";
-    privacyInput = "ÎˆÏ‡Ï‰ Î´Î¹Î±Î²Î¬ÏƒÎµÎ¹ ÎºÎ±Î¹ ÏƒÏ…Î¼Ï†Ï‰Î½ÏŽ Î¼Îµ Ï„Î·Î½ Î Î¿Î»Î¹Ï„Î¹ÎºÎ® Î±Ï€Î¿ÏÏÎ®Ï„Î¿Ï…";
-    phoneError = "Î•Î¹ÏƒÎ±Î³Î¬Î³ÎµÏ„Îµ Î­Î³ÎºÏ…ÏÎ¿ Î±ÏÎ¹Î¸Î¼ÏŒ Ï„Î·Î»ÎµÏ†ÏŽÎ½Î¿Ï…";
-    emailError = "Î•Î¹ÏƒÎ±Î³Î¬Î³ÎµÏ„Îµ Î­Î³ÎºÏ…ÏÎ¿ email";
-    newsAndOffers = "ÎÎ­Î± ÎºÎ±Î¹ Ï€ÏÎ¿ÏƒÏ†Î¿ÏÎ­Ï‚";
-    acceptPrivacyPolicy = "Î‘Ï€Î¿Î´Î¿Ï‡Î® Î Î¿Î»Î¹Ï„Î¹ÎºÎ®Ï‚ Î±Ï€Î¿ÏÏÎ®Ï„Î¿Ï…";
-    btntext = "ÎšÎ¬Î½Ï„Îµ ÎºÎ»Î¹Îº ÎµÎ´ÏŽ";
-    labtext = "Î“Î¹Î± Ï€ÎµÏÎ¹ÏƒÏƒÏŒÏ„ÎµÏÎµÏ‚ Ï€Î»Î·ÏÎ¿Ï†Î¿ÏÎ¯ÎµÏ‚ ÏƒÏ‡ÎµÏ„Î¹ÎºÎ¬ Î¼Îµ Î¬Î»Î»Î± ÎºÎ±Ï„Î±Î»ÏÎ¼Î±Ï„Î± DAMAC";
-    contacted = "I can be contacted via";
+    mrInput = "Κος.";
+    msInput = "Δις.";
+    mrsInput = "Κα.";
+    newsInput = "Θέλω να μαθαίνω για τα νέα και τις προσφορές";
+    privacyInput = "Έχω διαβάσει και συμφωνώ με την Πολιτική απορρήτου";
+    phoneError = "Εισαγάγετε έγκυρο αριθμό τηλεφώνου";
+    emailError = "Εισαγάγετε έγκυρο email";
+    newsAndOffers = "Νέα και προσφορές";
+    acceptPrivacyPolicy = "Αποδοχή Πολιτικής απορρήτου";
+    lookingTo = "Τι θα θέλατε να κάνετε σήμερα;";
+    areYouLookingTo = "Τι θα θέλατε να κάνετε σήμερα;"; //add to other languages as well if needed
+    findAJob = "Εργασία @ DAMAC"; //add to other languages as well
+    invest = "Επένδυση";
+    buyaHome = "Αγορά σπιτιού";
+    workAtDamac = "Εργασία @ DAMAC";
+    iAmAJobSeeker = "Αναζητώ εργασία";
+    exploringDamac = "Απλώς κοιτάω";
+    propertyTypePreference = "Για τι είδους ακίνητο ενδιαφέρεστε;";
+    villaHouse = "Βίλα / Σπίτι";
+    apartmentFlat = "Διαμέρισμα";
+    bedroomCountPreference = "Πόσες κρεβατοκάμαρες χρειάζεστε;";
+    studio = "Στούντιο";
+    oneBr = "1";
+    twoBr = "2";
+    threeBr = "3";
+    fourPlusBr = "4+";
+    budgetRangePreference = "Ποιο είναι το εύρος του προϋπολογισμού σας;";
+    uptoOneM = "Έως 1 εκατ. Ντιράμ Ηνωμένων Αραβικών Εμιράτων";
+    oneMtoTwoM = "1 εκατ. έως 2 εκατ. Ντιράμ Ηνωμένων Αραβικών Εμιράτων";
+    twoMtoFiveM = "2 εκατ. έως 5 εκατ. Ντιράμ Ηνωμένων Αραβικών Εμιράτων";
+    fiveMPlus = "Πάνω από 5 εκατ. Ντιράμ Ηνωμένων Αραβικών Εμιράτων";
+    whenToBuy = "Πότε σκοπεύετε να κάνετε την αγορά;";
+    daysThirty = "Εντός 30 ημερών";
+    daysNinety = "Εντός 90 ημερών";
+    immediately = "Άμεσα";
+    withinThreeMonths = "Εντός 3 μηνών";
+    withinSixMonths = "Εντός 6 μηνών";
+    stillConsidering = "Δεν έχω αποφασίσει ακόμη";
+    btntext = "Κάντε κλικ εδώ";
+    labtext = "Για περισσότερες πληροφορίες σχετικά με άλλα καταλύματα DAMAC";
+    contacted = "Μπορείτε να επικοινωνήσετε μαζί μου μέσω";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Προτιμώμενη γλώσσα";
   } else if (websiteLanguage == "GR") {
-    _Translate.set("Processing...", "Verarbeitung lÃ¤uft...");
-    _Translate.set("Please Fix These Errors", "Bitte beheben Sie diese Fehler");
-    _Translate.set("is not valid", "ist ungÃ¼ltig");
-    _Translate.set("is required", "ist erforderlich");
-    _Translate.set("starts with @ sign", "beginnt mit @-Zeichen");
-    _Translate.set("is missing @ sign", "@-Zeichen fehlt");
-    _Translate.set("contains repeated dots", "enthÃ¤lt wiederholte Punkte");
-    _Translate.set("starts with a dot", "beginnt mit einem Punkt");
-    _Translate.set("domain is missing", "Domain fehlt");
-    _Translate.set(
-      "domain starts with a dot",
-      "Domain beginnt mit einem Punkt",
-    );
-    _Translate.set("domain is not valid", "Domain ist ungÃ¼ltig");
-    _Translate.set("domain ends with a dot", "Domain endet mit einem Punkt");
+    _Translate.set("Processing...","Verarbeitung läuft...");
+    _Translate.set("Please Fix These Errors","Bitte beheben Sie diese Fehler");
+    _Translate.set("is not valid","ist ungültig");
+    _Translate.set("is required","ist erforderlich");
+    _Translate.set("starts with @ sign","beginnt mit @-Zeichen");
+    _Translate.set("is missing @ sign","@-Zeichen fehlt");
+    _Translate.set("contains repeated dots","enthält wiederholte Punkte");
+    _Translate.set("starts with a dot","beginnt mit einem Punkt");
+    _Translate.set("domain is missing","Domain fehlt");
+    _Translate.set("domain starts with a dot","Domain beginnt mit einem Punkt");
+    _Translate.set("domain is not valid","Domain ist ungültig");
+    _Translate.set("domain ends with a dot","Domain endet mit einem Punkt");
     phoneInput = "Telefonnummer";
     titleInput = "Anrede";
     firstNameInput = "Vorname";
@@ -668,64 +668,62 @@ document.addEventListener("DOMContentLoaded", async function () {
     emailInput = "E-Mail";
     mrInput = "Herr";
     msInput = "Frau";
-    mrsInput = "FrÃ¤ulein";
-    newsInput = "Ich mÃ¶chte Ã¼ber Neuigkeiten und Angebote informiert werden";
-    privacyInput =
-      "Ich habe die Datenschutzbestimmungen gelesen und stimme ihnen zu";
-    phoneError = "Bitte geben Sie eine gÃ¼ltige Telefonnummer ein";
-    emailError = "Bitte geben Sie eine gÃ¼ltige E-Mail-Adresse ein";
+    mrsInput = "Fräulein";
+    newsInput = "Ich möchte über Neuigkeiten und Angebote informiert werden";
+    privacyInput = "Ich habe die Datenschutzbestimmungen gelesen und stimme ihnen zu";
+    phoneError = "Bitte geben Sie eine gültige Telefonnummer ein";
+    emailError = "Bitte geben Sie eine gültige E-Mail-Adresse ein";
     newsAndOffers = "Neuigkeiten und Angebote";
     acceptPrivacyPolicy = "Akzeptieren Datenschutzbestimmungen";
     lookingTo = "Wollen Sie";
+    areYouLookingTo = "Wollen Sie"; //add to other languages as well if needed
+    findAJob = "Bei @ DAMAC arbeiten"; //add to other languages as well
     invest = "investieren";
     buyaHome = "ein Zuhause kaufen";
     workAtDamac = "Bei @ DAMAC arbeiten";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    iAmAJobSeeker = "Ich bin auf Arbeitssuche";
+    exploringDamac = "Ich bin auf der Suche";
+    propertyTypePreference = "Für welche Art von Immobilie interessieren Sie sich?";
+    villaHouse = "Villa/Haus";
+    apartmentFlat = "Appartement/Wohnung";
+    bedroomCountPreference = "Wie viele Schlafzimmer benötigen Sie?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "Wann mÃ¶chten Sie kaufen?";
-    daysThirty = "Inerhalb kommenden 30 Tage";
-    daysNinety = "Inerhalb kommenden 90 Tage";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
+    budgetRangePreference = "Wie hoch ist Ihr Budget?";
+    uptoOneM = "Bis zu AED 1 Mio.";
+    oneMtoTwoM = "AED 1 Mio. - 2 Mio.";
+    twoMtoFiveM = "AED 2 Mio. - 5 Mio.";
+    fiveMPlus = "Mehr als AED 5 Mio.";
+    whenToBuy = "Wann möchten Sie kaufen?";
+    daysThirty = "Innerhalb kommenden 30 Tage";
+    daysNinety = "Innerhalb kommenden 90 Tage";
+    immediately = "Sofort";
+    withinThreeMonths = "Innerhalb von 3 Monaten";
+    withinSixMonths = "Innerhalb von 6 Monaten";
+    stillConsidering = "Bin noch am überlegen";
     btntext = "Hier klicken";
     labtext = "Hier finden Sie weitere Infos zu Immobilien von DAMAC";
-    contacted = "I can be contacted via";
+    contacted = "Man kann mich kontaktieren via";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Bevorzugte Sprache";
   } else if (websiteLanguage == "NL") {
-    _Translate.set("Processing...", "Verwerken...");
-    _Translate.set("Please Fix These Errors", "Corrigeer deze fouten a.u.b.");
-    _Translate.set("is not valid", "is niet geldig");
-    _Translate.set("is required", "Is benodigd");
-    _Translate.set("starts with @ sign", "begint met @-teken");
-    _Translate.set("is missing @ sign", "ontbreekt @-teken");
-    _Translate.set("contains repeated dots", "bevat herhaalde punten");
-    _Translate.set("starts with a dot", "begint met een punt");
-    _Translate.set("domain is missing", "domein ontbreekt");
-    _Translate.set("domain starts with a dot", "domein begint met een punt");
-    _Translate.set("domain is not valid", "domein is niet geldig");
-    _Translate.set("domain ends with a dot", "domein eindigt op een punt");
-    phoneInput = "Telefoonnummer in";
+    _Translate.set("Processing...","Verwerken...");
+    _Translate.set("Please Fix These Errors","Corrigeer deze fouten a.u.b.");
+    _Translate.set("is not valid","is niet geldig");
+    _Translate.set("is required","Is benodigd");
+    _Translate.set("starts with @ sign","begint met @-teken");
+    _Translate.set("is missing @ sign","ontbreekt @-teken");
+    _Translate.set("contains repeated dots","bevat herhaalde punten");
+    _Translate.set("starts with a dot","begint met een punt");
+    _Translate.set("domain is missing","domein ontbreekt");
+    _Translate.set("domain starts with a dot","domein begint met een punt");
+    _Translate.set("domain is not valid","domein is niet geldig");
+    _Translate.set("domain ends with a dot","domein eindigt op een punt");
+    phoneInput = "Telefoonnummer";
     titleInput = "Aanhef";
     firstNameInput = "Voornaam";
     lastNameInput = "Achternaam";
@@ -737,112 +735,167 @@ document.addEventListener("DOMContentLoaded", async function () {
     privacyInput = "Ik heb het privacybeleid gelezen en ga ermee akkoord";
     phoneError = "Voer alstublieft een geldig telefoonnummer in";
     emailError = "Voer een geldig e-mailadres in";
-    newsAndOffers = "Nieuws en aanbiedingen";
-    acceptPrivacyPolicy = "Accepteer privacybeleid";
-    lookingTo = "Ben je op zoek naar";
+    newsAndOffers = "News And Offers";
+    acceptPrivacyPolicy = "Accept Privacy Policy";
+    lookingTo = "Wilt u graag";
+    areYouLookingTo = "Wilt u graag"; //add to other languages as well if needed
+    findAJob = "Werk @ DAMAC"; //add to other languages as well
     invest = "Investeren";
     buyaHome = "Een huis kopen";
     workAtDamac = "Werk @ DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    iAmAJobSeeker = "Ik zoek een baan";
+    exploringDamac = "Ik kijk alleen even rond";
+    propertyTypePreference = "Naar welk type woning ben je op zoek?";
+    villaHouse = "Villa/huis";
+    apartmentFlat = "Appartement/flat";
+    bedroomCountPreference = "Hoeveel slaapkamers moeten er zijn?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "Wanneer ben je van plan om te kopen?";
+    budgetRangePreference = "Wat is je budget?";
+    uptoOneM = "Tot 1 miljoen AED";
+    oneMtoTwoM = "Tussen 1 en 2 miljoen AED";
+    twoMtoFiveM = "Tussen 2 en 5 miljoen AED";
+    fiveMPlus = "Meer dan 5 miljoen AED";
+    whenToBuy = "Wanneer bent u van plan te kopen?";
     daysThirty = "In 30 dagen";
     daysNinety = "Binnen 90 dagen";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
+    immediately = "Per direct";
+    withinThreeMonths = "Binnen 3 maanden";
+    withinSixMonths = "Binnen 6 maanden";
+    stillConsidering = "Weet het nog niet";
     btntext = "KLIK HIER";
-    labtext = "Voor meer informatie over andere DAMAC-eigenschappen:";
+    labtext = "Voor meer informatie over andere DAMAC-eigenschappen";
     contacted = "Ik ben bereikbaar via";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Voorkeurstaal";
   } else if (websiteLanguage == "RO") {
-    _Translate.set("Processing...", "Se proceseazÄƒâ€¦...");
-
-    _Translate.set(
-      "Please Fix These Errors",
-      "VÄƒ rugÄƒm sÄƒ remediaÈ›i aceste erori",
-    );
-
-    _Translate.set("is not valid", "nu este valid");
-    _Translate.set("is required", "este obligatoriu");
-    _Translate.set("starts with @ sign", "Ã®ncepe cu semnul @");
-    _Translate.set("is missing @ sign", "semnul @ lipseÈ™te");
-    _Translate.set("contains repeated dots", "conÈ›ine puncte repetate");
-    _Translate.set("starts with a dot", "Ã®ncepe cu un punct");
-    _Translate.set("domain is missing", "lipseÈ™te 'domeniul");
-    _Translate.set("domain starts with a dot", "domeniul Ã®ncepe cu un punct");
-    _Translate.set("domain is not valid", "domeniul nu este valid");
-    _Translate.set("domain ends with a dot", "domeniul se Ã®ncheie cu un punct");
+    _Translate.set("Processing...","Se procesează…...");
+    _Translate.set("Please Fix These Errors","Vă rugăm să remediați aceste erori");
+    _Translate.set("is not valid","nu este valid");
+    _Translate.set("is required","este obligatoriu");
+    _Translate.set("starts with @ sign","începe cu semnul @");
+    _Translate.set("is missing @ sign","semnul @ lipsește");
+    _Translate.set("contains repeated dots","conține puncte repetate");
+    _Translate.set("starts with a dot","începe cu un punct");
+    _Translate.set("domain is missing","lipsește domeniul");
+    _Translate.set("domain starts with a dot","domeniul începe cu un punct");
+    _Translate.set("domain is not valid","domeniul nu este valid");
+    _Translate.set("domain ends with a dot","domeniul se încheie cu un punct");
     phoneInput = "De telefon";
-    titleInput = "SelectaÈ›i o titulaturÄƒ";
-    firstNameInput = "IntroduceÈ›i un prenume valid";
-    lastNameInput = "IntroduceÈ›i un nume de familie valid";
-    emailInput = "IntroduceÈ›i o adresÄƒ de e-mail validÄƒ";
+    titleInput = "Selectați o titulatură";
+    firstNameInput = "Prenume";
+    lastNameInput = "Nume de familie";
+    emailInput = "Adresă de e-mail";
     mrInput = "Dl";
     msInput = "Dna";
     mrsInput = "Dra";
-    newsInput = "Doresc sÄƒ primesc noutÄƒÈ›i È™i oferte";
-    privacyInput = "Am citit È™i sunt de acord cu Politica de confidenÈ›ialitate";
-    phoneError = "IntroduceÈ›i un numÄƒr de telefon valid";
-    emailError = "IntroduceÈ›i o adresÄƒ de e-mail validÄƒ";
-    newsAndOffers = "NoutÄƒÈ›i È™i oferte";
-    acceptPrivacyPolicy = "Accept Politica de confidenÈ›ialitate";
-    lookingTo = "VÄƒ intereseazÄƒ";
-    invest = "SÄƒ investiÈ›i";
-    buyaHome = "SÄƒ cumpÄƒraÈ›i o casÄƒ";
-    workAtDamac = "SÄƒ lucraÈ›i la DAMAC";
-    iAmAJobSeeker = "I am a job seeker";
-    exploringDamac = "I am just exploring";
-    propertyTypePreference = "What kind of property interests you?";
-    villaHouse = "Villa/House";
-    apartmentFlat = "Apartment/Flat";
-
-    bedroomCountPreference = "How many bedrooms do you need?";
+    newsInput = "Doresc să primesc noutăți și oferte";
+    privacyInput = "Am citit și sunt de acord cu Politica de confidențialitate";
+    phoneError = "Introduceți un număr de telefon valid";
+    emailError = "Introduceți o adresă de e-mail validă";
+    newsAndOffers = "Noutăți și oferte";
+    acceptPrivacyPolicy = "Accept Politica de confidențialitate";
+    lookingTo = "Vă interesează";
+    areYouLookingTo = "Vă interesează"; //add to other languages as well if needed
+    findAJob = "Să lucrați la DAMAC"; //add to other languages as well
+    invest = "Să investiți";
+    buyaHome = "Să cumpărați o casă";
+    workAtDamac = "Să lucrați la DAMAC";
+    iAmAJobSeeker = "Caut un loc de muncă";
+    exploringDamac = "Doar explorez";
+    propertyTypePreference = "Ce tip de proprietate vă interesează?";
+    villaHouse = "Vilă/Casă";
+    apartmentFlat = "Apartament";
+    bedroomCountPreference = "De câte dormitoare aveți nevoie?";
     studio = "Studio";
     oneBr = "1";
     twoBr = "2";
     threeBr = "3";
     fourPlusBr = "4+";
-    budgetRangePreference = "What is your budget range?";
-    uptoOneM = "Up to AED 1M";
-    oneMtoTwoM = "AED 1M to AED 2M";
-    twoMtoFiveM = "AED 2M to AED 5M";
-    fiveMPlus = "Above AED 5M";
-
-    whenToBuy = "CÃ¢nd intenÈ›ionaÈ›i sÄƒ cumpÄƒraÈ›i ?";
-    daysThirty = "ÃŽn urmÄƒtoarele 30 de zile";
-    daysNinety = "ÃŽn urmÄƒtoarele 90 de zile";
-    immediately = "Immediately";
-    withinThreeMonths = "Within 3 Months";
-    withinSixMonths = "Within 6 Months";
-    stillConsidering = "Still considering";
-
-    btntext = "APÄ‚SAÈšI AICI";
-    labtext = "Pentru mai multe informaÈ›ii despre DAMAC Properties";
-    contacted = "MÄƒ puteÈ›i contactata prin";
+    budgetRangePreference = "Care este intervalul în care se încadrează bugetul dvs.?";
+    uptoOneM = "Până la 1 milion AED";
+    oneMtoTwoM = "Între 1 milion AED și 2 milioane AED";
+    twoMtoFiveM = "Între 2 milioane AED și 5 milioane AED";
+    fiveMPlus = "Peste 5 milioane AED";
+    whenToBuy = "Când intenționați să cumpărați?";
+    daysThirty = "În următoarele 30 de zile";
+    daysNinety = "În următoarele 90 de zile";
+    immediately = "Imediat";
+    withinThreeMonths = "În 3 luni";
+    withinSixMonths = "În 6 luni";
+    stillConsidering = "Încă mă gândesc";
+    btntext = "APĂSAȚI AICI";
+    labtext = "Pentru mai multe informații despre DAMAC Properties";
+    contacted = "Mă puteți contactata prin";
     sms = "SMS";
     whatsapp = "WhatsApp";
-    preferredLanguageInput = "Preferred Language";
+    preferredLanguageInput = "Limbă preferată";
+  } else if (websiteLanguage == "TR") { //TURKISH
+    _Translate.set("Processing...","İşleniyor...");
+    _Translate.set("Please Fix These Errors","Lütfen Bu Hataları Düzeltin");
+    _Translate.set("is not valid","geçerli değil");
+    _Translate.set("is required","gerekli");
+    _Translate.set("starts with @ sign","@ işareti ile başlıyor");
+    _Translate.set("is missing @ sign","@ işareti eksik");
+    _Translate.set("contains repeated dots","yinelenen noktalar içeriyor");
+    _Translate.set("starts with a dot","bir nokta ile başlıyor");
+    _Translate.set("domain is missing","etki alanı eksik");
+    _Translate.set("domain starts with a dot","etki alanı bir nokta ile başlıyor");
+    _Translate.set("domain is not valid","etki alanı geçerli değil");
+    _Translate.set("domain ends with a dot","etki alanı bir nokta ile bitiyor");
+    phoneInput = "Telefon";
+    titleInput = "Ünvan";
+    firstNameInput = "Ad";
+    lastNameInput = "Soyadı";
+    emailInput = "E-posta";
+    mrInput = "Bay";
+    msInput = "Bayan";
+    mrsInput = "Bayan";
+    newsInput = "Haberler ve teklifler hakkında bilgi almak istiyorum";
+    privacyInput = "Gizlilik Politikasını okudum ve kabul ediyorum";
+    phoneError = "Lütfen geçerli bir telefon numarası girin";
+    emailError = "Geçerli bir e-posta adresi girin";
+    newsAndOffers = "Haberler ve Teklifler";
+    acceptPrivacyPolicy = "Gizlilik Politikasını Kabul Et";
+    lookingTo = "Bugün ne yapmak istiyorsunuz?";
+    areYouLookingTo = "Bugün ne yapmak istiyorsunuz?"; //add to other languages as well if needed
+    findAJob = "DAMAC ile çalışmak"; //add to other languages as well
+    invest = "Yatırım yapmak";
+    buyaHome = "Ev satın almak";
+    workAtDamac = "DAMAC ile çalışmak";
+    iAmAJobSeeker = "İş arıyorum";
+    exploringDamac = "Yalnızca araştırma yapıyorum";
+    propertyTypePreference = "Ne tür bir gayrimenkulle ilgileniyorsunuz?";
+    villaHouse = "Villa/Ev";
+    apartmentFlat = "Daire";
+    bedroomCountPreference = "Kaç yatak odasına ihtiyacınız var?";
+    studio = "Stüdyo";
+    oneBr = "1";
+    twoBr = "2";
+    threeBr = "3";
+    fourPlusBr = "4+";
+    budgetRangePreference = "Bütçe aralığınız nedir?";
+    uptoOneM = "1 M BAE dirhemine kadar";
+    oneMtoTwoM = "1 M ila 2 M BAE dirhemi";
+    twoMtoFiveM = "2 M ila 5 M BAE dirhemi";
+    fiveMPlus = "5 M BAE dirheminden fazla";
+    whenToBuy = "Satın alma işlemini ne zaman gerçekleştirmeyi planlıyorsunuz?";
+    daysThirty = "30 gün içinde";
+    daysNinety = "90 gün içinde";
+    immediately = "Hemen";
+    withinThreeMonths = "3 ay içinde";
+    withinSixMonths = "6 ay içinde";
+    stillConsidering = "Hâlâ düşünüyorum";
+    btntext = "BURAYA TIKLAYIN";
+    labtext = "Diğer DAMAC Gayrimenkulleri hakkında daha fazla bilgi için";
+    contacted = "Bana ulaşılmasını istediğim kanal";
+    sms = "SMS";
+    whatsapp = "WhatsApp";
+    preferredLanguageInput = "Tercih Edilen Dil";
   } else {
     _Translate.set("Processing...", "Processing...");
     _Translate.set("Please Fix These Errors", "Please Fix These Errors");
