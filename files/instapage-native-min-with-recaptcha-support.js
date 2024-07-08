@@ -1429,8 +1429,10 @@ window.addEventListener("DOMContentLoaded", function () {
                     grecaptcha.execute('6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb', {action: 'submit'}).then(function(token) {
                         // Add the token to the hidden input field
                         data['validationToken'] = token;
-                        console.log(`Token received: ${token}`);
-                        console.log(`Now sending data:`, data);
+
+                        // console.log(`Token received: ${token}`);
+                        // console.log(`Now sending data:`, data);
+                        
                         // Now submit the form
                         // document.getElementById('myForm').submit();
                         $.ajax({
