@@ -54,26 +54,6 @@ websiteLanguage = $("input[name='websiteLanguage']").val();
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
 
-    //   function appendRecaptchaTokenHolderToForms() {
-    //     // Get all forms on the page
-    //     const forms = document.getElementsByTagName('form');
-      
-    //     // Iterate through each form
-    //     for (let i = 0; i < forms.length; i++) {
-    //         const form = forms[i];
-
-    //         //  Create new hidden input for recaptcha token
-    //         const captchaTokenField = document.createElement('input');
-    //         captchaTokenField.type = 'hidden';
-    //         captchaTokenField.id = 'recaptchaToken';
-    //         captchaTokenField.name = 'recaptcha_token'
-
-    //         form.appendChild(captchaTokenField);
-    //     }
-    //   }
-
-    //   appendRecaptchaTokenHolderToForms()
-
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
@@ -1432,7 +1412,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
                         // console.log(`Token received: ${token}`);
                         // console.log(`Now sending data:`, data);
-                        
+
                         // Now submit the form
                         // document.getElementById('myForm').submit();
                         $.ajax({
