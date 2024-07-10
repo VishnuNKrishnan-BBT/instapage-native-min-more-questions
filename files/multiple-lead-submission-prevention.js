@@ -1438,6 +1438,15 @@ window.addEventListener("DOMContentLoaded", function () {
                             data: data,
                 
                             success: function (json) {
+                                //RESET SUBMIT BUTTON
+                                submitBtns.map(obj => {
+                                    obj.innerHTML = 'ENQUIRE NOW'
+                                    obj.disabled = false
+                                    obj.style.color = '#ffffff'
+                                    obj.style.backgroundColor = '#41C4F2'
+                                    obj.style.cursor = 'pointer'
+                                    obj.disabled = FALSE
+                                })
                               var gender = data.title == "MR." ? "male" : "female";
                               const hashedEmail = "NA";
                               const hashedPhone = "NA";
