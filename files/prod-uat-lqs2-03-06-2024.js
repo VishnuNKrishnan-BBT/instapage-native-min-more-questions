@@ -427,6 +427,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       document.head.appendChild(script);
   }
 
+  //Import reCAPTCHA script into the <head>.
   loadScript(`https://www.google.com/recaptcha/api.js?render=${reCAPTCHASiteKey}`, function() {
     console.log('Recaptcha enabled.');
   })
@@ -1863,38 +1864,51 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //Send to LQS 1
         if (sendToLQS1 && formValid.isValid()) {
-          $.ajax({
-            url: lqs1EndPoint,
-            beforeSend: function (xhr) {
-              xhr.setRequestHeader(
-                "Authorization",
-                lqs1authKey,
-              );
-            },
-            type: "POST",
-            data: data,
+          // console.log(`Contacting reCaptcha`);
+                grecaptcha.ready(function() {
+                    grecaptcha.execute(reCAPTCHASiteKey, {action: 'submit'}).then(function(token) {
+                        // Add the token to the hidden input field
+                        data['validationToken'] = token;
 
-            success: function (json) {
-              var gender = data.title == "MR." ? "male" : "female";
-              const hashedEmail = "NA";
-              const hashedPhone = "NA";
-              landingCMSThankYou(
-                gender,
-                hashedEmail,
-                hashedPhone,
-                null,
-                null,
-                data.page_variant,
-                data.email,
-              );
-              submitUrl();
-              // //console.log(json);
-              handler(e);
-            },
-            error: function (err) {
-              //console.log("Request failed, error= " + err);
-            },
-          });
+                        // console.log(`Token received: ${token}`);
+                        // console.log(`Now sending data:`, data);
+
+                        // Now submit the form
+                        // document.getElementById('myForm').submit();
+                        $.ajax({
+                            url: lqs1EndPoint,
+                            beforeSend: function (xhr) {
+                              xhr.setRequestHeader(
+                                "Authorization",
+                                lqs1authKey
+                              );
+                            },
+                            type: "POST",
+                            data: data,
+                
+                            success: function (json) {
+                              var gender = data.title == "MR." ? "male" : "female";
+                              const hashedEmail = "NA";
+                              const hashedPhone = "NA";
+                              landingCMSThankYou(
+                                gender,
+                                hashedEmail,
+                                hashedPhone,
+                                null,
+                                null,
+                                data.page_variant,
+                                data.email,
+                              );
+                              submitUrl();
+                              // //console.log(json);
+                              handler(e);
+                            },
+                            error: function (err) {
+                              //console.log("Request failed, error= " + err);
+                            },
+                          });
+                    });
+                });
         } else {
           handler(e);
         }
