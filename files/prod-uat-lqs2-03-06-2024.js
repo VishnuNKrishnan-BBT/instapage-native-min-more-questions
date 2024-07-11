@@ -1843,7 +1843,7 @@ window.addEventListener("DOMContentLoaded", function () {
         data.Lead_Gen_Identifier = 'instapage'
 
         //Disable submit buttons
-        if(sendToLQS1 || sendToLQS2){
+        if(formValid.isValid() && (sendToLQS1 || sendToLQS2)){
           toggleSubmitBtns('disable')
         }
 
