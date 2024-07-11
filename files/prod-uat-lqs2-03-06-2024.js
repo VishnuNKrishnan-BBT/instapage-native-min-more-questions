@@ -297,7 +297,7 @@ const toggleSubmitBtns = mode => {
     return
   }
 
-  if(mode !== 'disable'){
+  if(mode === 'disable'){
     //Disable submit button
     submitBtns.map(obj => {
       obj.innerHTML = 'SUBMITTING'
