@@ -24,6 +24,13 @@ const lqs2leadEndpoint = "https://uat-mashery.damacgroup.com/v1/lqs/redis";
 
 
 
+// ======== R E C A P T C H A   C O N F I G ========
+const reCAPTCHASiteKey = '6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb'
+// ======== E N D   O F   R E C A P T C H A   C O N F I G ========
+
+
+
+
 // ======== I T I   T O   S F   C O U N T R Y   A D A P T O R   A N D   R E T R I E V A L   F U N C T I O N S ========
 const itiSFCountryAdaptor = [
     {  name: "Afghanistan (‫افغانستان‬‎)", diallingCode: "+93", sendAs: { country: "Afghanistan", countryCode: "Afghanistan: 0093" }  },
@@ -406,6 +413,25 @@ let code //Country Code selected in iti
 
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
+
+  function loadScript(url, callback) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+
+      // Check for callback
+      if (callback) {
+          script.onload = callback;
+      }
+
+      document.head.appendChild(script);
+  }
+
+  loadScript(`https://www.google.com/recaptcha/api.js?render=${reCAPTCHASiteKey}`, function() {
+    console.log('Recaptcha enabled.');
+  })
+
+
   // _Translate.set( original in English, translated );
   if (websiteLanguage == "EN") {
     _Translate.set("Processing...", "Processing...");
