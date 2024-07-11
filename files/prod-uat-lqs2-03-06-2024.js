@@ -343,9 +343,11 @@ const pushToNewLQS = data => {
       })
       .then(data => {
         console.log('Success:', data)
+        toggleSubmitBtns('enable')
       })
       .catch(error => {
         console.error('Error:', error)
+        toggleSubmitBtns('enable')
       })
   }
 // ======== E N D   O F   F U N C T I O N S ========
@@ -1857,6 +1859,39 @@ window.addEventListener("DOMContentLoaded", function () {
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
 
+        const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
+        const toggleSubmitBtns = mode => {
+          if(mode !== 'enable' && mode !== 'disable'){
+            console.log('toggleSubmitBtns: mode has to be enable or disable');
+            return
+          }
+
+          if(mode !== 'disable'){
+            //Disable submit button
+            submitBtns.map(obj => {
+              obj.innerHTML = 'SUBMITTING'
+              obj.style.color = '#41C4F2'
+              obj.style.backgroundColor = '#ffffff'
+              obj.style.cursor = 'not-allowed'
+              obj.disabled = true
+            })
+          }else if(mode === 'enable'){
+            //RESET SUBMIT BUTTON
+            submitBtns.map(obj => {
+              obj.innerHTML = 'ENQUIRE NOW'
+              obj.disabled = false
+              obj.style.color = '#ffffff'
+              obj.style.backgroundColor = '#41C4F2'
+              obj.style.cursor = 'pointer'
+            })
+          }
+        }
+
+        //Disable submit buttons
+        if(sendToLQS1 || sendToLQS2){
+          toggleSubmitBtns('disable')
+        }
+
         //Send to LQS 2
         if (sendToLQS2 && formValid.isValid()) {
           grecaptcha.ready(function() {
@@ -1874,12 +1909,10 @@ window.addEventListener("DOMContentLoaded", function () {
         if (sendToLQS1 && formValid.isValid()) {
           // console.log(`Contacting reCaptcha`);
                 grecaptcha.ready(function() {
-                    grecaptcha.execute(reCAPTCHASiteKey, {action: 'submit'}).then(function(token) {
+                    grecaptcha.execute(reCAPTCHASiteKey, {action: 'submit'})
+                      .then(function(token) {
                         // Add the token to the hidden input field
                         data['validationToken'] = token;
-
-                        // console.log(`Token received: ${token}`);
-                        // console.log(`Now sending data:`, data);
 
                         // Now submit the form
                         // document.getElementById('myForm').submit();
@@ -1895,6 +1928,7 @@ window.addEventListener("DOMContentLoaded", function () {
                             data: data,
                 
                             success: function (json) {
+                              toggleSubmitBtns('enable')
                               var gender = data.title == "MR." ? "male" : "female";
                               const hashedEmail = "NA";
                               const hashedPhone = "NA";
