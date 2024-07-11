@@ -317,6 +317,19 @@ const toggleSubmitBtns = mode => {
     })
   }
 }
+
+function loadScript(url, callback) {
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = url;
+
+  // Check for callback
+  if (callback) {
+      script.onload = callback;
+  }
+
+  document.head.appendChild(script);
+}
 // ======== E N D   O F   U I   H A N D L E R   F U N C T I O N S ========
 
 
@@ -448,19 +461,6 @@ let code //Country Code selected in iti
 
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
-
-  function loadScript(url, callback) {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = url;
-
-      // Check for callback
-      if (callback) {
-          script.onload = callback;
-      }
-
-      document.head.appendChild(script);
-  }
 
   //Import reCAPTCHA script into the <head>.
   loadScript(`https://www.google.com/recaptcha/api.js?render=${reCAPTCHASiteKey}`, function() {
@@ -1692,56 +1692,6 @@ if (urlSplits.includes("gdn")) {
 } else {
   defaultCampaignId = "a121n00000Dwy45";
 }
-
-
-
-// ======================================== LOGIC OF  ================================================
-// const pageURL = window.location.href
-// const hasUTMParams = pageURL.split('?')[1] !== undefined && pageURL.split('?')[1] !== null
-
-// const addUTMParamsToSessionStorage = () => {
-//     if(!hasUTMParams){
-//         return
-//     }
-
-//     const UTMParamsString = pageURL.split('?')[1]
-//     const UTMParamsArray = UTMParamsString.split('&')
-
-//     if(UTMParamsArray.length == 0){
-//         return
-//     }
-
-//     UTMParamsArray.map(obj => {
-//       sessionStorage.setItem(obj.split('=')[0], obj.split('=')[1])
-//     })
-// }
-
-// const getDefaultCampaignIdAsPerUtmMedium = () => {
-
-//   let campaign_id = sessionStorage.getItem('campaign_id')
-
-//   if(campaign_id) {
-//     return campaign_id
-//   } else {
-//     let utm_medium = sessionStorage.getItem('utm_medium')
-//     if (utm_medium == "gdn") {
-//       return "a1207000000bnOn";
-//     } else if (utm_medium == "emailer-specific") {
-//       return "a1207000000cX0R";
-//     } else if (utm_medium == "social-specific") {
-//       return "a121n00000D9pUv";
-//     } else if (utm_medium == "affiliate-specific") {
-//       return "a1207000000d8a4";
-//     } else if (utm_medium == "social-inf") {
-//       return "a121n00000D9pUv";
-//     } else {
-//       return "a121n00000Dwy45";
-//     }
-//   }
-// }
-
-// defaultCampaignId = getDefaultCampaignIdAsPerUtmMedium()
-// ======================================== END     O N   I N I T ================================================
 
 window.addEventListener("DOMContentLoaded", function () {
   if (window.__featuresReady && window.__featuresReady.indexOf("Form") > -1) {
