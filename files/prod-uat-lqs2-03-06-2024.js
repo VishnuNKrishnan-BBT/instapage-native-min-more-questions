@@ -288,6 +288,39 @@ function retrieveCountry(countryName) {
 
 
 
+
+// ======== U I   H A N D L E R   F U N C T I O N S ========
+const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
+const toggleSubmitBtns = mode => {
+  if(mode !== 'enable' && mode !== 'disable'){
+    console.log('toggleSubmitBtns: mode has to be enable or disable');
+    return
+  }
+
+  if(mode !== 'disable'){
+    //Disable submit button
+    submitBtns.map(obj => {
+      obj.innerHTML = 'SUBMITTING'
+      obj.style.color = '#41C4F2'
+      obj.style.backgroundColor = '#ffffff'
+      obj.style.cursor = 'not-allowed'
+      obj.disabled = true
+    })
+  }else if(mode === 'enable'){
+    //RESET SUBMIT BUTTON
+    submitBtns.map(obj => {
+      obj.innerHTML = 'ENQUIRE NOW'
+      obj.disabled = false
+      obj.style.color = '#ffffff'
+      obj.style.backgroundColor = '#41C4F2'
+      obj.style.cursor = 'pointer'
+    })
+  }
+}
+// ======== E N D   O F   U I   H A N D L E R   F U N C T I O N S ========
+
+
+
 // ======== L Q S 2.0   F U N C T I O N S ========
 //Obtain Mashery access token
 function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
@@ -1858,34 +1891,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
-
-        const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
-        const toggleSubmitBtns = mode => {
-          if(mode !== 'enable' && mode !== 'disable'){
-            console.log('toggleSubmitBtns: mode has to be enable or disable');
-            return
-          }
-
-          if(mode !== 'disable'){
-            //Disable submit button
-            submitBtns.map(obj => {
-              obj.innerHTML = 'SUBMITTING'
-              obj.style.color = '#41C4F2'
-              obj.style.backgroundColor = '#ffffff'
-              obj.style.cursor = 'not-allowed'
-              obj.disabled = true
-            })
-          }else if(mode === 'enable'){
-            //RESET SUBMIT BUTTON
-            submitBtns.map(obj => {
-              obj.innerHTML = 'ENQUIRE NOW'
-              obj.disabled = false
-              obj.style.color = '#ffffff'
-              obj.style.backgroundColor = '#41C4F2'
-              obj.style.cursor = 'pointer'
-            })
-          }
-        }
 
         //Disable submit buttons
         if(sendToLQS1 || sendToLQS2){
