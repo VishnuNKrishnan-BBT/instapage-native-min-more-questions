@@ -51,6 +51,35 @@ let sms;
 let whatsapp;
 let preferredLanguageInput
 websiteLanguage = $("input[name='websiteLanguage']").val();
+
+//HANDLE MULTIPLE CLICKS ON SUBMIT
+const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
+const toggleSubmitBtns = mode => {
+  if(mode !== 'enable' && mode !== 'disable'){
+    console.log('toggleSubmitBtns: mode has to be enable or disable');
+    return
+  }
+
+  if(mode === 'disable'){
+    //Disable submit button
+    submitBtns.map(obj => {
+      obj.innerHTML = 'SUBMITTING'
+      obj.style.color = '#41C4F2'
+      obj.style.backgroundColor = '#ffffff'
+      obj.style.cursor = 'not-allowed'
+      obj.disabled = true
+    })
+  }else if(mode === 'enable'){
+    //RESET SUBMIT BUTTON
+    submitBtns.map(obj => {
+      obj.innerHTML = 'ENQUIRE NOW'
+      obj.disabled = false
+      obj.style.color = '#ffffff'
+      obj.style.backgroundColor = '#41C4F2'
+      obj.style.cursor = 'pointer'
+    })
+  }
+}
 //console.log(websiteLanguage);
 document.addEventListener("DOMContentLoaded", async function () {
 
@@ -940,35 +969,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     whatsapp = "WhatsApp";
     preferredLanguageInput = "Preferred Language";
   }
-
-//HANDLE MULTIPLE CLICKS ON SUBMIT
-const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
-const toggleSubmitBtns = mode => {
-  if(mode !== 'enable' && mode !== 'disable'){
-    console.log('toggleSubmitBtns: mode has to be enable or disable');
-    return
-  }
-
-  if(mode === 'disable'){
-    //Disable submit button
-    submitBtns.map(obj => {
-      obj.innerHTML = 'SUBMITTING'
-      obj.style.color = '#41C4F2'
-      obj.style.backgroundColor = '#ffffff'
-      obj.style.cursor = 'not-allowed'
-      obj.disabled = true
-    })
-  }else if(mode === 'enable'){
-    //RESET SUBMIT BUTTON
-    submitBtns.map(obj => {
-      obj.innerHTML = 'ENQUIRE NOW'
-      obj.disabled = false
-      obj.style.color = '#ffffff'
-      obj.style.backgroundColor = '#41C4F2'
-      obj.style.cursor = 'pointer'
-    })
-  }
-}
 
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
   let fieldsNoNumbers = [firstNameInput, lastNameInput];
