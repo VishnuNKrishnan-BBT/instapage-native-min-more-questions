@@ -2365,7 +2365,7 @@ function replaceTextInElements(oldText, newText, element) {
 setInterval(() => {
   console.log('Refreshing access token...');
   obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
-}, 1000)
+}, 30*60*1000)
 
 addUTMParamsToSessionStorage()
 // ======== E N D   O F   O N   I N I T ========
