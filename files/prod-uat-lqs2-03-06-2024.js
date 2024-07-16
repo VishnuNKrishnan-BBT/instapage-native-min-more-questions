@@ -834,10 +834,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     lookingTo = "你可希望";
     areYouLookingTo = "你可希望"; //add to other languages as well if needed
     findAJob = "加入@达马克工作"; //add to other languages as well
-    invest = "投资";
+    invest = "投資";
     buyaHome = "置业";
     workAtDamac = "加入@达马克工作";
-    iAmAJobSeeker = "我正在找工作";
+    iAmAJobSeeker = "找工作";
     exploringDamac = "我想了解一下基本情况";
     propertyTypePreference = "您对哪种房产感兴趣？";
     villaHouse = "别墅/房子";
@@ -854,8 +854,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "200万迪拉姆至500万迪拉姆";
     fiveMPlus = "500万迪拉姆以上";
     whenToBuy = "你打算何時購買？";
-    daysThirty = "30天内";
-    daysNinety = "90天内";
+    daysThirty = "30天內";
+    daysNinety = "90天內";
     immediately = "立即";
     withinThreeMonths = "3个月内";
     withinSixMonths = "6个月内";
