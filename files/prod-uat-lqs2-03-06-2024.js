@@ -599,8 +599,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "بين 2 مليون درهم و5 مليون درهم إماراتي";
     fiveMPlus = "أكثر من 5 مليون درهم إماراتي";
     whenToBuy = "ما هي المدة التي ستستغرقها لشراء منزل؟";
-    daysThirty = "خلال 30 يوماً";
-    daysNinety = "خلال 90 يوماً";
+    daysThirty = "خلال 30 يوم";
+    daysNinety = "خلال 90 يوم";
     immediately = "في الحال";
     withinThreeMonths = "خلال 3 أشهر";
     withinSixMonths = "خلال 6 أشهر";
