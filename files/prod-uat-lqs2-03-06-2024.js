@@ -319,6 +319,14 @@ const toggleSubmitBtns = mode => {
 }
 
 function loadScript(url, callback) {
+  const existingScript = Array.from(document.getElementsByTagName('script')).find(
+    script => script.src === url
+  )
+
+  if(existingScript){
+    return
+  }
+
   const script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = url;
@@ -2354,7 +2362,10 @@ function replaceTextInElements(oldText, newText, element) {
 
 
 // ======== O N   I N I T ========
-obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
+setInterval(() => {
+  console.log('Refreshing access token...');
+  obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
+}, 1000)
 
 addUTMParamsToSessionStorage()
 // ======== E N D   O F   O N   I N I T ========
