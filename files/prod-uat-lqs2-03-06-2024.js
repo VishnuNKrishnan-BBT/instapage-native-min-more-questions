@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     workAtDamac = "العمل لدى داماك";
     areYouLookingTo = "هل تبحث عن"; //add to other languages as well if needed
     findAJob = "أبحث عن عمل"; //add to other languages as well
-    iAmAJobSeeker = "أبحث عن عمل";
+    iAmAJobSeeker = "الحصول على وظيفة";
     exploringDamac = "أستعرض الخيارات المتاحة";
     propertyTypePreference = "ما نوع العقار الذي تبحث عنه؟";
     villaHouse = "فيلا/منزل";
@@ -2026,7 +2026,7 @@ function getFormData($form) {
       // if (n["value"] === exploringDamac) {
       //   n.value = "job seeker";
       // }
-      if (n["value"] === workAtDamac || n["value"] === findAJob) {
+      if (n["value"] === workAtDamac || n["value"] === findAJob || n["value"] === iAmAJobSeeker) {
         n.value = "Jobseeker";
       }
     }
