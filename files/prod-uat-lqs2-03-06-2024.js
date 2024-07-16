@@ -1105,8 +1105,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     daysThirty = "Inerhalb kommenden 30 Tage";
     daysNinety = "Inerhalb kommenden 90 Tage";
     immediately = "Sofort";
-    withinThreeMonths = "Innerhalb von 3 Monaten";
-    withinSixMonths = "Innerhalb von 6 Monaten";
+    withinThreeMonths = "Inerhalb von 3 Monaten";
+    withinSixMonths = "Inerhalb von 6 Monaten";
     stillConsidering = "Bin noch am überlegen";
     btntext = "Hier klicken";
     labtext = "Hier finden Sie weitere Infos zu Immobilien von DAMAC";
