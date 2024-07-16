@@ -2015,13 +2015,13 @@ function getFormData($form) {
       n["name"] = "BuyerType";
 
       if (n["value"] === invest) {
-        n.value = "investor";
+        n.value = "Investor";
       }
       if (n["value"] === buyaHome) {
-        n.value = "homeowner";
+        n.value = "Homeowner";
       }
       if (n["value"] === exploringDamac) {
-        n.value = "exploring";
+        n.value = "Exploring";
       }
       // if (n["value"] === exploringDamac) {
       //   n.value = "job seeker";
