@@ -730,8 +730,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     twoMtoFiveM = "Entre 2 y 5 millones de AED";
     fiveMPlus = "Más de 5 millones de AED";
     whenToBuy = "¿Cuándo piensa hacer la compra?";
-    daysThirty = "En 30 días";
-    daysNinety = "En 90 días";
+    daysThirty = "En un plazo de 30 días";
+    daysNinety = "En un plazo de 90 días";
     immediately = "Inmediatamente";
     withinThreeMonths = "En 3 meses";
     withinSixMonths = "En 6 meses";
