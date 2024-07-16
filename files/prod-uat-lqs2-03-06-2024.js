@@ -713,7 +713,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     invest = "Invertir";
     buyaHome = "Comprar un inmueble";
     workAtDamac = "Trabajar en DAMAC";
-    iAmAJobSeeker = "Busco un empleo";
+    iAmAJobSeeker = "Encontrar un trabajo";
     exploringDamac = "Solo estoy explorando";
     propertyTypePreference = "¿Qué tipo de inmueble le interesa?";
     villaHouse = "Villa/chalet";
