@@ -941,6 +941,35 @@ document.addEventListener("DOMContentLoaded", async function () {
     preferredLanguageInput = "Preferred Language";
   }
 
+//HANDLE MULTIPLE CLICKS ON SUBMIT
+const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
+const toggleSubmitBtns = mode => {
+  if(mode !== 'enable' && mode !== 'disable'){
+    console.log('toggleSubmitBtns: mode has to be enable or disable');
+    return
+  }
+
+  if(mode === 'disable'){
+    //Disable submit button
+    submitBtns.map(obj => {
+      obj.innerHTML = 'SUBMITTING'
+      obj.style.color = '#41C4F2'
+      obj.style.backgroundColor = '#ffffff'
+      obj.style.cursor = 'not-allowed'
+      obj.disabled = true
+    })
+  }else if(mode === 'enable'){
+    //RESET SUBMIT BUTTON
+    submitBtns.map(obj => {
+      obj.innerHTML = 'ENQUIRE NOW'
+      obj.disabled = false
+      obj.style.color = '#ffffff'
+      obj.style.backgroundColor = '#41C4F2'
+      obj.style.cursor = 'pointer'
+    })
+  }
+}
+
   //console.log("firstNameInput..", firstNameInput, lastNameInput);
   let fieldsNoNumbers = [firstNameInput, lastNameInput];
   var modstring = "";
@@ -1403,18 +1432,8 @@ window.addEventListener("DOMContentLoaded", function () {
           data.lastName = newVal;
         }
 
-        const submitBtns = Array.from(document.getElementsByClassName('btn form-btn item-block'))
         if (formValid.isValid()) {
-
-            //Disable submit button
-            submitBtns.map(obj => {
-                obj.innerHTML = 'SUBMITTING'
-                obj.style.color = '#41C4F2'
-                obj.style.backgroundColor = '#ffffff'
-                obj.style.cursor = 'not-allowed'
-                obj.disabled = true
-            })
-
+                toggleSubmitBtns('disable')
                 console.log(`Contacting reCaptcha`);
                 grecaptcha.ready(function() {
                     grecaptcha.execute('6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb', {action: 'submit'}).then(function(token) {
@@ -1438,14 +1457,7 @@ window.addEventListener("DOMContentLoaded", function () {
                             data: data,
                 
                             success: function (json) {
-                                //RESET SUBMIT BUTTON
-                                submitBtns.map(obj => {
-                                    obj.innerHTML = 'ENQUIRE NOW'
-                                    obj.disabled = false
-                                    obj.style.color = '#ffffff'
-                                    obj.style.backgroundColor = '#41C4F2'
-                                    obj.style.cursor = 'pointer'
-                                })
+                              toggleSubmitBtns('enable')
                               var gender = data.title == "MR." ? "male" : "female";
                               const hashedEmail = "NA";
                               const hashedPhone = "NA";
@@ -1463,6 +1475,7 @@ window.addEventListener("DOMContentLoaded", function () {
                               handler(e);
                             },
                             error: function (err) {
+                                toggleSubmitBtns('enable')
                               //console.log("Request failed, error= " + err);
                             },
                           });

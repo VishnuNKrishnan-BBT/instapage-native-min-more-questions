@@ -1852,7 +1852,7 @@ window.addEventListener("DOMContentLoaded", function () {
           grecaptcha.ready(function() {
             grecaptcha.execute(reCAPTCHASiteKey, {action: 'submit'})
               .then(function(token) {
-                // Add the token to the hidden input field
+                // Add the token to the payload
                 data['validationToken'] = token;
 
                 pushToNewLQS(data)

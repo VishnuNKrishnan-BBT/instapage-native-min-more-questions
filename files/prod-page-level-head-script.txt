@@ -1296,6 +1296,7 @@
   var bodyId = $(this).attr('id');
 </script>
 
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6Le2egYqAAAAAIiz4tGvGyXwB--ERQUfb9Ip8tcb"></script>
 <script
 defer
 	src="https://damac-native-min-js-more-qns-7b2849b13c57.herokuapp.com/files/prod-uat-lqs2-03-06-2024.js"></script>
