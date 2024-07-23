@@ -2040,13 +2040,16 @@ function getFormData($form) {
         n.value = "Within 90 days";
       }
       if (n["value"] === immediately) {
-        n.value = "Immediately";
+        n.value = "Now";
       }
       if (n["value"] === withinThreeMonths) {
         n.value = "Within 3 months";
       }
       if (n["value"] === withinSixMonths) {
         n.value = "Within 6 months";
+      }
+      if (n["value"] === stillConsidering) {
+        n.value = "Still considering";
       }
     }
     // if (n["name"] === `${newsAndOffers}::INSTAPAGE_BOX::${newsInput}`) {
