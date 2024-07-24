@@ -1840,12 +1840,16 @@ window.addEventListener("DOMContentLoaded", function () {
         } else {
           fullName = fullName.trim();
           const elements = fullName.split(" ");
-          data.firstName = elements[0];``
+          data.firstName = elements[0];
           elements.shift();
           var x = elements.join(" ");
           var newVal = elements.length > 0 ? x : "noLastName";
           data.lastName = newVal;
         }
+
+        //Removing leading and trailing spaces from firstname and lastname (if it exists) in the payload - Azure Bug ID # 73022
+        data.firstName = data.firstName.trim()
+        data.lastName = data.lastName.trim()
 
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
