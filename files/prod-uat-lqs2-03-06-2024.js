@@ -1410,6 +1410,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       e = e || window.event;
       // Check if the pressed key is space (key code 32) - Azure Bug ID # 73029
       if (e.keyCode === 32) {
+          e.preventDefault();
           return;
       }
       $(this).val($(this).val().toLocaleLowerCase());
