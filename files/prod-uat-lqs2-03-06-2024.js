@@ -1847,9 +1847,16 @@ window.addEventListener("DOMContentLoaded", function () {
           data.lastName = newVal;
         }
 
-        //Removing leading and trailing spaces from firstname and lastname (if it exists) in the payload - Azure Bug ID # 73022
+        //Removing leading and trailing spaces from firstname and lastname (if it exists) in the payload value - Azure Bug ID # 73022
         data.firstName = data.firstName.trim()
         data.lastName = data.lastName.trim()
+
+        //Removing non numerical characters from phone number (if it exisits) in the payload value - Azure Bug ID # 73114
+        const allowedChars = ['0','1','2','3','4','5','6','7','8','9']
+        const givenChars = Array.from(data.phoneNumber)
+        const filteredChars = givenChars.filter(obj => allowedChars.includes(obj))
+        const transformedNumber = filteredChars.join('') //This is good for the payload
+        data.phoneNumber = transformedNumber
 
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
