@@ -1406,13 +1406,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
   $('input[type="email"]').each(function () {
-    $(this)[0].onkeyup = function (e) {
+    $(this)[0].onkeydown = function (e) {
       e = e || window.event;
       // Check if the pressed key is space (key code 32) - Azure Bug ID # 73029
       if (e.keyCode === 32) {
           e.preventDefault();
           return;
       }
+    };
+    $(this)[0].onkeyup = function (e) {
+      e = e || window.event;
       $(this).val($(this).val().toLocaleLowerCase());
     };
   });
