@@ -1417,6 +1417,10 @@ document.addEventListener("DOMContentLoaded", async function () {
           e.preventDefault();
           return;
       }
+      // Limit the length of the input value to 50 characters - Azure Bug ID # 73018
+      if ($(this).val().length == 50) {
+        e.preventDefault()
+      }
     };
     $(this)[0].onkeyup = function (e) {
       e = e || window.event;
