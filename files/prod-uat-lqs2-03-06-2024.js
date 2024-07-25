@@ -1402,6 +1402,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (regSpecialChar.test(e.key)) {
           return false;
         }
+        // Limit the length of the input value to 50 characters - Azure Bug ID # 73018
+        if ($(this).val().length > 50) {
+          $(this).val() = $(this).val().substring(0, 50);
+        }
       };
     }
   });
