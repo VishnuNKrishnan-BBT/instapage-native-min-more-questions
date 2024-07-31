@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     acceptPrivacyPolicy = "Accept Privacy Policy";
     lookingTo = "What are you looking to do today?";
     areYouLookingTo = "Are you looking to"; //add to other languages as well if needed
-    invest = "Invest";
+    invest = "Invest in real estate";
     buyaHome = "Buy a home";
     workAtDamac = "Work @ DAMAC";
     findAJob = "Find a job"; //add to other languages as well
