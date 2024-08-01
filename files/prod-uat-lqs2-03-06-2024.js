@@ -2041,7 +2041,7 @@ function getFormData($form) {
     if (n["name"] === lookingTo || n["name"] === areYouLookingTo) {
       n["name"] = "BuyerType";
 
-      if (n["value"] === invest) {
+      if (n["value"] === invest || n["value"] === 'Invest') { //<TODO> Use language variables instead of hardcoding
         n.value = "Investor";
       }
       if (n["value"] === buyaHome) {
