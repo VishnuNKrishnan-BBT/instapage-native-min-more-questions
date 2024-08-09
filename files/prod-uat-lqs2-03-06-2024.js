@@ -1822,7 +1822,7 @@ window.addEventListener("DOMContentLoaded", function () {
         $("input[name='ga_client_id']").val(getCookie("_ga"));
         $("input[name='fbid']").val(getFacebookCookie("_fbp"));
         $("input[name='fbclid']").val(getFbc());
-        $("input[name='user_agent']").val(jscd.nAgt.slice(0, 10)); //Trimming user_agent 20 max 255 characters - Based on discussion with Akila and Venkateswarlu
+        $("input[name='user_agent']").val(jscd.nAgt.slice(0, 255)); //Trimming user_agent 20 max 255 characters - Based on discussion with Akila and Venkateswarlu
         $("input[name='os']").val(jscd.os);
         $("input[name='resolution']").val(jscd.screen);
         $("input[name='browser']").val(
@@ -1876,11 +1876,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
-
-        // //Trimming user_agent 20 max 255 characters - Based on discussion with Akila and Venkateswarlu
-        // if (data.user_agent.length > 255) {
-        //   data.user_agent.slice(0, 10)
-        // }
 
         //Disable submit buttons
         if(formValid.isValid() && (sendToLQS1 || sendToLQS2)){

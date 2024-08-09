@@ -1822,7 +1822,7 @@ window.addEventListener("DOMContentLoaded", function () {
         $("input[name='ga_client_id']").val(getCookie("_ga"));
         $("input[name='fbid']").val(getFacebookCookie("_fbp"));
         $("input[name='fbclid']").val(getFbc());
-        $("input[name='user_agent']").val(jscd.nAgt);
+        $("input[name='user_agent']").val(jscd.nAgt.slice(0, 255)); //Trimming user_agent 20 max 255 characters - Based on discussion with Akila and Venkateswarlu
         $("input[name='os']").val(jscd.os);
         $("input[name='resolution']").val(jscd.screen);
         $("input[name='browser']").val(
