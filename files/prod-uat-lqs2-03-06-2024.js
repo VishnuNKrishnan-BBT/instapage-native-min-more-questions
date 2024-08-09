@@ -1877,6 +1877,11 @@ window.addEventListener("DOMContentLoaded", function () {
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
 
+        //Trimming user_agent 20 max 255 characters - Based on discussion with Akila and Venkateswarlu
+        if (data.user_agent.length > 255) {
+          data.user_agent.slice(0, 10)
+        }
+
         //Disable submit buttons
         if(formValid.isValid() && (sendToLQS1 || sendToLQS2)){
           toggleSubmitBtns('disable')
