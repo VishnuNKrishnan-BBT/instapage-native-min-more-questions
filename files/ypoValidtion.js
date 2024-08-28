@@ -15,14 +15,7 @@ const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
 const isValid = (char, validChars) => {
-        if (!validChars.includes(char)) {
-            return false
-        }
-
-        if(char == 'Tab' || char == 'Backspace' || char == 'Enter'){
-            return true
-        }
-    return true
+        return validChars.includes(char) || (char == 'Tab' || char == 'Backspace' || char == 'Enter')
 }
 
 const addFieldValidation = (field, allowedArray) => {
