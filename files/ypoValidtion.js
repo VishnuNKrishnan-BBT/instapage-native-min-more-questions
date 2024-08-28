@@ -18,6 +18,10 @@ const isValid = (char, validChars) => {
         if (!validChars.includes(char)) {
             return false
         }
+
+        if(char == 'Tab' || char == 'Backspace'){
+            return true
+        }
     return true
 }
 
