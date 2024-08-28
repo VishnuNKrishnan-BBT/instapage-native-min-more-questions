@@ -19,7 +19,7 @@ const isValid = (char, validChars) => {
             return false
         }
 
-        if(char == 'Tab' || char == 'Backspace'){
+        if(char == 'Tab' || char == 'Backspace' || char == 'Enter'){
             return true
         }
     return true
