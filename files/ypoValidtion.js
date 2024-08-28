@@ -15,7 +15,11 @@ const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
 const isValid = (char, validChars) => {
-        return validChars.includes(char) || (char == 'Tab' || char == 'Backspace' || char == 'Enter')
+        if (!validChars.includes(char)) {
+            return false
+        }
+        
+    return true
 }
 
 const addFieldValidation = (field, allowedArray) => {
@@ -25,7 +29,9 @@ const addFieldValidation = (field, allowedArray) => {
     }
 
     field.addEventListener('keydown', e => {
-        e.preventDefault()
+        if(e.key != 'Tab' || e.key != 'Backspace' || e.key != 'Enter'){
+            e.preventDefault()
+        }
     
         if(isValid(e.key, allowedArray)){
             field.value += e.key
