@@ -40,7 +40,7 @@ const initValidation = () => {
     addFieldValidation(nameInput, alphaSpace)
     addFieldValidation(cityInput, alphaSpace)
     addFieldValidation(phoneInput, num)
-    addFieldValidation(ypocInput, alphaSpace)
+    addFieldValidation(ypocInput, 3)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
