@@ -32,8 +32,8 @@ const addFieldValidation = (field, allowedArray) => {
         if(!e.data){
             return
         }else{
-            if(isValid(e.data, allowedArray)){
-                field.value += 'e.data'
+            if(!isValid(e.data, allowedArray)){
+                field.value = field.value.slice(0, -1)
             }
         }
     })
