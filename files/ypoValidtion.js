@@ -28,14 +28,12 @@ const addFieldValidation = (field, allowedArray) => {
     }
 
     field.addEventListener('input', (e) => {
-        const lastChar = e.data // The last character typed
-        console.log(e)
-
-        if (!lastChar || !isValid(lastChar, allowedArray)) {
-            return // If valid or empty (e.g., after Backspace), do nothing
-        } else {
-            //field.value = field.value.slice(0, -1) // Remove invalid character
-            field.value += lastChar
+        if(!e.data){
+            return
+        }else{
+            if(isValid(e.data, allowedArray)){
+                field.value += e.data
+            }
         }
     })
 }
