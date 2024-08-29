@@ -34,8 +34,8 @@ const addFieldValidation = (field, allowedArray) => {
         if (!lastChar || !isValid(lastChar, allowedArray)) {
             return // If valid or empty (e.g., after Backspace), do nothing
         } else {
-            field.value = field.value.slice(0, -1) // Remove invalid character
-            e.preventDefault()
+            //field.value = field.value.slice(0, -1) // Remove invalid character
+            field.value += lastChar
         }
     })
 }
