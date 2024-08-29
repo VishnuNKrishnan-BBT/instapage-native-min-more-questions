@@ -29,26 +29,7 @@ const addFieldValidation = (field, allowedArray) => {
     }
 
     field.addEventListener('keydown', e => {
-        console.log(e);
-        alert(JSON.stringify(e, null, 4))
-
-        if(e.key != 'Tab' && e.key != 'Backspace' && e.key != 'Enter'){
-            e.preventDefault()
-        }
-    
-        if(isValid(e.key, allowedArray)){
-            field.value += e.key
-        }
-    })
-
-
-
-
-
-
-    field.addEventListener('touchstart', e => {
-        console.log(e);
-        alert(JSON.stringify(e, null, 4))
+        console.log(e)
 
         if(e.key != 'Tab' && e.key != 'Backspace' && e.key != 'Enter'){
             e.preventDefault()
