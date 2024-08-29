@@ -35,8 +35,8 @@ const addFieldValidation = (field, allowedArray) => {
             e.preventDefault()
         }
     
-        if(isValid(e.target.value, allowedArray)){
-            field.value += e.target.value
+        if(isValid(e.key, allowedArray)){
+            field.value += e.key
         }
     })
 }
