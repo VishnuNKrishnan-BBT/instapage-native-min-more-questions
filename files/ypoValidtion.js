@@ -33,7 +33,7 @@ const addFieldValidation = (field, allowedArray) => {
             return
         }else{
             if(isValid(e.data, allowedArray)){
-                field.value += e.data
+                field.value += 'e.data'
             }
         }
     })
