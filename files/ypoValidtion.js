@@ -31,21 +31,11 @@ const addFieldValidation = (field, allowedArray) => {
         const lastChar = e.data // The last character typed
         console.log(e)
 
-        if (!lastChar || isValid(lastChar, allowedArray)) {
+        if (!lastChar || !isValid(lastChar, allowedArray)) {
             return // If valid or empty (e.g., after Backspace), do nothing
         } else {
             field.value = field.value.slice(0, -1) // Remove invalid character
             e.preventDefault()
-        }
-    })
-
-    field.addEventListener('keydown', (e) => {
-        if (e.key === 'Tab' || e.key === 'Backspace' || e.key === 'Enter') {
-            return // Allow these keys
-        }
-
-        if (!isValid(e.key, allowedArray)) {
-            e.preventDefault() // Prevent default for invalid keys
         }
     })
 }
