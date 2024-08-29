@@ -29,7 +29,7 @@ const addFieldValidation = (field, allowedArray) => {
     }
 
     field.addEventListener('keydown', e => {
-        if(e.key != 'Tab' || e.key != 'Backspace' || e.key != 'Enter'){
+        if(e.key != 'Tab' && e.key != 'Backspace' && e.key != 'Enter'){
             e.preventDefault()
         }
     
