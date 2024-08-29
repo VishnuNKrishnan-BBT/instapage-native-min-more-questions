@@ -28,6 +28,7 @@ const addFieldValidation = (field, allowedArray) => {
     }
 
     field.addEventListener('input', (e) => {
+        console.log(e)
         if(!e.data){
             return
         }else{
