@@ -30,7 +30,6 @@ const addFieldValidation = (field, allowedArray) => {
     field.addEventListener('input', (e) => {
         const lastChar = e.data // The last character typed
         console.log(e)
-        alert(JSON.stringify(e, null, 4))
 
         if (!lastChar || isValid(lastChar, allowedArray)) {
             return // If valid or empty (e.g., after Backspace), do nothing
