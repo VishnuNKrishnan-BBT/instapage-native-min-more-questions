@@ -15,23 +15,30 @@ const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
 
-function handleKeyPress(event, field) {
+function handleKeyPress(event, field, allowedChars) {
     // Get the key pressed
     const keyPressed = event.key
 
     // Check if the key is a single character and included in the allowedCharacters array
-    if (keyPressed.length === 1 && allowedCharacters.includes(keyPressed)) {
+    if (keyPressed.length === 1 && allowedChars.includes(keyPressed)) {
         // Add the character to the input field
         field.value += keyPressed
     }
 }
 
 const initValidation = () => {
-    nameInput.addEventListener('keydown', handleKeyPress)
-    cityInput.addEventListener('keydown', handleKeyPress)
-    phoneInput.addEventListener('keydown', handleKeyPress)
-    emailInput.addEventListener('keydown', handleKeyPress)
-    ypocInput.addEventListener('keydown', handleKeyPress)
+    nameInput.addEventListener('keydown', e => {
+        handleKeyPress(e, nameInput, alphaSpace)
+    })
+    cityInput.addEventListener('keydown', e => {
+        handleKeyPress(e, cityInput, alphaSpace)
+    })
+    phoneInput.addEventListener('keydown', e => {
+        handleKeyPress(e, phoneInput, num)
+    })
+    ypocInput.addEventListener('keydown', e => {
+        handleKeyPress(e, ypocInput, alphaNumSpaceSpec)
+    })
 }
 
 document.addEventListener('DOMContentLoaded', function() {
