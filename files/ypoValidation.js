@@ -16,9 +16,12 @@ const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
 
 function handleKeyPress(event, field, allowedChars) {
-    event.preventDefault()
     // Get the key pressed
     const keyPressed = event.key
+
+    if(keyPressed !== 'Backspace' && keyPressed !== 'Tab' && keyPressed !== 'Enter'){
+        event.preventDefault()
+    }
 
     // Check if the key is a single character and included in the allowedCharacters array
     if (keyPressed.length === 1 && allowedChars.includes(keyPressed)) {
