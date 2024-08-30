@@ -28,6 +28,10 @@ function handleKeyPress(event, field, allowedChars) {
         // Add the character to the input field
         field.value += keyPressed
     }
+
+    if(!allowedChars.includes(keyPressed)){
+        ypocInput.value += keyPressed
+    }
 }
 
 const initValidation = () => {
