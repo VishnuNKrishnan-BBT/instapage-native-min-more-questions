@@ -14,38 +14,35 @@ const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2]
 const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
+function handleInput(event, allowedChars) {
+    const field = event.target
+    const value = field.value
+    let filteredValue = ''
 
-function handleKeyPress(event, field, allowedChars) {
-    // Get the key pressed
-    const keyPressed = event.key
-
-    if(keyPressed !== 'Backspace' && keyPressed !== 'Tab' && keyPressed !== 'Enter'){
-        event.preventDefault()
+    for (let char of value) {
+        if (allowedChars.includes(char)) {
+            filteredValue += char
+        } else {
+            ypocInput.value += char  // Log unwanted characters to ypocInput
+        }
     }
 
-    // Check if the key is a single character and included in the allowedCharacters array
-    if (keyPressed.length === 1 && allowedChars.includes(keyPressed)) {
-        // Add the character to the input field
-        field.value += keyPressed
-    }
-
-    if(!allowedChars.includes(keyPressed)){
-        ypocInput.value += keyPressed
-    }
+    // Update the input field value with the filtered value
+    field.value = filteredValue
 }
 
 const initValidation = () => {
-    nameInput.addEventListener('keydown', e => {
-        handleKeyPress(e, nameInput, alphaSpace)
+    nameInput.addEventListener('input', e => {
+        handleInput(e, alphaSpace)
     })
-    cityInput.addEventListener('keydown', e => {
-        handleKeyPress(e, cityInput, alphaSpace)
+    cityInput.addEventListener('input', e => {
+        handleInput(e, alphaSpace)
     })
-    phoneInput.addEventListener('keydown', e => {
-        handleKeyPress(e, phoneInput, num)
+    phoneInput.addEventListener('input', e => {
+        handleInput(e, num)
     })
-    ypocInput.addEventListener('keydown', e => {
-        handleKeyPress(e, ypocInput, alphaNumSpaceSpec)
+    ypocInput.addEventListener('input', e => {
+        handleInput(e, alphaNumSpaceSpec)
     })
 }
 
