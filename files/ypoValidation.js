@@ -16,6 +16,7 @@ const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
 
 function handleKeyPress(event, field, allowedChars) {
+    event.preventDefault()
     // Get the key pressed
     const keyPressed = event.key
 
