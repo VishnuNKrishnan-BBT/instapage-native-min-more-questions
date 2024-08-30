@@ -15,7 +15,7 @@ const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 
 
-function addFieldValidation(event, field) {
+function handleKeyPress(event, field) {
     // Get the key pressed
     const keyPressed = event.key
 
@@ -27,10 +27,11 @@ function addFieldValidation(event, field) {
 }
 
 const initValidation = () => {
-    addFieldValidation(nameInput, alphaSpace)
-    addFieldValidation(cityInput, alphaSpace)
-    addFieldValidation(phoneInput, num)
-    addFieldValidation(ypocInput, alphaNumSpaceSpec)
+    nameInput.addEventListener('keydown', handleKeyPress)
+    cityInput.addEventListener('keydown', handleKeyPress)
+    phoneInput.addEventListener('keydown', handleKeyPress)
+    emailInput.addEventListener('keydown', handleKeyPress)
+    ypocInput.addEventListener('keydown', handleKeyPress)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
