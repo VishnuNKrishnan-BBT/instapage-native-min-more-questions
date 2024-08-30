@@ -22,8 +22,6 @@ function handleInput(event, allowedChars) {
     for (let char of value) {
         if (allowedChars.includes(char)) {
             filteredValue += char
-        } else {
-            ypocInput.value += char  // Log unwanted characters to ypocInput
         }
     }
 
