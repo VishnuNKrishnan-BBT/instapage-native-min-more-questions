@@ -391,24 +391,24 @@ const pushToNewLQS = data => {
       .then(response => {
         if (response.ok) {
 
-          () => { //Data layer addition - Requirement was not communicated. Not raised in UAT either. Saurabh wanted this "ASAP" when he discovered that data layer events were not firing.
-            console.log('Data layer...')
-            var gender = data.title == "MR." ? "male" : "female";
-            const hashedEmail = "NA";
-            const hashedPhone = "NA";
-            landingCMSThankYou(
-              gender,
-              hashedEmail,
-              hashedPhone,
-              null,
-              null,
-              data.page_variant,
-              data.email,
-            );
-            submitUrl();
-            // //console.log(json);
-            handler(e);
-          }
+          //Data layer addition - Requirement was not communicated. Not raised in UAT either. Saurabh wanted this "ASAP" when he discovered that data layer events were not firing.
+          console.log('Data layer...')
+          var gender = data.title == "MR." ? "male" : "female";
+          const hashedEmail = "NA";
+          const hashedPhone = "NA";
+          landingCMSThankYou(
+            gender,
+            hashedEmail,
+            hashedPhone,
+            null,
+            null,
+            data.page_variant,
+            data.email,
+          );
+          submitUrl();
+          // //console.log(json);
+          handler(e);
+          
 
           return response.json()
         } else {
