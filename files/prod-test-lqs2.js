@@ -392,6 +392,7 @@ const pushToNewLQS = data => {
         if (response.ok) {
 
           () => { //Data layer addition - Requirement was not communicated. Not raised in UAT either. Saurabh wanted this "ASAP" when he discovered that data layer events were not firing.
+            console.log('Data layer...')
             var gender = data.title == "MR." ? "male" : "female";
             const hashedEmail = "NA";
             const hashedPhone = "NA";
