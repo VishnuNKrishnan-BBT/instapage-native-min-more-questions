@@ -19,10 +19,10 @@ const allowedEmailCharacters = [
 
 const nameInput = Array.from(document.getElementsByTagName('form'))[0][0]
 const cityInput = Array.from(document.getElementsByTagName('form'))[0][1]
-const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2]
-const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
-const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
-const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][5]
+const phoneInput = Array.from(document.getElementsByTagName('form'))[0][4] //2, 3 and 4 are part of intl dropdown
+const emailInput = Array.from(document.getElementsByTagName('form'))[0][5]
+const ypocInput = Array.from(document.getElementsByTagName('form'))[0][6]
+const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][7]
 
 function handleInput(event, allowedChars) {
     const field = event.target
