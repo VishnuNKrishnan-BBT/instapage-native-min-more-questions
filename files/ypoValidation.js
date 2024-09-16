@@ -41,6 +41,7 @@ function checkBlankInput() {
 }
 
 function markBlankFields() {
+    console.log('marking blanks')
     if(nameInput.value == ''){
         nameInput.style.border = '1px solid tomato'
     }else{
