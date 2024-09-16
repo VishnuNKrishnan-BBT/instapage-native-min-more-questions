@@ -27,11 +27,11 @@ const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][5]
 function checkBlankInput() {
     //Return true if there are blank inputs
     if(
-        nameInput == '' ||
-        cityInput == '' ||
-        phoneInput == '' ||
-        emailInput == '' ||
-        ypocInput == ''
+        nameInput.value == '' ||
+        cityInput.value == '' ||
+        phoneInput.value == '' ||
+        emailInput.value == '' ||
+        ypocInput.value == ''
         
     ){
         return true
