@@ -43,18 +43,28 @@ function checkBlankInput() {
 function markBlankFields() {
     if(nameInput.value == ''){
         nameInput.style.border = '1px solid tomato'
+    }else{
+        nameInput.style.border = '1px solid white'
     }
     if(cityInput.value == ''){
         cityInput.style.border = '1px solid tomato'
+    }else{
+        cityInput.style.border = '1px solid white'
     }
     if(phoneInput.value == ''){
         phoneInput.style.border = '1px solid tomato'
+    }else{
+        phoneInput.style.border = '1px solid white'
     }
     if(emailInput.value == ''){
         emailInput.style.border = '1px solid tomato'
+    }else{
+        emailInput.style.border = '1px solid white'
     }
     if(ypocInput.value == ''){
         ypocInput.style.border = '1px solid tomato'
+    }else{
+        ypocInput.style.border = '1px solid white'
     }
 }
 
