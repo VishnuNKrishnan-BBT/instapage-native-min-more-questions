@@ -13,7 +13,7 @@ const cityInput = Array.from(document.getElementsByTagName('form'))[0][1]
 const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2]
 const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
-const countryCode = Array.from(document.getElementsByTagName('form'))[0][5]
+const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][5]
 
 const isValid = (char, validChars) => {
         if (!validChars.includes(char)) {
