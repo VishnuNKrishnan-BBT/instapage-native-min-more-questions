@@ -16,13 +16,47 @@ const allowedEmailCharacters = [
     '.', '_', '%', '+', '-', '@'
 ]
 
-
+const form = Array.from(document.getElementsByTagName('form'))[0]
 const nameInput = Array.from(document.getElementsByTagName('form'))[0][0]
 const cityInput = Array.from(document.getElementsByTagName('form'))[0][1]
-const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2] //2, 3 and 4 are part of intl dropdown
+const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2]
 const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][5]
+
+function checkBlankInput() {
+    //Return true if there are blank inputs
+    if(
+        nameInput == '' ||
+        cityInput == '' ||
+        phoneInput == '' ||
+        emailInput == '' ||
+        ypocInput == ''
+        
+    ){
+        return true
+    }else{
+        return false
+    }
+}
+
+function markBlankFields() {
+    if(nameInput == ''){
+        nameInput.style.border = '1px solid tomato'
+    }
+    if(cityInput == ''){
+        cityInput.style.border = '1px solid tomato'
+    }
+    if(phoneInput == ''){
+        phoneInput.style.border = '1px solid tomato'
+    }
+    if(emailInput == ''){
+        emailInput.style.border = '1px solid tomato'
+    }
+    if(ypocInput == ''){
+        ypocInput.style.border = '1px solid tomato'
+    }
+}
 
 function handleInput(event, allowedChars) {
     const field = event.target
@@ -55,6 +89,13 @@ function handleEmailInput(event, allowedChars) {
 }
 
 const initValidation = () => {
+    form.addEventListener('submit', e => {
+        if(checkBlankInput()){
+            e.preventDefault() //Do not submit
+            markBlankFields()
+        }
+    })
+
     nameInput.addEventListener('input', e => {
         handleInput(e, alphaSpace)
     })
