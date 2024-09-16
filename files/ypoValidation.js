@@ -23,6 +23,7 @@ const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2]
 const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
 const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
 const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][5]
+const submitBtn = document.getElementsByTagName('button')[1]
 
 function checkBlankInput() {
     //Return true if there are blank inputs
@@ -32,7 +33,6 @@ function checkBlankInput() {
         phoneInput.value == '' ||
         emailInput.value == '' ||
         ypocInput.value == ''
-        
     ){
         return true
     }else{
@@ -41,19 +41,19 @@ function checkBlankInput() {
 }
 
 function markBlankFields() {
-    if(nameInput == ''){
+    if(nameInput.value == ''){
         nameInput.style.border = '1px solid tomato'
     }
-    if(cityInput == ''){
+    if(cityInput.value == ''){
         cityInput.style.border = '1px solid tomato'
     }
-    if(phoneInput == ''){
+    if(phoneInput.value == ''){
         phoneInput.style.border = '1px solid tomato'
     }
-    if(emailInput == ''){
+    if(emailInput.value == ''){
         emailInput.style.border = '1px solid tomato'
     }
-    if(ypocInput == ''){
+    if(ypocInput.value == ''){
         ypocInput.style.border = '1px solid tomato'
     }
 }
@@ -90,7 +90,7 @@ function handleEmailInput(event, allowedChars) {
 
 const initValidation = () => {
     form.addEventListener('submit', e => {
-        if(checkBlankInput()){
+        if(checkBlankInput() == true){
             e.preventDefault() //Do not submit
             markBlankFields()
         }
