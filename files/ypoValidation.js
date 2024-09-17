@@ -19,10 +19,10 @@ const allowedEmailCharacters = [
 const form = Array.from(document.getElementsByTagName('form'))[0]
 const nameInput = Array.from(document.getElementsByTagName('form'))[0][0]
 const cityInput = Array.from(document.getElementsByTagName('form'))[0][1]
-const phoneInput = Array.from(document.getElementsByTagName('form'))[0][2]
-const emailInput = Array.from(document.getElementsByTagName('form'))[0][3]
-const ypocInput = Array.from(document.getElementsByTagName('form'))[0][4]
-const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][5]
+const phoneInput = Array.from(document.getElementsByTagName('form'))[0][3]
+const emailInput = Array.from(document.getElementsByTagName('form'))[0][4]
+const ypocInput = Array.from(document.getElementsByTagName('form'))[0][5]
+const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][6]
 const submitBtn = document.getElementsByTagName('button')[1]
 
 function checkBlankInput() {
