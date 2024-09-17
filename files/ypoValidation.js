@@ -100,14 +100,14 @@ function handleEmailInput(event, allowedChars) {
 }
 
 const initValidation = () => {
-    form.addEventListener('submit', e => {
-        if(checkBlankInput() == true){
-            e.preventDefault() //Do not submit
-            markBlankFields()
-        }else{
-            null
-        }
-    })
+    // form.addEventListener('submit', e => {
+    //     if(checkBlankInput() == true){
+    //         e.preventDefault() //Do not submit
+    //         markBlankFields()
+    //     }else{
+    //         null
+    //     }
+    // })
 
     nameInput.addEventListener('input', e => {
         handleInput(e, alphaSpace)
