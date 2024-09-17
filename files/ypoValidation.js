@@ -69,13 +69,13 @@ function markBlankFields() {
     }
 }
 
-function handleInput(event, allowedChars) {
+function handleInput(event, allowedChars, maxLength = 128) {
     const field = event.target
     const value = field.value
     let filteredValue = ''
 
     for (let char of value) {
-        if (allowedChars.includes(char)) {
+        if (allowedChars.includes(char) && allowedChars.length <= maxLength) {
             filteredValue += char
         }
     }
@@ -116,7 +116,7 @@ const initValidation = () => {
         handleInput(e, alphaSpace)
     })
     phoneInput.addEventListener('input', e => {
-        handleInput(e, num)
+        handleInput(e, num, 15)
     })
     emailInput.addEventListener('input', e => {
         handleInput(e, allowedEmailCharacters)
