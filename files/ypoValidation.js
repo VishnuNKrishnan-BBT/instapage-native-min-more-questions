@@ -75,7 +75,7 @@ function handleInput(event, allowedChars, maxLength = 128) {
     let filteredValue = ''
 
     for (let char of value) {
-        if (allowedChars.includes(char) && allowedChars.length <= maxLength) {
+        if (allowedChars.includes(char) && filteredValue.length <= maxLength) {
             filteredValue += char
         }
     }
