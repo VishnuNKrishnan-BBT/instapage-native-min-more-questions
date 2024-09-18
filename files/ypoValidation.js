@@ -19,9 +19,9 @@ const allowedEmailCharacters = [
 const form = Array.from(document.getElementsByTagName('form'))[0]
 const nameInput = Array.from(document.getElementsByTagName('form'))[0][0]
 const cityInput = Array.from(document.getElementsByTagName('form'))[0][1]
-const phoneInput = document.getElementById('field-d872567810e8715db83b28f3073eae71-2')
+const phoneInput = document.getElementById('field-f7f68b243196f9ab78fb2974ff556ad9-2')
 const emailInput = Array.from(document.getElementsByTagName('form'))[0][5]
-const ypocInput = document.getElementById('field-d872567810e8715db83b28f3073eae71-4')
+const ypocInput = document.getElementById('field-f7f68b243196f9ab78fb2974ff556ad9-4')
 const countryCodeInput = Array.from(document.getElementsByTagName('form'))[0][7]
 const submitBtn = document.getElementsByTagName('button')[1]
 
