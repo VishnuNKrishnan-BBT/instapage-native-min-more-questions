@@ -84,13 +84,13 @@ function handleInput(event, allowedChars, maxLength = 128) {
     field.value = filteredValue
 }
 
-function handleEmailInput(event, allowedChars) {
+function handleEmailInput(event, allowedChars, maxLength = 128) {
     const field = event.target
     const value = field.value
     let filteredValue = ''
 
     for (let char of value) {
-        if (allowedChars.includes(char)) {
+        if (allowedChars.includes(char) && filteredValue.length <= maxLength) {
             filteredValue += char
         }
     }
