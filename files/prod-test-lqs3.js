@@ -360,9 +360,9 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
       })
       .then(response => {
         if (!response.ok) {
-          throw new Error(`Error obtaining access token. Status: ${response.status}`);
+            reject(response.status)
+            throw new Error(`Error obtaining access token. Status: ${response.status}`);
         }
-        return response.json();
       })
       .then(data => {
         const accessToken = data.access_token;
@@ -391,7 +391,9 @@ function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
     
     if (existingAccessToken === null || existingAccessToken === undefined) {
       obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
-      return;
+      .then(token => {
+        if(token)
+      })
     }
 
     const refreshToken = window.sessionStorage.getItem('lqsrt');
@@ -436,7 +438,7 @@ function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
 const pushToNewLQS = async data => {
   console.log(`AT::pushToNewLQS invoked`)
 
-    refreshAccessToken(clientId, clientSecret, tokenEndpoint)
+    obtainAccessToken(clientId, clientSecret, tokenEndpoint)
     .then(() => {
         const headers = {
             'Content-Type': 'application/json',
