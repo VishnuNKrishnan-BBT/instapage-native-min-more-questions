@@ -356,8 +356,10 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
             var accessToken = response.access_token;
+            var refreshToken = response.refresh_token
             //console.log("Access Token: " + accessToken);
           	window.sessionStorage.setItem('lqsat', accessToken)
+            window.sessionStorage.setItem('lqsrt', refreshToken)
             // You can use the access token as needed
         } else if (xhr.readyState == 4) {
             console.error("Error obtaining access token. Status: " + xhr.status);
@@ -367,30 +369,77 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
     xhr.send(params);
 }
 
+//Refresh access token
+function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
+  return new Promise((resolve, reject) => {
+    const existingAccessToken = window.sessionStorage.getItem('lqsat');
+    
+    if (existingAccessToken === null || existingAccessToken === undefined) {
+      obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint);
+      return;
+    }
+
+    const refreshToken = window.sessionStorage.getItem('lqsrt');
+    const params = new URLSearchParams();
+    params.append('grant_type', 'refresh_token');
+    params.append('refresh_token', refreshToken);
+
+    const headers = new Headers();
+    headers.append("Authorization", "Basic " + btoa(`${clientId}:${clientSecret}`));
+    headers.append("Content-Type", "application/x-www-form-urlencoded");
+
+    fetch(tokenEndpoint, {
+      method: 'POST',
+      headers: headers,
+      body: params.toString()
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error obtaining access token. Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const accessToken = data.access_token;
+      const refreshToken = data.refresh_token;
+      window.sessionStorage.setItem('lqsat', accessToken);
+      window.sessionStorage.setItem('lqsrt', refreshToken);
+      resolve({ accessToken, refreshToken });
+    })
+    .catch(error => {
+      console.error(error);
+      reject(error);
+    });
+  });
+}
+
+
 
 
 
 //Perform a POST request. Send the given payload (data parameter) to LQS (Mashery TIBCO)
-const pushToNewLQS = data => {
-  
+const pushToNewLQS = async data => {
+  console.log(`AT::pushToNewLQS invoked`)
     const headers = {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${sessionStorage.getItem('lqsat')}`
     }
-  
-    // console.log(data)
+  console.log(`AT::Headers \n${headers}`)
   
     const requestBody = JSON.stringify(data)
+    console.log(`AT::Headers \n${requestBody}`)
   
     // Using the fetch API
+    console.log(`AT::fetch invoked...`)
     fetch(lqs2leadEndpoint, {
       method: 'POST',
       headers: headers,
       body: requestBody,
     })
       .then(response => {
+        console.log(`AT::1st then() block response`, response)
         if (response.ok) {
-
+          console.log(`AT::If block - Response is OK`)
           //Data layer addition - No Ticket.
           console.log('Data layer...')
           var gender = data.title == "MR." ? "male" : "female";
@@ -408,11 +457,18 @@ const pushToNewLQS = data => {
           submitUrl();
           // //console.log(json);
           handler(e);
-          
-
           return response.json()
         } else {
-          throw new Error(`Error: ${response.status} - ${response.statusText}`)
+          console.log(`AT::Else block - Response is NOT OK`)
+          //throw new Error(`Error: ${response.status} - ${response.statusText}`)
+          console.log(`AT::Refreshing accessToken`)
+          refreshAccessToken(clientId, clientSecret, tokenEndpoint)
+            .then(res => {
+              console.log(`AT::refreshAccessToken() response: ${res}`)
+              window.sessionStorage.setItem('lqsat', res.accessToken)
+              window.sessionStorage.setItem('lqsrt', res.refreshToken)
+              pushToNewLQS(requestBody)
+            })
         }
       })
       .then(data => {
@@ -993,16 +1049,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     threeBr = "3";
     fourPlusBr = "4+";
     budgetRangePreference = "Каков ваш бюджет?";
-    uptoOneM = "До 1 млн дирхамов";
-    oneMtoTwoM = "От 1 до 2 млн дирхамов";
-    twoMtoFiveM = "От 2 до 5 млн дирхамов";
-    fiveMPlus = "Свыше 5 млн дирхамов";
+    uptoOneM = "До 1 млн дирхамов";
+    oneMtoTwoM = "От 1 до 2 млн дирхамов";
+    twoMtoFiveM = "От 2 до 5 млн дирхамов";
+    fiveMPlus = "Свыше 5 млн дирхамов";
     whenToBuy = "Когда вы планируете сделать покупку?";
     daysThirty = "В течение 30 дней";
     daysNinety = "В течение 90 дней";
     immediately = "Немедленно";
-    withinThreeMonths = "В течение 3 месяцев";
-    withinSixMonths = "В течение 6 месяцев";
+    withinThreeMonths = "В течение 3 месяцев";
+    withinSixMonths = "В течение 6 месяцев";
     stillConsidering = "Пока рассматриваю";
     btntext = "Нажмите здесь";
     labtext = "Подробнее о других объектах DAMAC Properties";
@@ -2415,7 +2471,7 @@ function replaceTextInElements(oldText, newText, element) {
 obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Run once on init
 setInterval(() => {
   console.log('Refreshing access token...');
-  obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Repeat every 25 minutes
+  obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Repeat every 30 minutes
 }, 25*60*1000)
 
 addUTMParamsToSessionStorage()
