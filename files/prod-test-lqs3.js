@@ -362,18 +362,17 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
         if (!response.ok) {
             reject(response.status)
             throw new Error(`Error obtaining access token. Status: ${response.status}`);
+        }else{
+            const accessToken = response.data.access_token;
+            const refreshToken = response.data.refresh_token;
+    
+            // Save tokens to session storage
+            window.sessionStorage.setItem('lqsat', accessToken);
+            window.sessionStorage.setItem('lqsrt', refreshToken);
+    
+            // Resolve the promise with the tokens
+            resolve({ accessToken, refreshToken });
         }
-      })
-      .then(data => {
-        const accessToken = data.access_token;
-        const refreshToken = data.refresh_token;
-  
-        // Save tokens to session storage
-        window.sessionStorage.setItem('lqsat', accessToken);
-        window.sessionStorage.setItem('lqsrt', refreshToken);
-  
-        // Resolve the promise with the tokens
-        resolve({ accessToken, refreshToken });
       })
       .catch(error => {
         console.error(error);
