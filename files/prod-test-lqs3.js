@@ -424,10 +424,10 @@ const pushToNewLQS = async data => {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${sessionStorage.getItem('lqsat')}`
     }
-  console.log(`AT::Headers \n${headers}`)
+  console.log(`AT::Headers \n${JSON.stringify(headers)}`)
   
     const requestBody = JSON.stringify(data)
-    console.log(`AT::Headers \n${requestBody}`)
+    console.log(`AT::Body \n${requestBody}`)
   
     // Using the fetch API
     console.log(`AT::fetch invoked...`)
