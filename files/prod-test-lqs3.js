@@ -345,37 +345,52 @@ function loadScript(url, callback) {
 // ======== L Q S 2.0   F U N C T I O N S ========
 //Obtain Mashery access token
 function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
-    var xhr = new XMLHttpRequest();
-    var params = "grant_type=client_credentials" +
-                "&client_id=" + encodeURIComponent(clientId) +
-                "&client_secret=" + encodeURIComponent(clientSecret)
-
-    xhr.open("POST", tokenEndpoint, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = JSON.parse(xhr.responseText);
-            var accessToken = response.access_token;
-            var refreshToken = response.refresh_token
-            //console.log("Access Token: " + accessToken);
-          	window.sessionStorage.setItem('lqsat', accessToken)
-            window.sessionStorage.setItem('lqsrt', refreshToken)
-            // You can use the access token as needed
-        } else if (xhr.readyState == 4) {
-            console.error("Error obtaining access token. Status: " + xhr.status);
+    return new Promise((resolve, reject) => {
+      const params = new URLSearchParams();
+      params.append('grant_type', 'client_credentials');
+      params.append('client_id', clientId);
+      params.append('client_secret', clientSecret);
+  
+      fetch(tokenEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: params.toString(),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Error obtaining access token. Status: ${response.status}`);
         }
-    };
-
-    xhr.send(params);
-}
+        return response.json();
+      })
+      .then(data => {
+        const accessToken = data.access_token;
+        const refreshToken = data.refresh_token;
+  
+        // Save tokens to session storage
+        window.sessionStorage.setItem('lqsat', accessToken);
+        window.sessionStorage.setItem('lqsrt', refreshToken);
+  
+        // Resolve the promise with the tokens
+        resolve({ accessToken, refreshToken });
+      })
+      .catch(error => {
+        console.error(error);
+        reject(error);
+      });
+    });
+  }
+  
 
 //Refresh access token
 function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
+    console.log(`AT:: refreshAccessToken() invoked`)
   return new Promise((resolve, reject) => {
     const existingAccessToken = window.sessionStorage.getItem('lqsat');
     
     if (existingAccessToken === null || existingAccessToken === undefined) {
-      obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint);
+      obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
       return;
     }
 
@@ -420,65 +435,69 @@ function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
 //Perform a POST request. Send the given payload (data parameter) to LQS (Mashery TIBCO)
 const pushToNewLQS = async data => {
   console.log(`AT::pushToNewLQS invoked`)
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${sessionStorage.getItem('lqsat')}`
-    }
-  console.log(`AT::Headers \n${JSON.stringify(headers)}`)
-  
-    const requestBody = JSON.stringify(data)
-    console.log(`AT::Body \n${requestBody}`)
-  
-    // Using the fetch API
-    console.log(`AT::fetch invoked...`)
-    fetch(lqs2leadEndpoint, {
-      method: 'POST',
-      headers: headers,
-      body: requestBody,
-    })
-      .then(response => {
-        console.log(`AT::1st then() block response`, response)
-        if (response.ok) {
-          console.log(`AT::If block - Response is OK`)
-          //Data layer addition - No Ticket.
-          console.log('Data layer...')
-          var gender = data.title == "MR." ? "male" : "female";
-          const hashedEmail = "NA";
-          const hashedPhone = "NA";
-          landingCMSThankYou(
-            gender,
-            hashedEmail,
-            hashedPhone,
-            null,
-            null,
-            data.page_variant,
-            data.email,
-          );
-          submitUrl();
-          // //console.log(json);
-          handler(e);
-          return response.json()
-        } else {
-          console.log(`AT::Else block - Response is NOT OK`)
-          //throw new Error(`Error: ${response.status} - ${response.statusText}`)
-          console.log(`AT::Refreshing accessToken`)
-          refreshAccessToken(clientId, clientSecret, tokenEndpoint)
-            .then(res => {
-              console.log(`AT::refreshAccessToken() response: ${res}`)
-              window.sessionStorage.setItem('lqsat', res.accessToken)
-              window.sessionStorage.setItem('lqsrt', res.refreshToken)
-              pushToNewLQS(requestBody)
+
+    refreshAccessToken(clientId, clientSecret, tokenEndpoint)
+    .then(() => {
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('lqsat')}`
+          }
+          console.log(`AT::Headers \n${JSON.stringify(headers)}`)
+        
+          const requestBody = JSON.stringify(data)
+          console.log(`AT::Body \n${requestBody}`)
+        
+          // Using the fetch API
+          console.log(`AT::fetch invoked...`)
+          fetch(lqs2leadEndpoint, {
+            method: 'POST',
+            headers: headers,
+            body: requestBody,
+          })
+            .then(response => {
+              console.log(`AT::1st then() block response`, response)
+              if (response.ok) {
+                console.log(`AT::If block - Response is OK`)
+                //Data layer addition - No Ticket.
+                console.log('Data layer...')
+                var gender = data.title == "MR." ? "male" : "female";
+                const hashedEmail = "NA";
+                const hashedPhone = "NA";
+                landingCMSThankYou(
+                  gender,
+                  hashedEmail,
+                  hashedPhone,
+                  null,
+                  null,
+                  data.page_variant,
+                  data.email,
+                );
+                submitUrl();
+                // //console.log(json);
+                handler(e);
+                return response.json()
+              } else {
+                console.log(`AT::Else block - Response is NOT OK`)
+                //throw new Error(`Error: ${response.status} - ${response.statusText}`)
+                console.log(`AT::Refreshing accessToken`)
+                refreshAccessToken(clientId, clientSecret, tokenEndpoint)
+                  .then(res => {
+                    console.log(`AT::refreshAccessToken() response: ${res}`)
+                    window.sessionStorage.setItem('lqsat', res.accessToken)
+                    window.sessionStorage.setItem('lqsrt', res.refreshToken)
+                    pushToNewLQS(requestBody)
+                  })
+              }
             })
-        }
-      })
-      .then(data => {
-        console.log('Success:', data)
-        toggleSubmitBtns('enable')
-      })
-      .catch(error => {
-        console.error('Error:', error)
-        toggleSubmitBtns('enable')
-      })
+            .then(data => {
+              console.log('Success:', data)
+              toggleSubmitBtns('enable')
+            })
+            .catch(error => {
+              console.error('Error:', error)
+              toggleSubmitBtns('enable')
+            })
+    })
   }
 // ======== E N D   O F   F U N C T I O N S ========
 
