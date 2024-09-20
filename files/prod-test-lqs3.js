@@ -346,40 +346,31 @@ function loadScript(url, callback) {
 //Obtain Mashery access token
 function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
     return new Promise((resolve, reject) => {
-      const params = new URLSearchParams();
-      params.append('grant_type', 'client_credentials');
-      params.append('client_id', clientId);
-      params.append('client_secret', clientSecret);
-  
-      fetch(tokenEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: params.toString(),
-      })
-      .then(response => {
-        console.log(`AT::${JSON.stringify(response)}`);
-        if (!response.ok) {
-            reject(response.status)
-            throw new Error(`Error obtaining access token. Status: ${response.status}`);
-        }else{
-            const accessToken = response.data.access_token;
-            const refreshToken = response.data.refresh_token;
+        var xhr = new XMLHttpRequest();
+        var params = "grant_type=client_credentials" +
+                    "&client_id=" + encodeURIComponent(clientId) +
+                    "&client_secret=" + encodeURIComponent(clientSecret)
     
-            // Save tokens to session storage
-            window.sessionStorage.setItem('lqsat', accessToken);
-            window.sessionStorage.setItem('lqsrt', refreshToken);
+        xhr.open("POST", tokenEndpoint, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                var accessToken = response.access_token;
+                var refreshToken = response.refresh_token
+                //console.log("Access Token: " + accessToken);
+                  window.sessionStorage.setItem('lqsat', accessToken)
+                  window.sessionStorage.setItem('lqsrt', refreshToken)
+                // You can use the access token as needed
+                resolve({accessToken, refreshToken})
+            } else if (xhr.readyState == 4) {
+                console.error("Error obtaining access token. Status: " + xhr.status);
+                reject(xhr.status)
+            }
+        };
     
-            // Resolve the promise with the tokens
-            resolve({ accessToken, refreshToken });
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        reject(error);
-      });
-    });
+        xhr.send(params);
+    })
   }
 
 
