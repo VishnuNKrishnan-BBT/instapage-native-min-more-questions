@@ -384,51 +384,51 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
   
 
 //Refresh access token
-function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
-    console.log(`AT:: refreshAccessToken() invoked`)
-  return new Promise((resolve, reject) => {
-    const existingAccessToken = window.sessionStorage.getItem('lqsat');
+// function refreshAccessToken(clientId, clientSecret, tokenEndpoint) {
+//     console.log(`AT:: refreshAccessToken() invoked`)
+//   return new Promise((resolve, reject) => {
+//     const existingAccessToken = window.sessionStorage.getItem('lqsat');
     
-    if (existingAccessToken === null || existingAccessToken === undefined) {
-      obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
-      .then(token => {
-        if(token)
-      })
-    }
+//     if (existingAccessToken === null || existingAccessToken === undefined) {
+//       obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
+//       .then(token => {
+//         if(token)
+//       })
+//     }
 
-    const refreshToken = window.sessionStorage.getItem('lqsrt');
-    const params = new URLSearchParams();
-    params.append('grant_type', 'refresh_token');
-    params.append('refresh_token', refreshToken);
+//     const refreshToken = window.sessionStorage.getItem('lqsrt');
+//     const params = new URLSearchParams();
+//     params.append('grant_type', 'refresh_token');
+//     params.append('refresh_token', refreshToken);
 
-    const headers = new Headers();
-    headers.append("Authorization", "Basic " + btoa(`${clientId}:${clientSecret}`));
-    headers.append("Content-Type", "application/x-www-form-urlencoded");
+//     const headers = new Headers();
+//     headers.append("Authorization", "Basic " + btoa(`${clientId}:${clientSecret}`));
+//     headers.append("Content-Type", "application/x-www-form-urlencoded");
 
-    fetch(tokenEndpoint, {
-      method: 'POST',
-      headers: headers,
-      body: params.toString()
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Error obtaining access token. Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      const accessToken = data.access_token;
-      const refreshToken = data.refresh_token;
-      window.sessionStorage.setItem('lqsat', accessToken);
-      window.sessionStorage.setItem('lqsrt', refreshToken);
-      resolve({ accessToken, refreshToken });
-    })
-    .catch(error => {
-      console.error(error);
-      reject(error);
-    });
-  });
-}
+//     fetch(tokenEndpoint, {
+//       method: 'POST',
+//       headers: headers,
+//       body: params.toString()
+//     })
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error(`Error obtaining access token. Status: ${response.status}`);
+//       }
+//       return response.json();
+//     })
+//     .then(data => {
+//       const accessToken = data.access_token;
+//       const refreshToken = data.refresh_token;
+//       window.sessionStorage.setItem('lqsat', accessToken);
+//       window.sessionStorage.setItem('lqsrt', refreshToken);
+//       resolve({ accessToken, refreshToken });
+//     })
+//     .catch(error => {
+//       console.error(error);
+//       reject(error);
+//     });
+//   });
+// }
 
 
 
@@ -482,9 +482,9 @@ const pushToNewLQS = async data => {
                 console.log(`AT::Else block - Response is NOT OK`)
                 //throw new Error(`Error: ${response.status} - ${response.statusText}`)
                 console.log(`AT::Refreshing accessToken`)
-                refreshAccessToken(clientId, clientSecret, tokenEndpoint)
+                obtainAccessToken(clientId, clientSecret, tokenEndpoint)
                   .then(res => {
-                    console.log(`AT::refreshAccessToken() response: ${res}`)
+                    console.log(`AT::obtainAccessToken() response: ${res}`)
                     window.sessionStorage.setItem('lqsat', res.accessToken)
                     window.sessionStorage.setItem('lqsrt', res.refreshToken)
                     pushToNewLQS(requestBody)
