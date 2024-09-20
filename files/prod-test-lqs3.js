@@ -382,7 +382,7 @@ function obtainAccessToken(clientId, clientSecret, tokenEndpoint) {
 const pushToNewLQS = async data => {
   console.log(`AT::pushToNewLQS invoked`)
 
-    obtainAccessToken(clientId, clientSecret, tokenEndpoint)
+    obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
     .then(() => {
         const headers = {
             'Content-Type': 'application/json',
@@ -426,7 +426,7 @@ const pushToNewLQS = async data => {
                 console.log(`AT::Else block - Response is NOT OK`)
                 //throw new Error(`Error: ${response.status} - ${response.statusText}`)
                 console.log(`AT::Refreshing accessToken`)
-                obtainAccessToken(clientId, clientSecret, tokenEndpoint)
+                obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint)
                   .then(res => {
                     console.log(`AT::obtainAccessToken() response: ${res}`)
                     window.sessionStorage.setItem('lqsat', res.accessToken)
@@ -2433,11 +2433,11 @@ function replaceTextInElements(oldText, newText, element) {
 
 
 // ======== O N   I N I T ========
-obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Run once on init
-setInterval(() => {
-  console.log('Refreshing access token...');
-  obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Repeat every 30 minutes
-}, 25*60*1000)
+// obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Run once on init
+// setInterval(() => {
+//   console.log('Refreshing access token...');
+//   obtainAccessToken(lqs2clientId, lqs2clientSecret, lqs2tokenEndpoint) //Repeat every 30 minutes
+// }, 25*60*1000)
 
 addUTMParamsToSessionStorage()
 // ======== E N D   O F   O N   I N I T ========
