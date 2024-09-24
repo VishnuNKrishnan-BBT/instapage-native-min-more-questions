@@ -1897,6 +1897,9 @@ window.addEventListener("DOMContentLoaded", function () {
         //Hardcoding Lead_Gen_Identifier based on request from Digital Marketing
         data.Lead_Gen_Identifier = 'instapage'
 
+        //Decoding keyword value - Requested by Jabez on 20-09-2024. No Ticket.
+        data.keyword = decodeURIComponent(data.keyword)
+
         //Disable submit buttons
         if(formValid.isValid() && (sendToLQS1 || sendToLQS2)){
           toggleSubmitBtns('disable')
